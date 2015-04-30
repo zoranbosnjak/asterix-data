@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<category cat="001" edition="1.1">
+    <dsc>Asterix Category 001, edition 1.1</dsc>
+    <items>
+
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed"><len>8</len></item>
+                <item name="SIC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="020" type="Extended">
+            <dsc>Target Report Descriptor</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="TYP" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Plot"/>
+                        <value val="1" dsc="Track"/>
+                    </values>
+                </item>
+                <item name="SIM" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Actual plot or track"/>
+                        <value val="1" dsc="Simulated plot or track"/>
+                    </values>
+                </item>
+                <item name="SSR_PSR" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="No detection"/>
+                        <value val="1" dsc="Sole primary detection"/>
+                        <value val="2" dsc="Sole secondary detection"/>
+                        <value val="3" dsc="Combined primary and secondary detection"/>
+                    </values>
+                </item>
+                <!-- TODO: add values -->
+                <item name="ANT" type="Fixed"><len>1</len></item>
+                <item name="SPI" type="Fixed"><len>1</len></item>
+                <item name="RAB" type="Fixed"><len>1</len></item>
+                <item name="TST" type="Fixed"><len>1</len></item>
+                <item name="DS1_DS2" type="Fixed"><len>2</len></item>
+                <item name="ME" type="Fixed"><len>1</len></item>
+                <item name="MI" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>2</len></item>
+            </items>
+        </item>
+
+        <item name="030" type="Extended">
+            <dsc>Warning/Error Conditions</dsc>
+            <len>(8,8)</len>
+        </item>
+
+        <item name="040">
+            <dsc>Measured Position in Polar Coordinates</dsc>
+            <items>
+                <item name="RHO" type="Fixed"><len>16</len></item>
+                <item name="THETA" type="Fixed"><len>16</len></item>
+            </items>
+        </item>
+
+        <item name="042">
+            <dsc>Calculated Position in Cartesian Coordinates</dsc>
+            <items>
+                <item name="X" type="Fixed"><len>16</len></item>
+                <item name="Y" type="Fixed"><len>16</len></item>
+            </items>
+        </item>
+
+        <item name="050">
+            <dsc>Mode-2 Code in Octal Representation</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="L" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>1</len></item>
+                <item name="ABCD" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="060">
+            <dsc>Mode-2 Code Confidence Indikator</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>4</len></item>
+                <item name="QX" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="070">
+            <dsc>Mode-3/A Code in Octal Representation</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="L" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>1</len></item>
+                <item name="ABCD" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="080">
+            <dsc>Mode-3/A Code Confidence Indikator</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>4</len></item>
+                <item name="QX" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="090">
+            <dsc>Mode-C Code in Binary Representation</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="HEIGHT" type="Fixed"><len>14</len></item>
+            </items>
+        </item>
+
+        <item name="100">
+            <dsc>Mode-C Code and Code Confidence Indicator</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="spare1" type="Spare"><len>2</len></item>
+                <item name="HEIGHT" type="Fixed"><len>12</len></item>
+                <item name="spare2" type="Spare"><len>4</len></item>
+                <item name="QUALITY" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="120" type="Fixed">
+            <dsc>Measured Radial Doppler Speed</dsc>
+            <len>8</len>
+        </item>
+
+        <item name="130" type="Extended">
+            <dsc>Radar Plot Characteristics</dsc>
+            <len>(8,8)</len>
+        </item>
+
+        <item name="131" type="Fixed">
+            <dsc>Received Power</dsc>
+            <len>8</len>
+        </item>
+
+        <item name="141" type="Fixed">
+            <dsc>Truncated Time of Day</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+
+        <item name="150">
+            <dsc>Presence of X-Pulse</dsc>
+            <items>
+                <item name="XA" type="Fixed"><len>1</len></item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+                <item name="XC" type="Fixed"><len>1</len></item>
+                <item name="spare2" type="Spare"><len>2</len></item>
+                <item name="X2" type="Fixed"><len>1</len></item>
+                <item name="spare3" type="Spare"><len>2</len></item>
+            </items>
+        </item>
+
+        <item name="161" type="Fixed">
+            <dsc>Track Plot Number</dsc>
+            <len>16</len>
+        </item>
+
+        <item name="170" type="Extended">
+            <dsc>Track Status</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="CON" type="Fixed"><len>1</len></item>
+                <item name="RAD" type="Fixed"><len>1</len></item>
+                <item name="MAN" type="Fixed"><len>1</len></item>
+                <item name="DOU" type="Fixed"><len>1</len></item>
+                <item name="RDPC" type="Fixed"><len>1</len></item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+                <item name="GHO" type="Fixed"><len>1</len></item>
+                <item name="TRE" type="Fixed"><len>1</len></item>
+                <item name="spare2" type="Spare"><len>6</len></item>
+            </items>
+        </item>
+
+        <item name="200">
+            <dsc>Calculated Track Velocity in Polar Coordinates</dsc>
+            <items>
+                <item name="GS" type="Fixed"><len>16</len></item>
+                <item name="CH" type="Fixed"><len>16</len></item>
+            </items>
+        </item>
+
+        <item name="210" type="Extended">
+            <dsc>Track Quality</dsc>
+            <len>(8,8)</len>
+        </item>
+
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+
+        <item name="RFS" type="Rfs">
+            <dsc>Random Field Sequencing</dsc>
+        </item>
+    </items>
+
+    <sac>010/SAC</sac>
+    <sic>010/SIC</sic>
+    
+    <uap_plot>
+        <item>010</item>
+        <item>020</item>
+        <item>040</item>
+        <item>070</item>
+        <item>090</item>
+        <item>130</item>
+        <item>141</item>
+        <item>050</item>
+        <item>120</item>
+        <item>131</item>
+        <item>080</item>
+        <item>100</item>
+        <item>060</item>
+        <item>030</item>
+        <item>150</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>SP</item>
+        <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+    </uap_plot>
+
+    <uap_track>
+        <item>010</item>
+        <item>020</item>
+        <item>161</item>
+        <item>040</item>
+        <item>042</item>
+        <item>200</item>
+        <item>070</item>
+        <item>090</item>
+        <item>141</item>
+        <item>130</item>
+        <item>131</item>
+        <item>120</item>
+        <item>170</item>
+        <item>210</item>
+        <item>050</item>
+        <item>080</item>
+        <item>100</item>
+        <item>060</item>
+        <item>030</item>
+        <item>SP</item>
+        <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+        <item>150</item>
+    </uap_track>
+</category>
+

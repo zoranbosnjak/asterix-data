@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<category cat="048" edition="1.15">
+    <dsc>Asterix Category 048, edition 1.15</dsc>
+    <items>
+
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed"><len>8</len></item>
+                <item name="SIC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="020" type="Extended">
+            <dsc>Target Report Descriptor</dsc>
+            <len>(8,8)</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="030" type="Extended">
+            <dsc>Warning/Error Conditions</dsc>
+            <len>(8,8)</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="040">
+            <dsc>Measured Position in Polar Co-ordinates</dsc>
+            <items>
+                <item name="RHO" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/256</lsb>
+                        <unit>NM</unit>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+                <item name="THETA" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/pow(2, 16)</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="042">
+            <dsc>Calculated Position in Cartesian Co-ordinates</dsc>
+            <items>
+                <item name="X" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <min>-256.0</min>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+                <item name="Y" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <min>-256.0</min>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="050" type="Fixed">
+            <dsc>Mode-2 Code in Octal Representation</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="055" type="Fixed">
+            <dsc>Mode-1 Code in Octal Representation</dsc>
+            <len>8</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="060" type="Fixed">
+            <dsc>Mode-2 Code Confidence Indicator</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="065" type="Fixed">
+            <dsc>Mode-1 Code Confidence Indicator</dsc>
+            <len>8</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="070" type="Fixed">
+            <dsc>Mode-3/A Code in Octal Representation</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="080" type="Fixed">
+            <dsc>Mode-3/A Code Confidence Indicator</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="090">
+            <dsc>Flight Level in Binary Representation</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="FL" type="Fixed"><len>14</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/4</lsb>
+                        <unit>FL</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="100" type="Fixed">
+            <dsc>Mode-C Code and Code Confidence Indicator</dsc>
+            <len>32</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="110" type="Fixed">
+            <dsc>Height Measured by a 3D Radar</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="120" type="Compound">
+            <dsc>Radial Doppler Speed</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="CAL" type="Fixed"><len>16</len></item>
+                <item name="RDS" type="Fixed"><len>56</len></item>
+            </items>
+        </item>
+
+        <item name="130" type="Compound">
+            <dsc>Radar Plot Characteristics</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="SRL" type="Fixed"><len>8</len></item>
+                <item name="SRR" type="Fixed"><len>8</len></item>
+                <item name="SAM" type="Fixed"><len>8</len></item>
+                <item name="PRL" type="Fixed"><len>8</len></item>
+                <item name="PAM" type="Fixed"><len>8</len></item>
+                <item name="RPD" type="Fixed"><len>8</len></item>
+                <item name="APD" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="140" type="Fixed">
+            <dsc>Time of Day</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+
+        <item name="161" type="Fixed">
+            <dsc>Track Number</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="170" type="Extended">
+            <dsc>Track Status</dsc>
+            <len>(8,8)</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="200">
+            <dsc>Calculated Track Velocity in Polar Co-ordinates</dsc>
+            <items>
+                <item name="GS" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>pow(2, -14)</lsb>
+                        <unit>NM/s</unit>
+                    </convert>
+                </item>
+                <item name="CH" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/pow(2, 16)</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="210" type="Fixed">
+            <dsc>Track Quality</dsc>
+            <len>32</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="220" type="Fixed">
+            <dsc>Aircraft Address</dsc>
+            <len>24</len>
+        </item>
+        
+        <item name="230" type="Fixed">
+            <dsc>Communications/ACAS Capability and Flight Status</dsc>
+            <len>16</len>
+            <!-- TODO: extend description of subfields below... -->
+        </item>
+
+        <item name="240">
+            <dsc>Aircraft Identification</dsc>
+            <convert><type>ACID</type></convert>
+            <items>
+                <item name="C1" type="Fixed"><len>6</len></item>
+                <item name="C2" type="Fixed"><len>6</len></item>
+                <item name="C3" type="Fixed"><len>6</len></item>
+                <item name="C4" type="Fixed"><len>6</len></item>
+                <item name="C5" type="Fixed"><len>6</len></item>
+                <item name="C6" type="Fixed"><len>6</len></item>
+                <item name="C7" type="Fixed"><len>6</len></item>
+                <item name="C8" type="Fixed"><len>6</len></item>
+            </items>
+        </item>
+
+        <item name="250" type="Repetitive">
+            <dsc>Mode S MB Data</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="item" type="Fixed"><len>64</len></item>
+            </items>
+        </item>
+
+        <item name="260" type="Fixed">
+            <dsc>ACAS Resolution Advisory Report</dsc>
+            <len>56</len>
+        </item>
+
+        <item name="RE" type="Explicit">
+            <dsc>Reserved Expansion Field</dsc>
+        </item>
+
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+
+    </items>
+
+    <sac>010/SAC</sac>
+    <sic>010/SIC</sic>
+    
+    <uap>
+        <item>010</item>
+        <item>140</item>
+        <item>020</item>
+        <item>040</item>
+        <item>070</item>
+        <item>090</item>
+        <item>130</item>
+        <item>220</item>
+        <item>240</item>
+        <item>250</item>
+        <item>161</item>
+        <item>042</item>
+        <item>200</item>
+        <item>170</item>
+        <item>210</item>
+        <item>030</item>
+        <item>080</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>230</item>
+        <item>260</item>
+        <item>055</item>
+        <item>050</item>
+        <item>065</item>
+        <item>060</item>
+        <item>SP</item>
+        <item>RE</item>
+    </uap>
+</category>
+
