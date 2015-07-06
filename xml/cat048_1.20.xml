@@ -552,38 +552,37 @@
 
     </items>
 
-    <sac>010/SAC</sac>
-    <sic>010/SIC</sic>
-    
-    <uap>
-        <item>010</item>
-        <item>140</item>
-        <item>020</item>
-        <item>040</item>
-        <item>070</item>
-        <item>090</item>
-        <item>130</item>
-        <item>220</item>
-        <item>240</item>
-        <item>250</item>
-        <item>161</item>
-        <item>042</item>
-        <item>200</item>
-        <item>170</item>
-        <item>210</item>
-        <item>030</item>
-        <item>080</item>
-        <item>100</item>
-        <item>110</item>
-        <item>120</item>
-        <item>230</item>
-        <item>260</item>
-        <item>055</item>
-        <item>050</item>
-        <item>065</item>
-        <item>060</item>
-        <item>SP</item>
-        <item>RE</item>
-    </uap>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>140</item>
+            <item>020</item>
+            <item>040</item>
+            <item>070</item>
+            <item>090</item>
+            <item>130</item>
+            <item>220</item>
+            <item>240</item>
+            <item>250</item>
+            <item>161</item>
+            <item>042</item>
+            <item>200</item>
+            <item>170</item>
+            <item>210</item>
+            <item>030</item>
+            <item>080</item>
+            <item>100</item>
+            <item>110</item>
+            <item>120</item>
+            <item>230</item>
+            <item>260</item>
+            <item>055</item>
+            <item>050</item>
+            <item>065</item>
+            <item>060</item>
+            <item>SP</item>
+            <item>RE</item>
+        </uap>
+    </uaps>
 </category>
 

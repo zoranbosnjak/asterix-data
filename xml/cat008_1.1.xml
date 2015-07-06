@@ -165,24 +165,23 @@
         </item>
     </items>
 
-    <sac>010/SAC</sac>
-    <sic>010/SIC</sic>
-    
-    <uap>
-        <item>010</item>
-        <item>000</item>
-        <item>020</item>
-        <item>036</item>
-        <item>034</item>
-        <item>040</item>
-        <item>050</item>
-        <item>090</item>
-        <item>100</item>
-        <item>110</item>
-        <item>120</item>
-        <item>038</item>
-        <item>SP</item>
-<!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
-    </uap>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>000</item>
+            <item>020</item>
+            <item>036</item>
+            <item>034</item>
+            <item>040</item>
+            <item>050</item>
+            <item>090</item>
+            <item>100</item>
+            <item>110</item>
+            <item>120</item>
+            <item>038</item>
+            <item>SP</item>
+            <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+        </uap>
+    </uaps>
 </category>
 

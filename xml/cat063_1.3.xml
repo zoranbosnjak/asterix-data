@@ -211,24 +211,23 @@
 
     </items>
     
-    <sac>010/SAC</sac>
-    <sic>010/SIC</sic>
-    
-    <uap>
-        <item>010</item>
-        <item>015</item>
-        <item>030</item>
-        <item>050</item>
-        <item>060</item>
-        <item>070</item>
-        <item>080</item>
-        <item>081</item>
-        <item>090</item>
-        <item>091</item>
-        <item>092</item>
-        <item></item>
-        <item>RE</item>
-        <item>SP</item>
-    </uap>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>015</item>
+            <item>030</item>
+            <item>050</item>
+            <item>060</item>
+            <item>070</item>
+            <item>080</item>
+            <item>081</item>
+            <item>090</item>
+            <item>091</item>
+            <item>092</item>
+            <item></item>
+            <item>RE</item>
+            <item>SP</item>
+        </uap>
+    </uaps>
 </category>
 

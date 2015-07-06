@@ -208,56 +208,56 @@
         </item>
     </items>
 
-    <sac>010/SAC</sac>
-    <sic>010/SIC</sic>
-    
-    <uap_plot>
-        <item>010</item>
-        <item>020</item>
-        <item>040</item>
-        <item>070</item>
-        <item>090</item>
-        <item>130</item>
-        <item>141</item>
-        <item>050</item>
-        <item>120</item>
-        <item>131</item>
-        <item>080</item>
-        <item>100</item>
-        <item>060</item>
-        <item>030</item>
-        <item>150</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item>SP</item>
-        <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
-    </uap_plot>
+    <uaps>
+        <plot>
+            <item>010</item>
+            <item>020</item>
+            <item>040</item>
+            <item>070</item>
+            <item>090</item>
+            <item>130</item>
+            <item>141</item>
+            <item>050</item>
+            <item>120</item>
+            <item>131</item>
+            <item>080</item>
+            <item>100</item>
+            <item>060</item>
+            <item>030</item>
+            <item>150</item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item>SP</item>
+            <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+        </plot>
 
-    <uap_track>
-        <item>010</item>
-        <item>020</item>
-        <item>161</item>
-        <item>040</item>
-        <item>042</item>
-        <item>200</item>
-        <item>070</item>
-        <item>090</item>
-        <item>141</item>
-        <item>130</item>
-        <item>131</item>
-        <item>120</item>
-        <item>170</item>
-        <item>210</item>
-        <item>050</item>
-        <item>080</item>
-        <item>100</item>
-        <item>060</item>
-        <item>030</item>
-        <item>SP</item>
-        <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
-        <item>150</item>
-    </uap_track>
+        <track>
+            <item>010</item>
+            <item>020</item>
+            <item>161</item>
+            <item>040</item>
+            <item>042</item>
+            <item>200</item>
+            <item>070</item>
+            <item>090</item>
+            <item>141</item>
+            <item>130</item>
+            <item>131</item>
+            <item>120</item>
+            <item>170</item>
+            <item>210</item>
+            <item>050</item>
+            <item>080</item>
+            <item>100</item>
+            <item>060</item>
+            <item>030</item>
+            <item>SP</item>
+            <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+            <item>150</item>
+        </track>
+    </uaps>
+
 </category>
 
