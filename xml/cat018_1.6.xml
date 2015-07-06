@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<category cat="018" edition="1.6">
+    <dsc>Asterix Category 018, edition 1.6</dsc>
+    <items>
+
+        <item name="000" type="Fixed">
+            <dsc>Message Type</dsc>
+            <len>8</len>
+            <values>
+                <value val="0x00" dsc="Associate_req"/>
+                <value val="0x01" dsc="Associate_resp"/>
+                <value val="0x02" dsc="Release_req"/>
+                <value val="0x03" dsc="Release_resp"/>
+                <value val="0x04" dsc="Abort_req"/>
+                <value val="0x05" dsc="Keep_alive"/>
+                <value val="0x10" dsc="Aircraft_report"/>
+                <value val="0x11" dsc="Aircraft_command"/>
+                <value val="0x12" dsc="II_code_change"/>
+                <value val="0x20" dsc="Uplink_packet"/>
+                <value val="0x21" dsc="Cancel_uplink_packet"/>
+                <value val="0x22" dsc="Uplink_packet_ack"/>
+                <value val="0x23" dsc="Downlink_packet"/>
+                <value val="0x26" dsc="Data_XON"/>
+                <value val="0x27" dsc="Data_XOFF"/>
+                <value val="0x30" dsc="Uplink_broadcast"/>
+                <value val="0x31" dsc="Cancel_uplink_broadcast"/>
+                <value val="0x32" dsc="Uplink_broadcast_ack"/>
+                <value val="0x34" dsc="Downlink_broadcast"/>
+                <value val="0x40" dsc="GICB_extraction"/>
+                <value val="0x41" dsc="Cancel_GICB_extraction"/>
+                <value val="0x42" dsc="GICB_extraction_ack"/>
+                <value val="0x43" dsc="GICB_response"/>
+            </values>
+        </item>
+
+        <item name="001">
+            <dsc>Result (D_Result)</dsc>
+            <items>
+                <item name="CAUSE" type="Fixed">
+                    <len>4</len>
+                    <!-- TODO: add values... -->
+                </item>
+                <item name="DIAG" type="Fixed">
+                    <len>4</len>
+                    <!-- TODO: add values... -->
+                </item>
+            </items>
+        </item>
+        
+        <item name="002" type="Fixed">
+            <dsc>Time of Day (D_Time)</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+
+        <item name="004">
+            <dsc>II Code (D_II_Code)</dsc>
+            <items>
+                <item name="Former II" type="Fixed"><len>4</len></item>
+                <item name="Current II" type="Fixed"><len>4</len></item>
+            </items>
+        </item>
+
+        <item name="005" type="Fixed">
+            <dsc>Mode S Address (D_Mode_S_address)</dsc>
+            <len>24</len>
+        </item>
+
+        <item name="006" type="Repetitive">
+            <dsc>Mode S Address List (D_Mode_S_address_list)</dsc>
+            <items>
+                <item name="ModeS" type="Fixed">
+                    <len>24</len>
+                    <dsc>Mode S Address</dsc>
+                </item>
+            </items>
+        </item>
+
+        <item name="007">
+            <dsc>Aircraft Data Link Command (D_Data_link_command)</dsc>
+            <items>
+                <item name="UM" type="Fixed"><len>1</len></item>
+                <item name="DM" type="Fixed"><len>1</len></item>
+                <item name="UC" type="Fixed"><len>1</len></item>
+                <item name="DC" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>4</len></item>
+            </items>
+        </item>
+
+        <item name="008" type="Extended">
+            <dsc>Aircraft Data Link Status (D_Data_link_status)</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="UDS" type="Fixed"><len>1</len></item>
+                <item name="DDS" type="Fixed"><len>1</len></item>
+                <item name="UCS" type="Fixed"><len>1</len></item>
+                <item name="DCS" type="Fixed"><len>1</len></item>
+                <item name="spare1" type="Spare"><len>2</len></item>
+                <item name="EI" type="Fixed"><len>1</len></item>
+                <item name="IC" type="Fixed"><len>1</len></item>
+                <item name="spare2" type="Spare"><len>6</len></item>
+            </items>
+        </item>
+
+        <item name="009" type="Extended">
+            <dsc>Aircraft Data Link Report Request (D_Report_request)</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="SR" type="Fixed"><len>1</len></item>
+                <item name="AR" type="Fixed"><len>1</len></item>
+                <item name="ER" type="Fixed"><len>1</len></item>
+                <item name="FR" type="Fixed"><len>1</len></item>
+                <item name="MR" type="Fixed"><len>1</len></item>
+                <item name="PR" type="Fixed"><len>1</len></item>
+                <item name="CR" type="Fixed"><len>1</len></item>
+                <item name="ID" type="Fixed"><len>1</len></item>
+                <item name="MA" type="Fixed"><len>1</len></item>
+                <item name="SP" type="Fixed"><len>1</len></item>
+                <item name="HG" type="Fixed"><len>1</len></item>
+                <item name="HD" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>2</len></item>
+            </items>
+        </item>
+
+        <item name="010">
+            <dsc>Transponder Communications Capability (D_COM)</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>5</len></item>
+                <item name="COM" type="Fixed">
+                    <len>3</len>
+                    <!-- TODO: add values... -->
+                </item>
+            </items>
+        </item>
+
+        <item name="011" type="Fixed">
+            <dsc>Capability Report (D_ECA)</dsc>
+            <len>56</len>
+        </item>
+
+        <item name="012">
+            <dsc>Aircraft Coverage Quality Factor (D_CQF)</dsc>
+            <items>
+                <item name="FS" type="Fixed"><len>1</len>
+                    <!-- TODO: add values... -->
+                </item>
+                <item name="CQF" type="Fixed"><len>7</len>
+                    <!-- TODO: add values... -->
+                </item>
+            </items>
+        </item>
+
+        <item name="013" type="Fixed">
+            <dsc>Aircraft CQF Calculation Method (D_CQF_method)</dsc>
+            <len>8</len>
+        </item>
+
+        <item name="014">
+            <dsc>Aircraft Position in Polar Co-ordinates (D_Polar_position)</dsc>
+            <items>
+                <item name="RHO" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/256</lsb>
+                        <unit>NM</unit>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+                <item name="THETA" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/pow(2,16)</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="015">
+            <dsc>Aircraft Position in Cartesian Co-ordinates (D_Cartesian_position)</dsc>
+            <items>
+                <item name="X" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <min>-256.0</min>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+                <item name="Y" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <min>-256.0</min>
+                        <max>256.0</max>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="016" type="Fixed">
+            <dsc>Packet Number (D_Packet_number)</dsc>
+            <len>32</len>
+        </item>
+
+        <item name="017" type="Repetitive">
+            <dsc>Packet Number List (D_Packet_number_list)</dsc>
+            <items>
+                <item name="PN" type="Fixed"><len>32</len></item>
+            </items>
+        </item>
+
+        <item name="018">
+            <dsc>Mode S Packet Properties (D_Packet_properties)</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>1</len></item>
+                <item name="PR" type="Fixed"><len>5</len></item>
+                <item name="PT" type="Fixed"><len>2</len>
+                    <!-- TODO: add values... -->
+                </item>
+            </items>
+        </item>
+
+        <item name="019" type="Explicit">
+            <dsc>Mode S Packet (D_Mode_S_packet)</dsc>
+        </item>
+
+        <item name="020" type="Fixed">
+            <dsc>Broadcast Number (D_Broadcast_number)</dsc>
+            <len>32</len>
+        </item>
+
+        <item name="021">
+            <dsc>Broadcast Properties (D_Broadcast_properties)</dsc>
+            <items>
+                <item name="priority" type="Fixed"><len>4</len></item>
+                <item name="power" type="Fixed"><len>4</len></item>
+                <item name="duration" type="Fixed"><len>8</len></item>
+                <item name="coverage" type="Fixed"><len>32</len></item>
+            </items>
+        </item>
+
+        <item name="022">
+            <dsc>Broadcast Prefix (D_Broadcast_prefix)</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>5</len></item>
+                <item name="prefix" type="Fixed"><len>27</len></item>
+            </items>
+        </item>
+
+        <item name="023" type="Fixed">
+            <dsc>Uplink or Downlink Broadcast (D_Broadcast)</dsc>
+            <len>56</len>
+        </item>
+
+        <item name="025" type="Fixed">
+            <dsc>GICB Number (D_GICB_number)</dsc>
+            <len>32</len>
+        </item>
+
+        <item name="027" type="Fixed">
+            <dsc>BDS Code (D_BDS_code)</dsc>
+            <len>8</len>
+        </item>
+
+        <item name="028" type="Fixed">
+            <dsc>GICB Extraction Periodicity (D_GICB_periodicity)</dsc>
+            <len>16</len>
+        </item>
+
+        <item name="029" type="Fixed">
+            <dsc>GICB Extracted (D_GICB_extracted)</dsc>
+            <len>56</len>
+        </item>
+
+        <item name="030">
+            <dsc>GICB Properties (D_GICB_properties)</dsc>
+            <items>
+                <item name="priority" type="Fixed"><len>5</len></item>
+                <item name="spare1" type="Spare"><len>3</len></item>
+                <item name="PC" type="Fixed"><len>1</len></item>
+                <item name="AU" type="Fixed"><len>1</len></item>
+                <item name="NE" type="Fixed"><len>1</len></item>
+                <item name="RD" type="Fixed"><len>2</len></item>
+                <item name="spare2" type="Spare"><len>3</len></item>
+            </items>
+        </item>
+
+        <item name="031" type="Fixed">
+            <dsc>Aircraft Identity (D_Identity)</dsc>
+            <len>48</len>
+        </item>
+
+        <item name="032">
+            <dsc>Aircraft Mode A (D_Mode_A)</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="L" type="Fixed"><len>1</len></item>
+                <item name="spare" type="Spare"><len>1</len></item>
+                <item name="ABCD" type="Fixed"><len>12</len></item>
+            </items>
+        </item>
+
+        <item name="033">
+            <dsc>Aircraft Height (D_Height)</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len></item>
+                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="FL" type="Fixed"><len>14</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/4</lsb>
+                        <unit>FL</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="034" type="Fixed">
+            <dsc>Aircraft Speed (D_Speed)</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>0.22</lsb>
+                <unit>kt</unit>
+            </convert>
+        </item>
+
+        <item name="035" type="Fixed">
+            <dsc>Aircraft Heading (D_Heading)</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>360.0/pow(2,16)</lsb>
+                <unit>deg</unit>
+            </convert>
+        </item>
+
+        <item name="036">
+            <dsc>Data Source Identifier (D_Source)</dsc>
+            <items>
+                <item name="SAC" type="Fixed"><len>8</len></item>
+                <item name="SIC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="037">
+            <dsc>Data Destination Identifier (D_Destination)</dsc>
+            <items>
+                <item name="SAC" type="Fixed"><len>8</len></item>
+                <item name="SIC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+    </items>
+
+    <uaps>
+        <uap>
+            <item>036</item>
+            <item>037</item>
+            <item>000</item>
+            <item>001</item>
+            <item>005</item>
+            <item>016</item>
+            <item>017</item>
+            <item>018</item>
+            <item>019</item>
+            <item>028</item>
+            <item>030</item>
+            <item>025</item>
+            <item>027</item>
+            <item>029</item>
+            <item>002</item>
+            <item>006</item>
+            <item>007</item>
+            <item>008</item>
+            <item>009</item>
+            <item>010</item>
+            <item>011</item>
+            <item>014</item>
+            <item>015</item>
+            <item>020</item>
+            <item>021</item>
+            <item>022</item>
+            <item>023</item>
+            <item>004</item>
+            <item>031</item>
+            <item>032</item>
+            <item>033</item>
+            <item>034</item>
+            <item>035</item>
+            <item>012</item>
+            <item>013</item>
+        </uap>
+    </uaps>
+
+</category>
+
