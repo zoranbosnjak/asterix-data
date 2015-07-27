@@ -207,7 +207,7 @@
                 <item name="AAC" type="Fixed"><len>1</len>
                     <values>
                         <value val="0" dsc="default value"/>
-                        1: "Assigned Mode A Code Conflict (same discrete Mode A Code assigned to another track)
+                        <value val="1" dsc="Assigned Mode A Code Conflict (same discrete Mode A Code assigned to another track"/>
                     </values>
                 </item>
                 <item name="SDS" type="Fixed"><len>2</len>

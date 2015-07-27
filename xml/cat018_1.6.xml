@@ -75,8 +75,8 @@
             <dsc>Mode S Address List (D_Mode_S_address_list)</dsc>
             <items>
                 <item name="ModeS" type="Fixed">
-                    <len>24</len>
                     <dsc>Mode S Address</dsc>
+                    <len>24</len>
                 </item>
             </items>
         </item>

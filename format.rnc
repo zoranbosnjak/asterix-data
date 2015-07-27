@@ -1,0 +1,55 @@
+# asterix data format description
+# to validate xml definition, use
+# jing -c <this_file.rnc> <definition>.xml [definition.xml ...]
+
+grammar {
+
+    start = element category {
+        attribute cat {xsd:integer},
+        attribute edition {text},
+
+        element dsc {text},
+        items,
+        uaps
+    }
+
+    items = element items {item+}
+
+    item = element item {
+        attribute name {text}?,
+        attribute type {text}?,
+
+        element dsc {text}?,
+
+        (
+            element len {text}? & 
+            (values? | convert?) & 
+            items?
+        )
+    }
+
+    values = element values {value+}
+
+    value = element value {
+        attribute val {text},
+        attribute dsc {text}
+    }
+
+    convert = element convert {
+        element type {text}? &
+        element lsb {text}? &
+        element unit {text}? &
+        element min {number}? &     
+        element max {number}?
+    }
+
+    number = xsd:float | xsd:integer
+
+    uaps = element uaps {uap+}
+
+    uap = element * {
+        element item { text }+
+    }
+
+}
+

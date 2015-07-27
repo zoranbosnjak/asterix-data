@@ -87,6 +87,7 @@
         <item name="030" type="Extended">
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
+            <items>
                 <item name="W_E" type="Fixed"><len>7</len>
                     <values>
                         <value val="0" dsc="no warning nor error condition"/>
@@ -105,6 +106,7 @@
                         <value val="82" dsc="low quality PSR plot"/>
                     </values>
                 </item>
+            </items>
         </item>
 
         <item name="040">

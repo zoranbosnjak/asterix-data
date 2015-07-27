@@ -87,7 +87,7 @@
                 <value val="4" dsc="service interrupted by the operator"/>
                 <value val="5" dsc="service interrupted due to contingency"/>
                 <value val="6" dsc="ready for service restart after contingency"/>
-                7: "service ended by the operator
+                <value val="7" dsc="service ended by the operator"/>
                 <value val="8" dsc="failure of user main radar"/>
                 <value val="9" dsc="service restarted by the operator"/>
                 <value val="10" dsc="main radar becoming operational"/>
