@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<category cat="062" edition="1.17">
+    <dsc>Asterix Category 062, edition 1.17</dsc>
+    <items>
+
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed"><len>8</len></item>
+                <item name="SIC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="015" type="Fixed">
+            <dsc>Service identification</dsc>
+            <len>8</len>
+        </item>
+
+        <item name="040" type="Fixed">
+            <dsc>Track Number</dsc>
+            <len>16</len>
+        </item>
+
+        <item name="060">
+            <dsc>Track Mode 3/A Code</dsc>
+            <items>
+                <item name="V" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Code validated"/>
+                        <value val="1" dsc="Code not validated"/>
+                    </values>
+                </item>
+                <item name="G" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Garbled Code"/>
+                    </values>
+                </item>
+                <item name="CH" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="No Change"/>
+                        <value val="1" dsc="Mode 3/A has changed"/>
+                    </values>
+                </item>
+                <item name="spare2" type="Spare"><len>1</len></item>
+                <item name="ABCD" type="Fixed">
+                    <dsc>Mode-3/A reply in octal representation</dsc>
+                    <len>12</len>
+                </item>
+            </items>
+        </item>
+
+        <item name="070" type="Fixed">
+            <dsc>Time of Track Information</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+
+        <item name="080" type="Extended">
+            <dsc>Track Status</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="MON" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Multisensor track"/>
+                        <value val="1" dsc="Monosensor track"/>
+                    </values>
+                </item>
+                <item name="SPI" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default value"/>
+                        <value val="1" dsc="SPI present in the last report received from a sensor capable of decoding this data"/>
+                    </values>
+                </item>
+                <item name="MRH" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Barometric altitude (Mode C) more reliable"/>
+                        <value val="1" dsc="Geometric altitude more reliable"/>
+                    </values>
+                </item>
+                <item name="SRC" type="Fixed"><len>3</len>
+                    <values>
+                        <value val="0" dsc="no source"/>
+                        <value val="1" dsc="GNSS"/>
+                        <value val="2" dsc="3D radar"/>
+                        <value val="3" dsc="triangulation"/>
+                        <value val="4" dsc="height from coverage"/>
+                        <value val="5" dsc="speed look-up table"/>
+                        <value val="6" dsc="default height"/>
+                        <value val="7" dsc="multilateration"/>
+                    </values>
+                </item>
+                <item name="CNF" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Confirmed track"/>
+                        <value val="1" dsc="Tenative track"/>
+                    </values>
+                </item>
+                <item name="SIM" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Actual track"/>
+                        <value val="1" dsc="Simulated track"/>
+                    </values>
+                </item>
+                <item name="TSE" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="last message transmitted to the user for the track"/>
+                    </values>
+                </item>
+                <item name="TSB" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="first message transmitted to the user for the track"/>
+                    </values>
+                </item>
+                <item name="FPC" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Not flight-plan correlated"/>
+                        <value val="1" dsc="Flight plan correlated"/>
+                    </values>
+                </item>
+                <item name="AFF" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="ADS-B data inconsistent with other surveillance information"/>
+                    </values>
+                </item>
+                <item name="STP" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Slave Track Promotion"/>
+                    </values>
+                </item>
+                <item name="KOS" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Complementary service used"/>
+                        <value val="1" dsc="Background service used"/>
+                    </values>
+                </item>
+                <item name="AMA" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="track not resulting from amalgamation process"/>
+                        <value val="1" dsc="track resulting from amalgamation process"/>
+                    </values>
+                </item>
+                <item name="MD4" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="No Mode 4 interrogation"/>
+                        <value val="1" dsc="Friendly target"/>
+                        <value val="2" dsc="Unknown target"/>
+                        <value val="3" dsc="No reply"/>
+                    </values>
+                </item>
+                <item name="ME" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Military Emergency present in the last report received from a sensor capable of decoding this data"/>
+                    </values>
+                </item>
+                <item name="MI" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Military Identification present in the last report received from a sensor capable of decoding this data"/>
+                    </values>
+                </item>
+                <item name="MD5" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="No Mode 5 interrogation"/>
+                        <value val="1" dsc="Friendly target"/>
+                        <value val="2" dsc="Unknown target"/>
+                        <value val="3" dsc="No reply"/>
+                    </values>
+                </item>
+                <item name="CST" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Age of the last received track update is higher than system dependent threshold (coasting)"/>
+                    </values>
+                </item>
+                <item name="PSR" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Age of the last received PSR track update is higher than system dependent threshold"/>
+                    </values>
+                </item>
+                <item name="SSR" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Age of the last received SSR track update is higher than system dependent threshold"/>
+                    </values>
+                </item>
+                <item name="MDS" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Age of the last received Mode S track update is higher than system dependent threshold"/>
+                    </values>
+                </item>
+                <item name="ADS" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Age of the last received ADS-B track update is higher than system dependent threshold"/>
+                    </values>
+                </item>
+                <item name="SUC" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Special Used Code (Mode A codes to be defined in the system to mark a track with special interest)"/>
+                    </values>
+                </item>
+                <item name="AAC" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="default value"/>
+                        <value val="1" dsc="Assigned Mode A Code Conflict (same discrete Mode A Code assigned to another track"/>
+                    </values>
+                </item>
+                <item name="SDS" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="Combined"/>
+                        <value val="1" dsc="Co-operative only"/>
+                        <value val="2" dsc="Non-Cooperative only"/>
+                        <value val="3" dsc="Not defined"/>
+                    </values>
+                </item>
+                <item name="EMS" type="Fixed"><len>3</len>
+                    <values>
+                        <value val="0" dsc="No emergency"/>
+                        <value val="1" dsc="General emergency"/>
+                        <value val="2" dsc="Lifeguard / medical"/>
+                        <value val="3" dsc="Minimum fuel"/>
+                        <value val="4" dsc="No communications"/>
+                        <value val="5" dsc="Unlawful interference"/>
+                        <value val="6" dsc="'Downed' Aircraft"/>
+                        <value val="7" dsc="Undefined"/>
+                    </values>
+                </item>
+                <item name="PFT" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="No indication"/>
+                        <value val="1" dsc="Potential False Track Indication"/>
+                    </values>
+                </item>
+                <item name="FPLT" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default value"/>
+                        <value val="1" dsc="Track created / update with FPL data"/>
+                    </values>
+                </item>
+                <item name="DUPT" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default value"/>
+                        <value val="1" dsc="Duplicate Mode 3/A Code"/>
+                    </values>
+                </item>
+                <item name="DUPF" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default value"/>
+                        <value val="1" dsc="Duplicate Flight Plan"/>
+                    </values>
+                </item>
+                <item name="DUPM" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="Default value"/>
+                        <value val="1" dsc="Duplicate Flight Plan due to manual correlation"/>
+                    </values>
+                </item>
+                <item name="spare" type="Spare"><len>4</len></item>
+            </items>
+        </item>
+
+        <item name="100">
+            <dsc>Calculated Track Position (Cartesian)</dsc>
+            <items>
+                <item name="X" type="Fixed"><len>24</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.5</lsb>
+                        <unit>m</unit>
+                    </convert>
+                </item>
+                <item name="Y" type="Fixed"><len>24</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.5</lsb>
+                        <unit>m</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="105">
+            <dsc>Calculated Position In WGS-84 Co-ordinates</dsc>
+            <items>
+                <item name="LAT" type="Fixed"><len>32</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>180.0/pow(2, 25)</lsb>
+                        <unit>deg</unit>
+                        <min>-90.0</min>
+                        <max>90.0</max>
+                    </convert>
+                </item>
+                <item name="LON" type="Fixed"><len>32</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>180.0/pow(2, 25)</lsb>
+                        <unit>deg</unit>
+                        <min>-180.0</min>
+                        <max>180.0</max>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="110" type="Compound">
+            <dsc>Mode 5 Data reports &amp; Extended Mode 1 Code</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="SUM" type="Fixed"><len>8</len></item>
+                <item name="PMN" type="Fixed"><len>32</len></item>
+                <item name="POS" type="Fixed"><len>48</len></item>
+                <item name="GA" type="Fixed"><len>16</len></item>
+                <item name="EM1" type="Fixed"><len>16</len></item>
+                <item name="TOS" type="Fixed"><len>8</len></item>
+                <item name="XP" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="120">
+            <dsc>Track Mode 2 Code</dsc>
+            <items>
+                <item name="spare" type="Spare"><len>4</len></item>
+                <item name="ABCD" type="Fixed">
+                    <dsc>Mode-2 code in octal representation</dsc>
+                    <len>12</len>
+                </item>
+
+            </items>
+        </item>
+
+        <item name="130" type="Fixed">
+            <dsc>Calculated Track Geometric Altitude</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>6.25</lsb>
+                <unit>ft</unit>
+                <min>-1500.0</min>
+                <max>150000</max>
+            </convert>
+        </item>
+
+        <item name="135">
+            <dsc>Calculated Track Barometric Altitude</dsc>
+            <items>
+                <item name="QNH" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="No QNH correction applied"/>
+                        <value val="1" dsc="QNH correction applied"/>
+                    </values>
+                </item>
+                <item name="ALT" type="Fixed">
+                    <len>15</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>25</lsb>
+                        <unit>ft</unit>
+                        <min>-15.0</min>
+                        <max>1500.0</max>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="136" type="Fixed">
+            <dsc>Measured Flight Level</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>1.0/4</lsb>
+                <unit>FL</unit>
+                <min>-15.0</min>
+                <max>1500.0</max>
+            </convert>
+        </item>
+
+        <item name="185">
+            <dsc>Calculated Track Velocity</dsc>
+            <items>
+                <item name="VX" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.25</lsb>
+                        <unit>m/s</unit>
+                        <min>-8192.0</min>
+                        <max>8191.75</max>
+                    </convert>
+                </item>
+                <item name="VY" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.25</lsb>
+                        <unit>m/s</unit>
+                        <min>-8192.0</min>
+                        <max>8191.75</max>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="200">
+            <dsc>Mode of Movement</dsc>
+            <items>
+                <item name="TRANS" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="Constant Course"/>
+                        <value val="1" dsc="Right Turn"/>
+                        <value val="2" dsc="Left Turn"/>
+                        <value val="3" dsc="Undetermined"/>
+                    </values>
+                </item>
+                <item name="LONG" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="Constant Groundspeed"/>
+                        <value val="1" dsc="Increasing Groundspeed"/>
+                        <value val="2" dsc="Decreasing Groundspeed"/>
+                        <value val="3" dsc="Undetermined"/>
+                    </values>
+                </item>
+                <item name="VERT" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="Level"/>
+                        <value val="1" dsc="Climb"/>
+                        <value val="2" dsc="Descent"/>
+                        <value val="3" dsc="Undetermined"/>
+                    </values>
+                </item>
+                <item name="ADF" type="Fixed"><len>1</len>
+                    <values>
+                        <value val="0" dsc="No altitude discrepancy"/>
+                        <value val="1" dsc="Altitude discrepancy"/>
+                    </values>
+                </item>
+                <item name="spare" type="Spare"><len>1</len></item>
+            </items>
+        </item>
+
+        <item name="210">
+            <dsc>Calculated Acceleration</dsc>
+            <items>
+                <item name="AX" type="Fixed"><len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.25</lsb>
+                        <unit>m/s2</unit>
+                    </convert>
+                </item>
+                <item name="AY" type="Fixed"><len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.25</lsb>
+                        <unit>m/s2</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="220" type="Fixed">
+            <dsc>Calculated Rate Of Climb/Descent</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>6.25</lsb>
+                <unit>ft/min</unit>
+            </convert>
+        </item>
+
+        <item name="245">
+            <dsc>Target Identification</dsc>
+            <items>
+                <item name="STI" type="Fixed"><len>2</len>
+                    <values>
+                        <value val="0" dsc="Callsign or registration downlinked from target"/>
+                        <value val="1" dsc="Callsign not downlinked from target"/>
+                        <value val="2" dsc="Registration not downlinked from target"/>
+                        <value val="3" dsc="Invalid"/>
+                    </values>
+                </item>
+                <item name="spare" type="Spare"><len>6</len></item>
+                <item name="ID" type="Fixed"><len>48</len>
+                    <!-- TODO: provide proper convert function... -->
+                </item>
+            </items>
+        </item>
+
+        <item name="270" type="Extended">
+            <dsc>Target Size &amp; Orientation</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="LENGTH" type="Fixed"><len>7</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1</lsb>
+                        <unit>m</unit>
+                    </convert>
+                </item>
+                <item name="ORIENTATION" type="Fixed"><len>7</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/128</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+                <item name="WIDTH" type="Fixed"><len>7</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1</lsb>
+                        <unit>m</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+
+        <item name="290" type="Compound">
+            <dsc>System Track Update Ages</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="TRK" type="Fixed"><len>8</len></item>
+                <item name="PSR" type="Fixed"><len>8</len></item>
+                <item name="SSR" type="Fixed"><len>8</len></item>
+                <item name="MDS" type="Fixed"><len>8</len></item>
+                <item name="ADS" type="Fixed"><len>16</len></item>
+                <item name="ES" type="Fixed"><len>8</len></item>
+                <item name="VDL" type="Fixed"><len>8</len></item>
+                <item name="UAT" type="Fixed"><len>8</len></item>
+                <item name="LOP" type="Fixed"><len>8</len></item>
+                <item name="MLT" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="295" type="Compound">
+            <dsc>Track Data Ages</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="MFL" type="Fixed"><len>8</len></item>
+                <item name="MD1" type="Fixed"><len>8</len></item>
+                <item name="MD2" type="Fixed"><len>8</len></item>
+                <item name="MDA" type="Fixed"><len>8</len></item>
+                <item name="MD4" type="Fixed"><len>8</len></item>
+                <item name="MD5" type="Fixed"><len>8</len></item>
+                <item name="MHG" type="Fixed"><len>8</len></item>
+                <item name="IAS" type="Fixed"><len>8</len></item>
+                <item name="TAS" type="Fixed"><len>8</len></item>
+                <item name="SAL" type="Fixed"><len>8</len></item>
+                <item name="FSS" type="Fixed"><len>8</len></item>
+                <item name="TID" type="Fixed"><len>8</len></item>
+                <item name="COM" type="Fixed"><len>8</len></item>
+                <item name="SAB" type="Fixed"><len>8</len></item>
+                <item name="ACS" type="Fixed"><len>8</len></item>
+                <item name="BVR" type="Fixed"><len>8</len></item>
+                <item name="GVR" type="Fixed"><len>8</len></item>
+                <item name="RAN" type="Fixed"><len>8</len></item>
+                <item name="TAR" type="Fixed"><len>8</len></item>
+                <item name="TAN" type="Fixed"><len>8</len></item>
+                <item name="GSP" type="Fixed"><len>8</len></item>
+                <item name="VUN" type="Fixed"><len>8</len></item>
+                <item name="MET" type="Fixed"><len>8</len></item>
+                <item name="EMC" type="Fixed"><len>8</len></item>
+                <item name="POS" type="Fixed"><len>8</len></item>
+                <item name="GAL" type="Fixed"><len>8</len></item>
+                <item name="PUN" type="Fixed"><len>8</len></item>
+                <item name="MB" type="Fixed"><len>8</len></item>
+                <item name="IAR" type="Fixed"><len>8</len></item>
+                <item name="MAC" type="Fixed"><len>8</len></item>
+                <item name="BPS" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="300" type="Fixed">
+            <dsc>Vehicle Fleet Identification</dsc>
+            <len>8</len>
+            <values>
+                <value val="0" dsc="Unknown"/>
+                <value val="1" dsc="ATC equipment maintenance"/>
+                <value val="2" dsc="Airport maintenance"/>
+                <value val="3" dsc="Fire"/>
+                <value val="4" dsc="Bird scarer"/>
+                <value val="5" dsc="Snow plough"/>
+                <value val="6" dsc="Runway sweeper"/>
+                <value val="7" dsc="Emergency"/>
+                <value val="8" dsc="Police"/>
+                <value val="9" dsc="Bus"/>
+                <value val="10" dsc="Tug (push/tow)"/>
+                <value val="11" dsc="Grass cutter"/>
+                <value val="12" dsc="Fuel"/>
+                <value val="13" dsc="Baggage"/>
+                <value val="14" dsc="Catering"/>
+                <value val="15" dsc="Aircraft maintenance"/>
+                <value val="16" dsc="Flyco (follow me)"/>
+            </values>
+        </item>
+
+        <item name="340" type="Compound">
+            <dsc>Measured Information</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="SID" type="Fixed"><len>16</len></item>
+                <item name="POS" type="Fixed"><len>32</len></item>
+                <item name="HEI" type="Fixed"><len>16</len></item>
+                <item name="MDC" type="Fixed"><len>16</len></item>
+                <item name="MDA" type="Fixed"><len>16</len></item>
+                <item name="TYP" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="380" type="Compound">
+            <dsc>Aircraft Derived Data</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="ADR" type="Fixed"><len>24</len></item>
+                <item name="ID" type="Fixed"><len>48</len></item>
+                <item name="MHG" type="Fixed"><len>16</len></item>
+                <item name="IAS" type="Fixed"><len>16</len></item>
+                <item name="TAS" type="Fixed"><len>16</len></item>
+                <item name="SAL" type="Fixed"><len>16</len></item>
+                <item name="FSS" type="Fixed"><len>16</len></item>
+                <item name="TIS" type="Extended">
+                    <len>(8,8)</len>
+                    <!-- TODO: test TIS! (extended type) -->
+                </item>
+                <item name="TID" type="Repetitive">
+                    <!-- TODO: extend description of subfields below... -->
+                    <items>
+                        <item name="item" type="Fixed"><len>120</len></item>
+                    </items>
+                </item>
+                <item name="COM" type="Fixed"><len>16</len></item>
+                <item name="SAB" type="Fixed"><len>16</len></item>
+                <item name="ACS" type="Fixed"><len>56</len></item>
+                <item name="BVR" type="Fixed"><len>16</len></item>
+                <item name="GVR" type="Fixed"><len>16</len></item>
+                <item name="RAN" type="Fixed"><len>16</len></item>
+                <item name="TAR" type="Fixed"><len>16</len></item>
+                <item name="TAN" type="Fixed"><len>16</len></item>
+                <item name="GSP" type="Fixed"><len>16</len></item>
+                <item name="VUN" type="Fixed"><len>8</len></item>
+                <item name="MET" type="Fixed"><len>64</len></item>
+                <item name="EMC" type="Fixed"><len>8</len></item>
+                <item name="POS" type="Fixed"><len>48</len></item>
+                <item name="GAL" type="Fixed"><len>16</len></item>
+                <item name="PUN" type="Fixed"><len>8</len></item>
+                <item name="MB" type="Repetitive">
+                    <!-- TODO: extend description of subfields below... -->
+                    <items>
+                        <item name="item" type="Fixed"><len>64</len></item>
+                    </items>
+                </item>
+                <item name="IAR" type="Fixed"><len>16</len></item>
+                <item name="MAC" type="Fixed"><len>16</len></item>
+                <item name="BPS" type="Fixed"><len>16</len></item>
+            </items>
+        </item>
+
+        <item name="390" type="Compound">
+            <dsc>Flight Plan Related Data</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="TAG">
+                    <items>
+                        <item name="SAC" type="Fixed"><len>8</len></item>
+                        <item name="SIC" type="Fixed"><len>8</len></item>
+                    </items>
+                </item>
+                <item name="CSN" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
+                <item name="IFI" type="Fixed"><len>32</len></item>
+                <item name="FCT" type="Fixed"><len>8</len></item>
+                <item name="TAC" type="Fixed"><len>32</len></item>
+                <item name="WTC" type="Fixed"><len>8</len></item>
+                <item name="DEP" type="Fixed"><len>32</len><convert><type>string</type></convert></item>
+                <item name="DST" type="Fixed"><len>32</len><convert><type>string</type></convert></item>
+                <item name="RDS" type="Fixed"><len>24</len></item>
+                <item name="CFL" type="Fixed"><len>16</len></item>
+                <item name="CTL" type="Fixed"><len>16</len></item>
+                <item name="TOD" type="Repetitive">
+                    <!-- TODO: extend description of subfields below... -->
+                    <items>
+                        <item name="item" type="Fixed"><len>32</len></item>
+                    </items>
+                </item>
+                <item name="AST" type="Fixed"><len>48</len></item>
+                <item name="STS" type="Fixed"><len>8</len></item>
+                <item name="STD" type="Fixed"><len>56</len></item>
+                <item name="STA" type="Fixed"><len>56</len></item>
+                <item name="PEM" type="Fixed"><len>16</len></item>
+                <item name="PEC" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
+            </items>
+        </item>
+
+        <item name="500" type="Compound">
+            <dsc>Estimated Accuracies</dsc>
+            <!-- TODO: extend description of subfields below... -->
+            <items>
+                <item name="APC" type="Fixed"><len>32</len></item>
+                <item name="COV" type="Fixed"><len>16</len></item>
+                <item name="APW" type="Fixed"><len>32</len></item>
+                <item name="AGA" type="Fixed"><len>8</len></item>
+                <item name="ABA" type="Fixed"><len>8</len></item>
+                <item name="ATV" type="Fixed"><len>16</len></item>
+                <item name="AA" type="Fixed"><len>16</len></item>
+                <item name="ARC" type="Fixed"><len>8</len></item>
+            </items>
+        </item>
+
+        <item name="510" type="Extended">
+            <dsc>Composed Track Number</dsc>
+            <len>(24,24)</len>
+            <items>
+                <item name="SUI_M" type="Fixed"><len>8</len></item>
+                <item name="STN_M" type="Fixed"><len>15</len></item>
+                <item name="SUI_S" type="Fixed"><len>8</len></item>
+                <item name="STN_S" type="Fixed"><len>15</len></item>
+            </items>
+        </item>
+
+        <item name="RE" type="Explicit">
+            <dsc>Reserved Expansion Field</dsc>
+        </item>
+
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+
+    </items>
+
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item></item>
+            <item>015</item>
+            <item>070</item>
+            <item>105</item>
+            <item>100</item>
+            <item>185</item>
+            <item>210</item>
+            <item>060</item>
+            <item>245</item>
+            <item>380</item>
+            <item>040</item>
+            <item>080</item>
+            <item>290</item>
+            <item>200</item>
+            <item>295</item>
+            <item>136</item>
+            <item>130</item>
+            <item>135</item>
+            <item>220</item>
+            <item>390</item>
+            <item>270</item>
+            <item>300</item>
+            <item>110</item>
+            <item>120</item>
+            <item>510</item>
+            <item>500</item>
+            <item>340</item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item>RE</item>
+            <item>SP</item>
+        </uap>
+    </uaps>
+</category>
+

@@ -64,8 +64,8 @@
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Unlawfull interference (code 7500)"/>
-                        <value val="2" dsc="Radio-communication failure(code 7600)"/>
-                        <value val="3" dsc="Emergency(code 7700)"/>
+                        <value val="2" dsc="Radio-communication failure (code 7600)"/>
+                        <value val="3" dsc="Emergency (code 7700)"/>
                     </values>
                 </item>
                 <item name="ME" type="Fixed"><len>1</len>
@@ -137,6 +137,7 @@
             <items>
                 <item name="X" type="Fixed"><len>16</len></item>
                 <item name="Y" type="Fixed"><len>16</len></item>
+                 <!-- TODO: convert... -->
             </items>
         </item>
 
@@ -258,6 +259,7 @@
         <item name="120" type="Fixed">
             <dsc>Measured Radial Doppler Speed</dsc>
             <len>8</len>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="130" type="Extended">
@@ -268,6 +270,7 @@
         <item name="131" type="Fixed">
             <dsc>Received Power</dsc>
             <len>8</len>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="141" type="Fixed">
@@ -369,6 +372,7 @@
                 <item name="GS" type="Fixed"><len>16</len></item>
                 <item name="CH" type="Fixed"><len>16</len></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="210" type="Extended">

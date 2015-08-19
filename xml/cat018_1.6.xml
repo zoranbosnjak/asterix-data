@@ -39,11 +39,31 @@
             <items>
                 <item name="CAUSE" type="Fixed">
                     <len>4</len>
-                    <!-- TODO: add values... -->
+                    <values>
+                        <value val="0x00" dsc="'Accepted', the request is accepted and is under processing"/>
+                        <value val="0x01" dsc="'Rejected', the request has not been accepted"/>
+                        <value val="0x02" dsc="'Cancelled', the request has been cancelled"/>
+                        <value val="0x03" dsc="'Finished', the request has been accepted and successfully processed"/>
+                        <value val="0x04" dsc="'Delayed', the request processing is temporarily delayed but the request is still valid"/>
+                        <value val="0x05" dsc="'In Progress', the request is being successfully processed"/>
+                        <value val="0x06" dsc="'Invalid Result'"/>
+                    </values>
                 </item>
                 <item name="DIAG" type="Fixed">
                     <len>4</len>
-                    <!-- TODO: add values... -->
+                    <values>
+                        <value val="0x00" dsc="No diagnostic available"/>
+                        <value val="0x01" dsc="Aircraft Exit"/>
+                        <value val="0x02" dsc="Incorrect aircraft address"/>
+                        <value val="0x03" dsc="Impossibility to process the message"/>
+                        <value val="0x04" dsc="Insufficient or change in data link capability"/>
+                        <value val="0x05" dsc="Invalid LV field"/>
+                        <value val="0x06" dsc="Duplicate request number"/>
+                        <value val="0x07" dsc="Unknown request number"/>
+                        <value val="0x08" dsc="Timer T3 expiry"/>
+                        <value val="0x09" dsc="Expiry of I/R delivery timer"/>
+                        <value val="0x10" dsc="Uplink flow disabled by UC"/>
+                    </values>
                 </item>
             </items>
         </item>
@@ -84,10 +104,34 @@
         <item name="007">
             <dsc>Aircraft Data Link Command (D_Data_link_command)</dsc>
             <items>
-                <item name="UM" type="Fixed"><len>1</len></item>
-                <item name="DM" type="Fixed"><len>1</len></item>
-                <item name="UC" type="Fixed"><len>1</len></item>
-                <item name="DC" type="Fixed"><len>1</len></item>
+                <item name="UM" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="UC shall be ignored"/>
+                        <value val="1" dsc="UC shall be taken into account"/>
+                    </values>
+                </item>
+                <item name="DM" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="DC shall be ignored"/>
+                        <value val="1" dsc="DC shall be taken into account"/>
+                    </values>
+                </item>
+                <item name="UC" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="the uplink flow shall be enabled"/>
+                        <value val="1" dsc="the uplink flow shall be stopped"/>
+                    </values>
+                </item>
+                <item name="DC" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="the downlink flow shall be enabled"/>
+                        <value val="1" dsc="the downlink flow shall be stopped"/>
+                    </values>
+                </item>
                 <item name="spare" type="Spare"><len>4</len></item>
             </items>
         </item>
@@ -96,13 +140,49 @@
             <dsc>Aircraft Data Link Status (D_Data_link_status)</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="UDS" type="Fixed"><len>1</len></item>
-                <item name="DDS" type="Fixed"><len>1</len></item>
-                <item name="UCS" type="Fixed"><len>1</len></item>
-                <item name="DCS" type="Fixed"><len>1</len></item>
+                <item name="UDS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The interrogator is enabled to uplink frames"/>
+                        <value val="1" dsc="The interrogator is disabled to uplink frames"/>
+                    </values>
+                </item>
+                <item name="DDS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The interrogator is enabled to extract frames"/>
+                        <value val="1" dsc="The interrogator is disabled to extract frames"/>
+                    </values>
+                </item>
+                <item name="UCS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The interrogator is enabled to uplink frames"/>
+                        <value val="1" dsc="The interrogator is disabled to uplink frames"/>
+                    </values>
+                </item>
+                <item name="DCS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The interrogator is enabled to extract frames"/>
+                        <value val="1" dsc="The interrogator is disabled to extract frames"/>
+                    </values>
+                </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
-                <item name="EI" type="Fixed"><len>1</len></item>
-                <item name="IC" type="Fixed"><len>1</len></item>
+                <item name="EI" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The aircraft is in the Datalink coverage map of the interrogator"/>
+                        <value val="1" dsc="The aircraft is not in the Datalink coverage map of the interrogator"/>
+                    </values>
+                </item>
+                <item name="IC" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The interrogators current ability to uplink/downlink frames (UCS/DCS) and the content of the Aircraft_report could be changed using D_Data_link_command."/>
+                        <value val="1" dsc="The interrogators current ability to uplink/downlink frames (UCS/DCS) and the content of the Aircraft_report cannot be changed using D_Data_link_command."/>
+                    </values>
+                </item>
                 <item name="spare2" type="Spare"><len>6</len></item>
             </items>
         </item>
@@ -111,18 +191,90 @@
             <dsc>Aircraft Data Link Report Request (D_Report_request)</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="SR" type="Fixed"><len>1</len></item>
-                <item name="AR" type="Fixed"><len>1</len></item>
-                <item name="ER" type="Fixed"><len>1</len></item>
-                <item name="FR" type="Fixed"><len>1</len></item>
-                <item name="MR" type="Fixed"><len>1</len></item>
-                <item name="PR" type="Fixed"><len>1</len></item>
-                <item name="CR" type="Fixed"><len>1</len></item>
-                <item name="ID" type="Fixed"><len>1</len></item>
-                <item name="MA" type="Fixed"><len>1</len></item>
-                <item name="SP" type="Fixed"><len>1</len></item>
-                <item name="HG" type="Fixed"><len>1</len></item>
-                <item name="HD" type="Fixed"><len>1</len></item>
+                <item name="SR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_Data_link_status"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_Data_link_status"/>
+                    </values>
+                </item>
+                <item name="AR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_COM"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_COM"/>
+                    </values>
+                </item>
+                <item name="ER" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_ECA"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_ECA"/>
+                    </values>
+                </item>
+                <item name="FR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_CQF"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_CQF"/>
+                    </values>
+                </item>
+                <item name="MR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_CQF_method"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_CQF_method"/>
+                    </values>
+                </item>
+                <item name="PR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_Polar_position"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_Polar_position"/>
+                    </values>
+                </item>
+                <item name="CR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include D_Cartesian_position"/>
+                        <value val="1" dsc="The next Aircraft_report shall include D_Cartesian_position"/>
+                    </values>
+                </item>
+                <item name="ID" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include Aircraft_ID"/>
+                        <value val="1" dsc="The next Aircraft_report shall include Aircraft_ID"/>
+                    </values>
+                </item>
+                <item name="MA" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include Mode_A"/>
+                        <value val="1" dsc="The next Aircraft_report shall include Mode_A"/>
+                    </values>
+                </item>
+                <item name="SP" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include Speed"/>
+                        <value val="1" dsc="The next Aircraft_report shall include Speed"/>
+                    </values>
+                </item>
+                <item name="HG" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include Height"/>
+                        <value val="1" dsc="The next Aircraft_report shall include Height"/>
+                    </values>
+                </item>
+                <item name="HD" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The next Aircraft_report may not include Heading"/>
+                        <value val="1" dsc="The next Aircraft_report shall include Heading"/>
+                    </values>
+                </item>
                 <item name="spare" type="Spare"><len>2</len></item>
             </items>
         </item>
@@ -133,7 +285,13 @@
                 <item name="spare" type="Spare"><len>5</len></item>
                 <item name="COM" type="Fixed">
                     <len>3</len>
-                    <!-- TODO: add values... -->
+                    <values>
+                        <value val="0" dsc="No communications capability (surveillance only)"/>
+                        <value val="1" dsc="Comm. A and Comm. B capability"/>
+                        <value val="2" dsc="Comm. A, Comm. B and Uplink ELM"/>
+                        <value val="3" dsc="Comm. A, Comm. B and Uplink ELM and Downlink ELM"/>
+                        <value val="4" dsc="Level 5 Transponder capability"/>
+                    </values>
                 </item>
             </items>
         </item>
@@ -146,11 +304,21 @@
         <item name="012">
             <dsc>Aircraft Coverage Quality Factor (D_CQF)</dsc>
             <items>
-                <item name="FS" type="Fixed"><len>1</len>
-                    <!-- TODO: add values... -->
+                <item name="FS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Aircraft is airborne"/>
+                        <value val="1" dsc="Aircraft is on the ground"/>
+                    </values>
                 </item>
-                <item name="CQF" type="Fixed"><len>7</len>
-                    <!-- TODO: add values... -->
+                <item name="CQF" type="Fixed">
+                    <len>7</len>
+                    <values>
+                        <value val="0" dsc="The CQF calculation method is not supported"/>
+                        <value val="1" dsc="The CQF is minimum"/>
+                        <value val="126" dsc="The CQF is maximum"/>
+                        <value val="127" dsc="The CQF is undefined according to the calculation method"/>
+                    </values>
                 </item>
             </items>
         </item>
@@ -226,8 +394,13 @@
             <items>
                 <item name="spare" type="Spare"><len>1</len></item>
                 <item name="PR" type="Fixed"><len>5</len></item>
-                <item name="PT" type="Fixed"><len>2</len>
-                    <!-- TODO: add values... -->
+                <item name="PT" type="Fixed">
+                    <len>2</len>
+                    <values>
+                        <value val="0" dsc="SVC packets"/>
+                        <value val="1" dsc="MSP packets"/>
+                        <value val="2" dsc="Route packets"/>
+                    </values>
                 </item>
             </items>
         </item>
@@ -244,9 +417,15 @@
         <item name="021">
             <dsc>Broadcast Properties (D_Broadcast_properties)</dsc>
             <items>
-                <item name="priority" type="Fixed"><len>4</len></item>
-                <item name="power" type="Fixed"><len>4</len></item>
-                <item name="duration" type="Fixed"><len>8</len></item>
+                <item name="priority" type="Fixed"><len>4</len><convert><type>unsigned integer</type></convert></item>
+                <item name="power" type="Fixed"><len>4</len><convert><type>unsigned integer</type></convert></item>
+                <item name="duration" type="Fixed">
+                    <len>8</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                        <unit>s</unit>
+                    </convert>
+                </item>
                 <item name="coverage" type="Fixed"><len>32</len></item>
             </items>
         </item>
@@ -289,10 +468,35 @@
             <items>
                 <item name="priority" type="Fixed"><len>5</len></item>
                 <item name="spare1" type="Spare"><len>3</len></item>
-                <item name="PC" type="Fixed"><len>1</len></item>
-                <item name="AU" type="Fixed"><len>1</len></item>
-                <item name="NE" type="Fixed"><len>1</len></item>
-                <item name="RD" type="Fixed"><len>2</len></item>
+                <item name="PC" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The periodicity may not be strictly respected"/>
+                        <value val="1" dsc="The periodicity shall be strictly respected"/>
+                    </values>
+                </item>
+                <item name="AU" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="GICB extractions should be sent only when required by the periodicity"/>
+                        <value val="1" dsc="If a GICB extraction is done due to external conditions, an update will also be sent, even if it does not match the expected periodicity"/>
+                    </values>
+                </item>
+                <item name="NE" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="The GICB extraction is attempted according to the periodicity"/>
+                        <value val="1" dsc="There will no GICB attempts"/>
+                    </values>
+                </item>
+                <item name="RD" type="Fixed">
+                    <len>2</len>
+                    <values>
+                        <value val="0" dsc="The extracted GICB must be sent only on the Data Link line"/>
+                        <value val="1" dsc="The extracted GICB must be sent only on the Surveillance line"/>
+                        <value val="2" dsc="The extracted GICB must be sent both on the Data Link and on the Surveillance lines"/>
+                    </values>
+                </item>
                 <item name="spare2" type="Spare"><len>3</len></item>
             </items>
         </item>
@@ -305,9 +509,27 @@
         <item name="032">
             <dsc>Aircraft Mode A (D_Mode_A)</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len></item>
-                <item name="G" type="Fixed"><len>1</len></item>
-                <item name="L" type="Fixed"><len>1</len></item>
+                <item name="V" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Code validated"/>
+                        <value val="1" dsc="Code not validated"/>
+                    </values>
+                </item>
+                <item name="G" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Garbled code"/>
+                    </values>
+                </item>
+                <item name="L" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Mode-3/A code derived from the reply of the transponder"/>
+                        <value val="1" dsc="Mode-3/A code not extracted during the last scan"/>
+                    </values>
+                </item>
                 <item name="spare" type="Spare"><len>1</len></item>
                 <item name="ABCD" type="Fixed"><len>12</len></item>
             </items>
@@ -316,8 +538,20 @@
         <item name="033">
             <dsc>Aircraft Height (D_Height)</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len></item>
-                <item name="G" type="Fixed"><len>1</len></item>
+                <item name="V" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Code validated"/>
+                        <value val="1" dsc="Code not validated"/>
+                    </values>
+                </item>
+                <item name="G" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Garbled code"/>
+                    </values>
+                </item>
                 <item name="FL" type="Fixed"><len>14</len>
                     <convert>
                         <type>decimal</type>

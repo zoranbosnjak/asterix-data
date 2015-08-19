@@ -26,6 +26,7 @@
         <item name="020" type="Fixed">
             <dsc>Sector Number</dsc>
             <len>8</len>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="030" type="Fixed">
@@ -41,29 +42,30 @@
         <item name="041" type="Fixed">
             <dsc>Antena Rotation Speed</dsc>
             <len>16</len>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="050" type="Compound">
             <dsc>System Configuration and Status</dsc>
             <items>
-                <item name="COM" type="Fixed"><len>8</len></item>
+                <item name="COM" type="Fixed"><len>8</len></item>    <!-- TODO: description... -->
                 <item></item>
                 <item></item>
-                <item name="PSR" type="Fixed"><len>8</len></item>
-                <item name="SSR" type="Fixed"><len>8</len></item>
-                <item name="MDS" type="Fixed"><len>16</len></item>
+                <item name="PSR" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
+                <item name="SSR" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
+                <item name="MDS" type="Fixed"><len>16</len></item>  <!-- TODO: description... -->
             </items>
         </item>
 
         <item name="060" type="Compound">
             <dsc>System Processing Mode</dsc>
             <items>
-                <item name="COM" type="Fixed"><len>8</len></item>
+                <item name="COM" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
                 <item></item>
                 <item></item>
-                <item name="PSR" type="Fixed"><len>8</len></item>
-                <item name="SSR" type="Fixed"><len>8</len></item>
-                <item name="MDS" type="Fixed"><len>8</len></item>
+                <item name="PSR" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
+                <item name="SSR" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
+                <item name="MDS" type="Fixed"><len>8</len></item>   <!-- TODO: description... -->
             </items>
         </item>
 
@@ -98,11 +100,14 @@
         <item name="090" type="Fixed">
             <dsc>Collimation Error</dsc>
             <len>16</len>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="100" type="Fixed">
             <dsc>Generic Polar Window</dsc>
             <len>64</len>
+            <!-- TODO: split... -->
+            <!-- TODO: convert... -->
         </item>
 
         <item name="110" type="Fixed">
@@ -125,6 +130,8 @@
         <item name="120" type="Fixed">
             <dsc>3D-Position Of Data Source</dsc>
             <len>64</len>
+            <!-- TODO: split... -->
+            <!-- TODO: convert... -->
         </item>
 
         <item name="RE" type="Explicit">

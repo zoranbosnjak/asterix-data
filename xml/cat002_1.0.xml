@@ -87,8 +87,8 @@
         <item name="090">
             <dsc>Collimation Error</dsc>
             <items>
-                <item name="RE" type="Fixed"><len>8</len></item>
-                <item name="AE" type="Fixed"><len>8</len></item>
+                <item name="RE" type="Fixed"><len>8</len></item>    <!-- TODO: convert... -->
+                <item name="AE" type="Fixed"><len>8</len></item>    <!-- TODO: convert... -->
             </items>
         </item>
 
@@ -100,6 +100,7 @@
                 <item name="THETA_START" type="Fixed"><len>16</len></item>
                 <item name="THETA_END" type="Fixed"><len>16</len></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="SP" type="Explicit">

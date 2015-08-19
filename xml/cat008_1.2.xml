@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<category cat="008" edition="1.1">
-    <dsc>Asterix Category 008, edition 1.1</dsc>
+<category cat="008" edition="1.2">
+    <dsc>Asterix Category 008, edition 1.2</dsc>
     <items>
 
         <item name="000" type="Fixed">
@@ -71,6 +71,7 @@
                 <item name="ER" type="Fixed"><len>8</len></item>
                 <item name="AZIMUTH" type="Fixed"><len>16</len></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="036" type="Repetitive">
@@ -80,6 +81,7 @@
                 <item name="Y" type="Fixed"><len>8</len><convert><type>integer</type></convert></item>
                 <item name="LENGTH" type="Fixed"><len>8</len><convert><type>unsigned integer</type></convert></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="038" type="Repetitive">
@@ -90,6 +92,7 @@
                 <item name="X2" type="Fixed"><len>8</len></item>
                 <item name="Y2" type="Fixed"><len>8</len></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="040">
@@ -121,6 +124,7 @@
                 <item name="X1" type="Fixed"><len>8</len></item>
                 <item name="Y1" type="Fixed"><len>8</len></item>
             </items>
+            <!-- TODO: convert... -->
         </item>
 
         <item name="090" type="Fixed">
