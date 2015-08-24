@@ -62,7 +62,7 @@
                         <value val="0x07" dsc="Unknown request number"/>
                         <value val="0x08" dsc="Timer T3 expiry"/>
                         <value val="0x09" dsc="Expiry of I/R delivery timer"/>
-                        <value val="0x10" dsc="Uplink flow disabled by UC"/>
+                        <value val="0x0a" dsc="Uplink flow disabled by UC"/>
                     </values>
                 </item>
             </items>
