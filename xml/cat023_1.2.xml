@@ -25,6 +25,7 @@
         
         <item name="015" type="Fixed">
             <dsc>Service Type and Indetification</dsc>
+            <len>8</len>
             <items>
                 <item name="SID" type="Fixed"><len>4</len></item>
                 <item name="STYP" type="Fixed"><len>4</len>
