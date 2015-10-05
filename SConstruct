@@ -14,9 +14,16 @@ Decider('content')
 def validate(target, source, env):
     """Validate xml files"""
 
+    # check non asci
+    cmd = 'python charvalidate.py ' + ' '.join(map(str,source))
+    rv = env.Execute(cmd)
+    assert rv==0
+
+    # check with template
     cmd = 'jing -c {} '.format(formatDef) + ' '.join(map(str,source))
     rv = env.Execute(cmd)
     assert rv==0
+
     print        
     print 'No errors found.'
 

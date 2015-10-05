@@ -36,7 +36,7 @@ grammar {
     }
 
     convert = element convert {
-        element type {text}? &
+        element type {text} &
         element lsb {text}? &
         element unit {text}? &
         element min {number}? &     
