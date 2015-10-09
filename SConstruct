@@ -31,6 +31,7 @@ def install(target, source, env):
     base = os.path.join(prefix,name)
     xml = os.path.join(base,'xml')
 
+    env.Execute(Delete(base))
     env.Execute(Mkdir(base))
     env.Execute(Copy(base, formatDef))
 
