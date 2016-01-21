@@ -14,18 +14,16 @@
             </values>
         </item>
         
-        <item name="010" type="Fixed">
+        <item name="010">
             <dsc>Data Source Identifier</dsc>
-            <len>16</len>
             <items>
                 <item name="SAC" type="Fixed"><len>8</len></item>
                 <item name="SIC" type="Fixed"><len>8</len></item>
             </items>
         </item>
         
-        <item name="015" type="Fixed">
+        <item name="015">
             <dsc>Service Type and Indetification</dsc>
-            <len>8</len>
             <items>
                 <item name="SID" type="Fixed"><len>4</len></item>
                 <item name="STYP" type="Fixed"><len>4</len>
