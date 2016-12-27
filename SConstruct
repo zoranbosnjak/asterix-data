@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 #   Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
 
@@ -24,11 +25,14 @@
 import os.path
 
 name = 'asterix-data'
-prefix = '/usr/local/share'
 
 formatDef = 'format.rnc'
 
-env = Environment()
+AddOption('--prefix', dest='prefix', type='string', nargs=1,
+        action='store', metavar='DIR', default='/usr/local/share',
+        help='installation prefix')
+
+env = Environment(PREFIX = GetOption('prefix'))
 
 Decider('content')
 
@@ -45,12 +49,12 @@ def validate(target, source, env):
     rv = env.Execute(cmd)
     assert rv==0
 
-    print        
+    print
     print 'No errors found.'
 
 def install(target, source, env):
-    base = os.path.join(prefix,name)
-    xml = os.path.join(base,'xml')
+    base = os.path.join("$PREFIX", name)
+    xml = os.path.join(base, 'xml')
 
     env.Execute(Delete(base))
     env.Execute(Mkdir(base))
