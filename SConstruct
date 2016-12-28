@@ -22,7 +22,7 @@
 #       Zoran Bošnjak, Sloveniacontrol Ltd.
 #           <zoran.bosnjak@sloveniacontrol.si>
 
-import os.path
+import os
 
 name = 'asterix-data'
 
@@ -54,12 +54,18 @@ def validate(target, source, env):
 
 def install(target, source, env):
     base = os.path.join("$PREFIX", name)
-    xml = os.path.join(base, 'xml')
 
-    env.Execute(Delete(base))
-    env.Execute(Mkdir(base))
+    # make sure that target directory is empty, create target if necessary
+    target = env.subst(base)
+    if os.path.exists(target):
+        assert os.path.isdir(target), target + " is not a directory!"
+        assert os.listdir(target) == [], target + " directory is not empty!"
+    else:
+        env.Execute(Mkdir(base))
+
+    # copy files
     env.Execute(Copy(base, formatDef))
-
+    xml = os.path.join(base, 'xml')
     env.Execute(Mkdir(xml))
     for i in Glob('xml/*.xml'):
         env.Execute(Copy(xml, i))
