@@ -32,7 +32,14 @@ AddOption('--prefix', dest='prefix', type='string', nargs=1,
         action='store', metavar='DIR', default='/usr/local/share',
         help='installation prefix')
 
-env = Environment(PREFIX = GetOption('prefix'))
+env = Environment(
+    PREFIX = GetOption('prefix'),
+    # need to expose $PATH in order to see python and jing at non-standard
+    # locations, for example during a nix-build
+    ENV = {
+        'PATH': os.environ['PATH']
+    }
+)
 
 Decider('content')
 
