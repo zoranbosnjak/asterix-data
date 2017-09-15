@@ -2,7 +2,7 @@
 
 <!--
     Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
-    
+
     This file is part of asterix-data.
 
     asterix-data is free software: you can redistribute it and/or modify
@@ -45,7 +45,11 @@
         <item name="020" type="Fixed">
             <dsc>Sector Number</dsc>
             <len>8</len>
-            <!-- TODO: convert... -->
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>360.0/pow(2,8)</lsb>
+                <unit>deg</unit>
+            </convert>
         </item>
 
         <item name="030" type="Fixed">
@@ -61,7 +65,11 @@
         <item name="041" type="Fixed">
             <dsc>Antena Rotation Speed</dsc>
             <len>16</len>
-            <!-- TODO: convert... -->
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
         </item>
 
         <item name="050" type="Compound">
