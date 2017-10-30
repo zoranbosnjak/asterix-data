@@ -364,15 +364,68 @@
 
         <item name="130" type="Compound">
             <dsc>Radar Plot Characteristics</dsc>
-            <!-- TODO: extend description of subfields below... -->
             <items>
-                <item name="SRL" type="Fixed"><len>8</len></item>
-                <item name="SRR" type="Fixed"><len>8</len></item>
-                <item name="SAM" type="Fixed"><len>8</len></item>
-                <item name="PRL" type="Fixed"><len>8</len></item>
-                <item name="PAM" type="Fixed"><len>8</len></item>
-                <item name="RPD" type="Fixed"><len>8</len></item>
-                <item name="APD" type="Fixed"><len>8</len></item>
+                <item name="SRL" type="Fixed">
+                    <dsc>SSR Plot Runlength</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/pow(2,13)</lsb>
+                        <unit>dg</unit>
+                    </convert>
+                </item>
+                <item name="SRR" type="Fixed">
+                    <dsc>Number of Received Replies for (M)SSR</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+                <item name="SAM" type="Fixed">
+                    <dsc>Amplitude of (M)SSR Reply</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0</lsb>
+                        <unit>dBm</unit>
+                    </convert>
+                </item>
+                <item name="PRL" type="Fixed">
+                    <dsc>Primary Plot Runlength</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/pow(2,13)</lsb>
+                        <unit>dg</unit>
+                    </convert>
+                </item>
+                <item name="PAM" type="Fixed">
+                    <dsc>Amplitude of Primary Plot</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0</lsb>
+                        <unit>dBm</unit>
+                    </convert>
+                </item>
+                <item name="RPD" type="Fixed">
+                    <dsc>Difference in Range between PSR and SSR plot</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/256</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+                <item name="APD" type="Fixed">
+                    <dsc>Difference in Azimuth between PSR and SSR plot</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>360.0/pow(2, 14)</lsb>
+                        <unit>dg</unit>
+                    </convert>
+                </item>
             </items>
         </item>
 
