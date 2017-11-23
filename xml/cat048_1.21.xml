@@ -615,17 +615,16 @@
 
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
-            <!-- TODO: extend description of subfields below... -->
             <items>
-              <item name="MBdata" type="Fixed"><len>56</len>
-                <dsc>56-bit message conveying Mode S Comm B message data </dsc>
-              </item>
-              <item name="BDS1" type="Fixed"><len>4</len>
-                <dsc>Comm B Data Buffer Store 1 Address</dsc>
-              </item>
-              <item name="BDS2" type="Fixed"><len>4</len>
-                <dsc>5Comm B Data Buffer Store 2 Address</dsc>
-              </item>
+                <item name="MBdata" type="Fixed"><len>56</len>
+                    <dsc>56-bit message conveying Mode S Comm B message data </dsc>
+                </item>
+                <item name="BDS1" type="Fixed"><len>4</len>
+                    <dsc>Comm B Data Buffer Store 1 Address</dsc>
+                </item>
+                <item name="BDS2" type="Fixed"><len>4</len>
+                    <dsc>5Comm B Data Buffer Store 2 Address</dsc>
+                </item>
             </items>
         </item>
 
