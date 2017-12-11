@@ -120,7 +120,7 @@
                 <item name="CNF" type="Fixed"><len>1</len>
                     <values>
                         <value val="0" dsc="Confirmed track"/>
-                        <value val="1" dsc="Tenative track"/>
+                        <value val="1" dsc="Tentative track"/>
                     </values>
                 </item>
                 <item name="SIM" type="Fixed"><len>1</len>
@@ -270,7 +270,7 @@
                 <item name="FPLT" type="Fixed"><len>1</len>
                     <values>
                         <value val="0" dsc="Default value"/>
-                        <value val="1" dsc="Track created / update with FPL data"/>
+                        <value val="1" dsc="Track created / updated with FPL data"/>
                     </values>
                 </item>
                 <item name="DUPT" type="Fixed"><len>1</len>
@@ -390,8 +390,8 @@
                     <len>15</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>25</lsb>
-                        <unit>ft</unit>
+                        <lsb>1.0/4</lsb>
+                        <unit>FL</unit>
                         <min>-15.0</min>
                         <max>1500.0</max>
                     </convert>
@@ -1253,8 +1253,8 @@
                             <dsc>Turn Direction</dsc>
                             <len>2</len>
                             <values>
-                                <value dsc="N/A" val="0"/>
-                                <value val="1" dsc="Turn right"/>
+								<value val="0" dsc="N/A"/>
+							    <value val="1" dsc="Turn right"/>
                                 <value val="2" dsc="Turn left"/>
                                 <value val="3" dsc="No turn"/>
                             </values>
@@ -1268,7 +1268,7 @@
                             </values>
                         </item>
                         <item name="TOA" type="Fixed">
-                            <dsc>TOV available</dsc>
+                            <dsc>TOV Availability</dsc>
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="TOV available"/>
@@ -1684,7 +1684,7 @@
                         <lsb>0.008</lsb>
                         <unit>Mach</unit>
                         <min>0</min>
-                        <max>4096</max>
+                        <max>4.096</max>
                     </convert>
                 </item>
                 <item name="BPS">
@@ -1747,7 +1747,7 @@
                     <dsc>Estimated Accuracy Of Track Position (Cartesian)</dsc>
                     <items>
                         <item name="X" type="Fixed">
-                            <dsc>Estimated (i.e. accuracy standard calculated deviation) position of of a the target expressed in Cartesian co-ordinates.</dsc>
+                            <dsc>Estimated accuracy (i.e. standard deviation) of the calculated position of a target expressed in Cartesian co-ordinates</dsc>
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
@@ -1756,7 +1756,7 @@
                             </convert>
                         </item>
                         <item name="Y" type="Fixed">
-                            <dsc>Estimated (i.e. accuracy standard calculated deviation) position of of a the target expressed in Cartesian co-ordinates.</dsc>
+                            <dsc>Estimated accuracy (i.e. standard deviation) of the calculated position of a target expressed in Cartesian co-ordinates</dsc>
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
@@ -1772,7 +1772,7 @@
                     <convert>
                         <type>decimal</type>
                         <lsb>1/2</lsb>
-                        <unit>km</unit>
+                        <unit>m</unit>
                         <max>16.383</max>
                     </convert>
                 </item>
