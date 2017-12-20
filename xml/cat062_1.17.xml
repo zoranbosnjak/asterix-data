@@ -1143,7 +1143,6 @@
                     </items>
                 </item>
                 <item name="TIS" type="Extended">
-                    <!-- TODO: test TIS! (extended type) -->
                     <dsc>Trajectory Intent Status</dsc>
                     <len>(8,8)</len>
                     <items>
@@ -1159,7 +1158,7 @@
                                 <value val="1" dsc="Trajectory Intent Data is not valid"/>
                             </values>
                         </item>
-                        <item name="Spare_M" type="Spare"><len>5</len></item>
+                        <item name="spare_M" type="Spare"><len>5</len></item>
                         <item name="NAV_S" type="Fixed"><len>1</len>
                             <values>
                                 <value val="0" dsc="Trajectory Intent Data is available for this aircraft"/>
@@ -1172,7 +1171,7 @@
                                 <value val="1" dsc="Trajectory Intent Data is not valid"/>
                             </values>
                         </item>
-                        <item name="Spare_S" type="Spare"><len>5</len></item>
+                        <item name="spare_S" type="Spare"><len>5</len></item>
                     </items>
                 </item>
                 <item name="TID" type="Repetitive">
