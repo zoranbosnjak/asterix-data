@@ -1706,7 +1706,6 @@
 
         <item name="390" type="Compound">
             <dsc>Flight Plan Related Data</dsc>
-            <!-- TODO: extend description of subfields below... -->
             <items>
                 <item name="TAG">
                     <items>
@@ -1715,26 +1714,206 @@
                     </items>
                 </item>
                 <item name="CSN" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
-                <item name="IFI" type="Fixed"><len>32</len></item>
-                <item name="FCT" type="Fixed"><len>8</len></item>
-                <item name="TAC" type="Fixed"><len>32</len></item>
+                <item name="IFI">
+                    <items>
+                        <item name="TYP" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Plan Number"/>
+                                <value val="1" dsc="Unit 1 internal flight number"/>
+                                <value val="1" dsc="Unit 2 internal flight number"/>
+                                <value val="1" dsc="Unit 3 internal flight number"/>
+                            </values>
+                        </item>
+                        <item name="spare" type="Spare"><len>3</len></item>
+                        <item name="NBR" type="Fixed">
+                            <len>27</len>
+                            <convert>
+                                <type>unsigned decimal</type>
+                                <unit></unit>
+                                <min>0</min>
+                                <max>99999999</max>
+                            </convert>
+                        </item>
+                    </items>
+                </item>
+                <item name="FCT">
+                    <items>
+                        <item name="GAT_OAT" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Unknown"/>
+                                <value val="1" dsc="General Air Traffic"/>
+                                <value val="2" dsc="Operational Air Traffic"/>
+                                <value val="3" dsc="Not applicable"/>
+                            </values>
+                        </item>
+                        <item name="FR1_FR2" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Instrument Flight Rules"/>
+                                <value val="1" dsc="Visual Flight Rules"/>
+                                <value val="2" dsc="Not applicable"/>
+                                <value val="3" dsc="Controlled Visual Flight Rules"/>
+                            </values>
+                        </item>
+                        <item name="RVSM" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Unknown"/>
+                                <value val="1" dsc="Approved"/>
+                                <value val="2" dsc="Exempt"/>
+                                <value val="3" dsc="Not Approved"/>
+                            </values>
+                        </item>
+                        <item name="HPR" type="Fixed">
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Normal Priority Flight"/>
+                                <value val="1" dsc="High Priority Flight"/>
+                            </values>
+                        </item>
+                        <item name="spare" type="Spare"><len>1</len></item>
+                    </items>
+                </item>
+                <item name="TAC" type="Fixed"><len>32</len><convert><type>string</type></convert></item>
                 <item name="WTC" type="Fixed"><len>8</len></item>
                 <item name="DEP" type="Fixed"><len>32</len><convert><type>string</type></convert></item>
                 <item name="DST" type="Fixed"><len>32</len><convert><type>string</type></convert></item>
-                <item name="RDS" type="Fixed"><len>24</len></item>
-                <item name="CFL" type="Fixed"><len>16</len></item>
-                <item name="CTL" type="Fixed"><len>16</len></item>
-                <item name="TOD" type="Repetitive">
-                    <!-- TODO: extend description of subfields below... -->
+                <item name="RDS">
                     <items>
-                        <item name="item" type="Fixed"><len>32</len></item>
+                        <item name="NU1" type="Fixed"><len>8</len></item>
+                        <item name="NU2" type="Fixed"><len>8</len></item>
+                        <item name="LTR" type="Fixed"><len>8</len></item>
                     </items>
                 </item>
-                <item name="AST" type="Fixed"><len>48</len></item>
-                <item name="STS" type="Fixed"><len>8</len></item>
-                <item name="STD" type="Fixed"><len>56</len></item>
-                <item name="STA" type="Fixed"><len>56</len></item>
-                <item name="PEM" type="Fixed"><len>16</len></item>
+                <item name="CFL" type="Fixed">
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1/4</lsb>
+                        <unit>FL</unit>
+                    </convert>
+                </item>
+                <item name="CTL">
+                    <items>
+                        <item name="Centre" type="Fixed"><len>8</len></item>
+                        <item name="Position" type="Fixed"><len>8</len></item>
+                    </items>
+                </item>
+                <item name="TOD" type="Repetitive">
+                    <items>
+                        <item name="TYP" type="Fixed">
+                            <len>5</len>
+                            <values>
+                                <value val="0" dsc="Scheduled off-block time"/>
+                                <value val="1" dsc="Estimated off-block time"/>
+                                <value val="2" dsc="Estimated take-off time"/>
+                                <value val="3" dsc="Actual off-block time"/>
+                                <value val="4" dsc="Predicted time at runway hold"/>
+                                <value val="5" dsc="Actual time at runway hold"/>
+                                <value val="6" dsc="Actual line-up time"/>
+                                <value val="7" dsc="Actual take-off time"/>
+                                <value val="8" dsc="Estimated time of arrival"/>
+                                <value val="9" dsc="Predicted landing time"/>
+                                <value val="10" dsc="Actual landing time"/>
+                                <value val="11" dsc="Actual time off runway"/>
+                                <value val="12" dsc="Predicted time to gate"/>
+                                <value val="13" dsc="Actual on-block time"/>
+                            </values>
+                        </item>
+                        <item name="DAY" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Today"/>
+                                <value val="1" dsc="Yesterday"/>
+                                <value val="2" dsc="Tomorrow"/>
+                                <value val="3" dsc="Invalid"/>
+                            </values>
+                        </item>
+                        <item name="spare1" type="Spare"><len>4</len></item>
+                        <item name="HOR" type="Fixed">
+                            <len>5</len>
+                            <convert>
+                                <type>unsigned decimal</type>
+                                <lsb>1</lsb>
+                                <unit>h</unit>
+                                <min>0</min>
+                                <max>23</max>
+                            </convert>
+                        </item>
+                        <item name="spare2" type="Spare"><len>2</len></item>
+                        <item name="MIN" type="Fixed">
+                            <len>6</len>
+                            <convert>
+                                <type>unsigned decimal</type>
+                                <lsb>1</lsb>
+                                <unit>min</unit>
+                                <min>0</min>
+                                <max>59</max>
+                            </convert>
+                        </item>
+                        <item name="AVS" type="Fixed">
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Seconds available"/>
+                                <value val="1" dsc="Seconds not available"/>
+                            </values>
+                        </item>
+                        <item name="spare3" type="Spare"><len>1</len></item>
+                        <item name="SEC" type="Fixed">
+                            <len>6</len>
+                            <convert>
+                                <type>unsigned decimal</type>
+                                <lsb>1</lsb>
+                                <unit>s</unit>
+                                <min>0</min>
+                                <max>59</max>
+                            </convert>
+                        </item>
+                    </items>
+                </item>
+                <item name="AST" type="Fixed"><len>48</len><convert><type>string</type></convert></item>
+                <item name="STS">
+                    <items>
+                        <item name="EMP" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Empty"/>
+                                <value val="1" dsc="Occupied"/>
+                                <value val="2" dsc="Unknown"/>
+                                <value val="3" dsc="Invalid"/>
+                            </values>
+                        </item>
+                        <item name="AVL" type="Fixed">
+                            <len>2</len>
+                            <values>
+                                <value val="0" dsc="Available"/>
+                                <value val="1" dsc="Not Available"/>
+                                <value val="2" dsc="Unknown"/>
+                                <value val="3" dsc="Invalid"/>
+                            </values>
+                        </item>
+                    </items>
+                </item>
+                <item name="STD" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
+                <item name="STA" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
+                <item name="PEM">
+                    <items>
+                        <item name="spare" type="Spare"><len>3</len></item>
+                        <item name="VA" type="Fixed">
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="No valid Mode 3/A available"/>
+                                <value val="1" dsc="Valid Mode 3/A available"/>
+                            </values>
+                        </item>
+                        <item name="ABCD" type="Fixed">
+                            <dsc>Mode-3/A reply in octal representation</dsc>
+                            <len>12</len>
+                        </item>
+                    </items>
+                </item>
                 <item name="PEC" type="Fixed"><len>56</len><convert><type>string</type></convert></item>
             </items>
         </item>
