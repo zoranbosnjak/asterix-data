@@ -1721,8 +1721,8 @@
                             <values>
                                 <value val="0" dsc="Plan Number"/>
                                 <value val="1" dsc="Unit 1 internal flight number"/>
-                                <value val="1" dsc="Unit 2 internal flight number"/>
-                                <value val="1" dsc="Unit 3 internal flight number"/>
+                                <value val="2" dsc="Unit 2 internal flight number"/>
+                                <value val="3" dsc="Unit 3 internal flight number"/>
                             </values>
                         </item>
                         <item name="spare" type="Spare"><len>3</len></item>
