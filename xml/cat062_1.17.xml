@@ -1729,7 +1729,7 @@
                         <item name="NBR" type="Fixed">
                             <len>27</len>
                             <convert>
-                                <type>unsigned decimal</type>
+                                <type>unsigned integer</type>
                                 <unit></unit>
                                 <min>0</min>
                                 <max>99999999</max>
