@@ -726,7 +726,7 @@
                 <item name="Barometric Vertical Rate" type="Fixed">
                     <len>15</len>
                     <convert>
-                        <type>unsigned decimal</type>
+                        <type>decimal</type>
                         <lsb>6.25</lsb>
                         <unit>feet/minute</unit>
                     </convert>
