@@ -6,6 +6,7 @@ pkgs.stdenv.mkDerivation {
   buildInputs = with pkgs; [
     scons
     jing
+    python36
   ];
   doCheck = true;
   checkPhase = ''
