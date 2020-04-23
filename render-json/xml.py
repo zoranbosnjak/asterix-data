@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import json
+import hashlib
 from formats.common import getNumber, renderRule, case
 
 accumulator = []
@@ -36,7 +38,8 @@ def itemLine(item):
     else:
         return '<item name="{}">'.format(item['name'])
 
-def render(root):
+def render(s):
+    root = json.loads(s)
     category = root['number']
     edition = root['edition']
     tell('<?xml version="1.0" encoding="UTF-8" ?>')
@@ -44,7 +47,8 @@ def render(root):
     tell('<!--')
     with indent:
         tell('Do not edit directly!')
-        tell('This file is auto-generated from json specs file.')
+        tell('This file is auto-generated from the original json specs file.')
+        tell('sha1sum of the json input: {}'.format(hashlib.sha1(s).hexdigest()))
     tell('-->')
     tell('')
     tell('<category cat="{:03d}" edition="{}.{}">'.format(category, edition['major'], edition['minor']))
@@ -139,6 +143,7 @@ def renderSubitem(element):
     def renderMaybeSubitem(n, subitem):
         if subitem['spare']:
             tell('<item name="spare{}" type="Spare"><len>{}</len></item>'.format(n, subitem['length']))
+            return True
         else:
             tell(itemLine(subitem))
             with indent:
@@ -147,12 +152,16 @@ def renderSubitem(element):
                     tell('<dsc>{}</dsc>'.format(xmlquote(title)))
                 renderSubitem(subitem['element'])
             tell('</item>')
+            return False
 
     def renderGroup():
         tell('<items>')
         with indent:
-            for n,item in enumerate(element['subitems']):
-                renderMaybeSubitem(n, item)
+            spareIndex = 1
+            for item in element['subitems']:
+                isSpare = renderMaybeSubitem(spareIndex, item)
+                if isSpare:
+                    spareIndex += 1
         tell('</items>')
 
     def renderExtended():
