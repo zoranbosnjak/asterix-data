@@ -319,7 +319,7 @@
                     <len>2</len>
                     <values>
                         <value val="3" dsc="Reserved"/>
-                        <value val="2" dsc="TOMRp whole seconds = (I021/073) Whole seconds – 1"/>
+                        <value val="2" dsc="TOMRp whole seconds = (I021/073) Whole seconds - 1"/>
                         <value val="1" dsc="TOMRp whole seconds = (I021/073) Whole seconds + 1"/>
                         <value val="0" dsc="TOMRp whole seconds = (I021/073) Whole seconds"/>
                     </values>
@@ -922,7 +922,7 @@
                         <value val="3" dsc="Minimum fuel"/>
                         <value val="4" dsc="No communications"/>
                         <value val="5" dsc="Unlawful interference"/>
-                        <value val="6" dsc="“Downed” Aircraft"/>
+                        <value val="6" dsc="Downed Aircraft"/>
                     </values>
                 </item>
                 <item name="SS" type="Fixed">

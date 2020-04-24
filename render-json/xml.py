@@ -19,17 +19,31 @@ class Indent(object):
 
 indent = Indent()
 
+def replaceString(s, mapping):
+    for (key,val) in mapping.items():
+        s = s.replace(key, val)
+    return s
+
+def replaceOutput(s):
+    return replaceString(s, {
+        u'–': '-',
+        u'“': '',
+        u'”': '',
+    })
+
 def tell(s):
+    s = replaceOutput(s) # This program requires ascii only.
     s = ' '*indentLevel*4 + s
     accumulator.append(s.rstrip())
 
 def xmlquote(s):
-    s = s.replace('"', "&quot;")
-    s = s.replace('&', '&amp;')
-    s = s.replace("'", "&apos;")
-    s = s.replace("<", "&lt;")
-    s = s.replace(">", "&gt;")
-    return s
+    return replaceString(s, {
+        '"': "&quot;",
+        "&": "&amp;",
+        "'": "&apos;",
+        "<":  "&lt;",
+        ">": "&gt;",
+    })
 
 def itemLine(item):
     itemType = item['element']['type']
