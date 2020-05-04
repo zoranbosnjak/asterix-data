@@ -29,6 +29,7 @@ def replaceOutput(s):
         u'–': '-',
         u'“': '',
         u'”': '',
+        u'°': ' deg',
     })
 
 def tell(s):
@@ -191,18 +192,36 @@ def renderSubitem(element):
         pass
 
     def renderCompound():
-        renderGroup()
+        tell('<items>')
+        with indent:
+            spareIndex = 1
+            for item in element['subitems']:
+                if item is None:
+                    tell('<item></item>')
+                else:
+                    isSpare = renderMaybeSubitem(spareIndex, item)
+                    if isSpare:
+                        spareIndex += 1
+        tell('</items>')
 
     return locals()['render'+element['type']]()
 
 def renderUap(uap):
-    assert uap['type'] == 'uap'
+    ut = uap['type']
+    if ut == 'uap':
+        variations = [{'name': 'uap', 'items': uap['items']}]
+    elif ut == 'uaps':
+        variations = uap['variations']
+    else:
+        raise Exception('unexpected uap type {}'.format(ut))
     tell('<uaps>')
     with indent:
-        tell('<uap>')
-        with indent:
-            for i in uap['items']:
-                tell('<item>{}</item>'.format(i or ''))
-        tell('</uap>')
+        for var in variations:
+            name = var['name']
+            tell('<{}>'.format(name))
+            with indent:
+                for i in var['items']:
+                    tell('<item>{}</item>'.format(i or ''))
+            tell('</{}>'.format(name))
     tell('</uaps>')
 
