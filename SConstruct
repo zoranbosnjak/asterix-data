@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 #   Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
@@ -57,7 +57,7 @@ def validate(target, source, env):
     assert rv==0
 
     print
-    print 'No errors found.'
+    print('No errors found.')
 
 def install(target, source, env):
     base = os.path.join("$PREFIX", name)

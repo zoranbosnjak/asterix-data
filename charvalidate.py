@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 #   Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
 
@@ -33,8 +33,8 @@ def check(s):
     lines = s.splitlines()
     lines = map(lambda line: any([ord(c)>127 or c=='\t' for c in line]), lines)
     lines = enumerate(lines, 1)
-    problems = filter(lambda (a,b): b, lines)
-    return map(lambda (a,b): a, problems)
+    problems = filter(lambda a: a[1], lines)
+    return map(lambda a: a[0], problems)
 
 # main
 parser = argparse.ArgumentParser()
@@ -43,17 +43,17 @@ parser.add_argument('-v', '--verbose', action='store_true', default=False, help=
 args = parser.parse_args()
 
 data = map(lambda x: (x.name, check(x.read())), args.infile)
-problems = sum(map(lambda (filename,cnt): len(cnt), data))
+problems = sum(map(lambda a: len(list(a[1])), data))
 
 if problems:
-    print problems, 'lines found (non-ascii or tabs)'
-    print '---'
+    print(problems, 'lines found (non-ascii or tabs)')
+    print('---')
 
     for filename, err in data:
         if err:
-            print filename, 'lines:', err
+            print(filename, 'lines:', err)
 
     sys.exit(1)
 
-print 'OK'
+print('OK')
 
