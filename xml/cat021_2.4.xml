@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 50f1e5b1e48930591194f5cefcb2d9f73c5ad32c
+    sha1sum of the json input: a6806559230b33190be11b3c97d2f744a9798499
 -->
 
 <category cat="021" edition="2.4">
@@ -73,7 +73,7 @@
             </items>
         </item>
         <item name="010">
-            <dsc>Data Source Identifier</dsc>
+            <dsc>Data Source Identification</dsc>
             <items>
                 <item name="SAC" type="Fixed">
                     <dsc>System Area Code</dsc>
@@ -440,7 +440,7 @@
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="Trajectory Intent Data is available for this aircraft"/>
-                                <value val="1" dsc="Trajectory Intent Data is not available for this ircraft"/>
+                                <value val="1" dsc="Trajectory Intent Data is not available for this aircraft"/>
                             </values>
                         </item>
                         <item name="NVB" type="Fixed">
@@ -1142,7 +1142,7 @@
             <dsc>Data Ages</dsc>
             <items>
                 <item name="AOS" type="Fixed">
-                    <dsc>Aircraft Operational Status age</dsc>
+                    <dsc>Aircraft Operational Status Age</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
@@ -1212,7 +1212,7 @@
                     </convert>
                 </item>
                 <item name="FL" type="Fixed">
-                    <dsc>Flight Level age</dsc>
+                    <dsc>Flight Level Age</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
