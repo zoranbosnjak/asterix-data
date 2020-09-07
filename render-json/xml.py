@@ -47,8 +47,10 @@ def xmlquote(s):
     })
 
 def itemLine(item):
-    itemType = item['element']['type']
+    itemType = item['variation']['type']
     if itemType != 'Group':
+        if itemType == 'Element':
+            itemType = 'Fixed'
         return '<item name="{}" type="{}">'.format(item['name'], itemType)
     else:
         return '<item name="{}">'.format(item['name'])
@@ -71,24 +73,23 @@ def render(s):
         tell('<dsc>Asterix Category {:03d}, edition {}.{}</dsc>'.format(category, edition['major'], edition['minor']))
         tell('<items>')
         with indent:
-            [renderItem(item) for item in root['catalogue']]
+            [renderTopItem(item) for item in root['catalogue']]
         tell('</items>')
     with indent:
         renderUap(root['uap'])
     tell('</category>')
     return ''.join([line+'\n' for line in accumulator])
 
-def renderItem(item):
-    subitem = item['subitem']
-    tell(itemLine(subitem))
+def renderTopItem(item):
+    tell(itemLine(item))
     with indent:
-        title = subitem['title']
+        title = item['title']
         if title:
             tell('<dsc>{}</dsc>'.format(xmlquote(title)))
-        renderSubitem(subitem['element'])
+        renderVariation(item['variation'])
     tell('</item>')
 
-def renderSubitem(element):
+def renderVariation(variation):
 
     def renderInteger(value):
         tell('<convert>')
@@ -113,7 +114,7 @@ def renderSubitem(element):
             if fract == 0:
                 tell('<lsb>{}</lsb>'.format(k))
             else:
-                tell('<lsb>{}/{}</lsb>'.format(k, pow(2,fract)))
+                tell('<lsb>{}/{}</lsb>'.format(float(k), pow(2,fract)))
 
             unit = value['unit']
             if unit is not None:
@@ -126,8 +127,8 @@ def renderSubitem(element):
                     tell('<max>{}</max>'.format(getNumber(i['value'])))
         tell('</convert>')
 
-    def renderFixed():
-        tell('<len>{}</len>'.format(element['size']))
+    def renderElement():
+        tell('<len>{}</len>'.format(variation['size']))
         def case0():
             pass
         def case1(val):
@@ -149,23 +150,25 @@ def renderSubitem(element):
                 renderInteger(rule)
             elif t == 'Quantity':
                 renderQuantity(rule)
+            elif t == 'Bds':
+                pass
             else:
                 raise Exception('unexpected value type {}'.format(t))
         def case2(val):
             pass
-        return renderRule(element['content'], case0, case1, case2)
+        return renderRule(variation['content'], case0, case1, case2)
 
-    def renderMaybeSubitem(n, subitem):
-        if subitem['spare']:
-            tell('<item name="spare{}" type="Spare"><len>{}</len></item>'.format(n, subitem['length']))
+    def renderMaybeItem(n, item):
+        if item['spare']:
+            tell('<item name="spare{}" type="Spare"><len>{}</len></item>'.format(n, item['length']))
             return True
         else:
-            tell(itemLine(subitem))
+            tell(itemLine(item))
             with indent:
-                title = subitem['title']
+                title = item['title']
                 if title:
                     tell('<dsc>{}</dsc>'.format(xmlquote(title)))
-                renderSubitem(subitem['element'])
+                renderVariation(item['variation'])
             tell('</item>')
             return False
 
@@ -173,20 +176,20 @@ def renderSubitem(element):
         tell('<items>')
         with indent:
             spareIndex = 1
-            for item in element['subitems']:
-                isSpare = renderMaybeSubitem(spareIndex, item)
+            for item in variation['items']:
+                isSpare = renderMaybeItem(spareIndex, item)
                 if isSpare:
                     spareIndex += 1
         tell('</items>')
 
     def renderExtended():
-        n1 = element['first']
-        n2 = element['extents']
+        n1 = variation['first']
+        n2 = variation['extents']
         tell('<len>({},{})</len>'.format(n1, n2))
         renderGroup()
 
     def renderRepetitive():
-        renderSubitem(element['element'])
+        renderVariation(variation['variation'])
 
     def renderExplicit():
         pass
@@ -195,16 +198,16 @@ def renderSubitem(element):
         tell('<items>')
         with indent:
             spareIndex = 1
-            for item in element['subitems']:
+            for item in variation['items']:
                 if item is None:
                     tell('<item></item>')
                 else:
-                    isSpare = renderMaybeSubitem(spareIndex, item)
+                    isSpare = renderMaybeItem(spareIndex, item)
                     if isSpare:
                         spareIndex += 1
         tell('</items>')
 
-    return locals()['render'+element['type']]()
+    return locals()['render'+variation['type']]()
 
 def renderUap(uap):
     ut = uap['type']
