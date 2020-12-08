@@ -18,11 +18,24 @@ Use `nix` to build `asterix-specs` project. This includes building *.json* files
 nix-build -o asterix-specs https://github.com/zoranbosnjak/asterix-specs/archive/master.tar.gz
 ```
 
-Render generated *.json* to *.xml*.
+## Test on single file
+
+Render generated *.json* to *.xml* (single file)
 
 ```bash
 ./asterix-specs/bin/render --script render-json/xml.py render asterix-specs/specs/.../definition.json > xml/catABC_X.Y.xml
-git add xml/catABC_X.Y.xml
+```
+
+## Automatic procedure
+
+```bash
+mkdir generated
+./update-from-asterix-specs.py asterix-specs/ generated/
+./update-from-asterix-specs.py asterix-specs/ generated/ | sh
+./update-from-asterix-specs.py asterix-specs/ xml/ | sh
+
+# check/compare files...
+# git add/commit files...
 ```
 
 # Install

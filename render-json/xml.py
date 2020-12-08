@@ -129,12 +129,12 @@ def renderVariation(variation):
 
     def renderElement():
         tell('<len>{}</len>'.format(variation['size']))
-        def case0():
-            pass
         def case1(val):
             rule = val['rule']
             t = rule['type']
-            if t == 'Table':
+            if t == 'Raw':
+                pass
+            elif t == 'Table':
                 tell('<values>')
                 with indent:
                     for key,value in rule['values']:
@@ -144,6 +144,7 @@ def renderVariation(variation):
                 f = case('string variatioin', rule['variation'],
                     ('StringAscii', lambda: tell('<convert><type>string</type></convert>')),
                     ('StringICAO', lambda: None),
+                    ('StringOctal', lambda: None),
                     )
                 f ()
             elif t == 'Integer':
@@ -156,7 +157,7 @@ def renderVariation(variation):
                 raise Exception('unexpected value type {}'.format(t))
         def case2(val):
             pass
-        return renderRule(variation['content'], case0, case1, case2)
+        return renderRule(variation['content'], case1, case2)
 
     def renderMaybeItem(n, item):
         if item['spare']:

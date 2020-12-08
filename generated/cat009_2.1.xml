@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: 5ff02e1d12e0884395c9f02da7f799da86a3750a
+-->
+
+<category cat="009" edition="2.1">
+    <dsc>Asterix Category 009, edition 2.1</dsc>
+    <items>
+        <item name="000" type="Fixed">
+            <dsc>Message Type</dsc>
+            <len>8</len>
+            <values>
+                <value val="2" dsc="Cartesian vector"/>
+                <value val="253" dsc="Intermediate-update-step message"/>
+                <value val="254" dsc="Start-of-picture message"/>
+                <value val="255" dsc="End-of-picture message"/>
+            </values>
+        </item>
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="020" type="Extended">
+            <dsc>Vector Qualifier</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="ORG" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Local Coordinates"/>
+                        <value val="1" dsc="System Coordinates"/>
+                    </values>
+                </item>
+                <item name="I" type="Fixed">
+                    <dsc>Intensity Level</dsc>
+                    <len>3</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+                <item name="S" type="Fixed">
+                    <dsc>Shading Orientation with Respect to North</dsc>
+                    <len>3</len>
+                    <values>
+                        <value val="0" dsc="0 deg"/>
+                        <value val="1" dsc="22.5 deg"/>
+                        <value val="2" dsc="45 deg"/>
+                        <value val="3" dsc="67.5 deg"/>
+                        <value val="4" dsc="90 deg"/>
+                        <value val="5" dsc="112.5 deg"/>
+                        <value val="6" dsc="135 deg"/>
+                        <value val="7" dsc="157.5 deg"/>
+                    </values>
+                </item>
+            </items>
+        </item>
+        <item name="030" type="Repetitive">
+            <dsc>Sequence of Cartesian Vectors</dsc>
+            <items>
+                <item name="X" type="Fixed">
+                    <dsc>X-coordinate</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+                <item name="Y" type="Fixed">
+                    <dsc>Y-coordinate</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+                <item name="L" type="Fixed">
+                    <dsc>Vector Length</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="060" type="Extended">
+            <dsc>Synchronisation/Control Signal</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="SN" type="Fixed">
+                    <dsc>Step Number</dsc>
+                    <len>6</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+            </items>
+        </item>
+        <item name="070" type="Fixed">
+            <dsc>Time of Day</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+        <item name="080" type="Extended">
+            <dsc>Processing Status</dsc>
+            <len>(24,8)</len>
+            <items>
+                <item name="F" type="Fixed">
+                    <dsc>Scaling Factor</dsc>
+                    <len>5</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1</lsb>
+                        <unit></unit>
+                    </convert>
+                </item>
+                <item name="R" type="Fixed">
+                    <dsc>Current Reduction Stage in Use</dsc>
+                    <len>3</len>
+                </item>
+                <item name="Q" type="Fixed">
+                    <dsc>Processing Parameters</dsc>
+                    <len>15</len>
+                </item>
+            </items>
+        </item>
+        <item name="090" type="Repetitive">
+            <dsc>Radar Configuration and Status</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>SAC of Radar Concerned</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>SIC of Radar Concerned</dsc>
+                    <len>8</len>
+                </item>
+                <item name="spare1" type="Spare"><len>3</len></item>
+                <item name="CP" type="Fixed">
+                    <dsc>Circular Polarisation</dsc>
+                    <len>1</len>
+                </item>
+                <item name="WO" type="Fixed">
+                    <dsc>Weather Channel Overload</dsc>
+                    <len>1</len>
+                </item>
+                <item name="R" type="Fixed">
+                    <dsc>Reduction Step in Use By Radar  Concerned</dsc>
+                    <len>3</len>
+                </item>
+            </items>
+        </item>
+        <item name="100" type="Fixed">
+            <dsc>Vector Count</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned integer</type>
+            </convert>
+        </item>
+    </items>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>000</item>
+            <item>020</item>
+            <item>030</item>
+            <item>060</item>
+            <item>070</item>
+            <item>080</item>
+            <item>090</item>
+            <item>100</item>
+        </uap>
+    </uaps>
+</category>

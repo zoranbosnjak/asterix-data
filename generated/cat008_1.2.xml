@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: 522db167a4ae51e4da38deeff1b43e96cd95bf68
+-->
+
+<category cat="008" edition="1.2">
+    <dsc>Asterix Category 008, edition 1.2</dsc>
+    <items>
+        <item name="000" type="Fixed">
+            <dsc>Message Type</dsc>
+            <len>8</len>
+            <values>
+                <value val="1" dsc="Polar vector"/>
+                <value val="2" dsc="Cartesian vector of start point/length"/>
+                <value val="3" dsc="Contour record"/>
+                <value val="4" dsc="Cartesian start point and end point vector"/>
+                <value val="254" dsc="SOP message"/>
+                <value val="255" dsc="EOP message"/>
+            </values>
+        </item>
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="020" type="Extended">
+            <dsc>Vector Qualifier</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="ORG" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Local Coordinates"/>
+                        <value val="1" dsc="System Coordinates"/>
+                    </values>
+                </item>
+                <item name="I" type="Fixed">
+                    <dsc>Intensity Level</dsc>
+                    <len>3</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+                <item name="S" type="Fixed">
+                    <dsc>Shading Orientation with Respect to North</dsc>
+                    <len>3</len>
+                    <values>
+                        <value val="0" dsc="0 deg"/>
+                        <value val="1" dsc="22.5 deg"/>
+                        <value val="2" dsc="45 deg"/>
+                        <value val="3" dsc="67.5 deg"/>
+                        <value val="4" dsc="90 deg"/>
+                        <value val="5" dsc="112.5 deg"/>
+                        <value val="6" dsc="135 deg"/>
+                        <value val="7" dsc="157.5 deg"/>
+                    </values>
+                </item>
+                <item name="spare1" type="Spare"><len>5</len></item>
+                <item name="TST" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Test vector"/>
+                    </values>
+                </item>
+                <item name="ER" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Error condition encountered"/>
+                    </values>
+                </item>
+            </items>
+        </item>
+        <item name="034" type="Repetitive">
+            <dsc>Sequence of Polar Vectors in SPF Notation</dsc>
+            <items>
+                <item name="STR" type="Fixed">
+                    <dsc>Start Range</dsc>
+                    <len>8</len>
+                </item>
+                <item name="ENDR" type="Fixed">
+                    <dsc>End Range</dsc>
+                    <len>8</len>
+                </item>
+                <item name="AZ" type="Fixed">
+                    <dsc>Azimuth</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="036" type="Repetitive">
+            <dsc>Sequence of Cartesian Vectors in SPF Notation</dsc>
+            <items>
+                <item name="X" type="Fixed">
+                    <dsc>X-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y" type="Fixed">
+                    <dsc>Y-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="L" type="Fixed">
+                    <dsc>Length</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="038" type="Repetitive">
+            <dsc>Sequence of Weather Vectors in SPF Notation</dsc>
+            <items>
+                <item name="X1" type="Fixed">
+                    <dsc>X1-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y1" type="Fixed">
+                    <dsc>Y1-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="X2" type="Fixed">
+                    <dsc>X2-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y2" type="Fixed">
+                    <dsc>Y2-Component</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="040">
+            <dsc>Contour Identifier</dsc>
+            <items>
+                <item name="ORG" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Local Coordinates"/>
+                        <value val="1" dsc="System Coordinates"/>
+                    </values>
+                </item>
+                <item name="I" type="Fixed">
+                    <dsc>Intensity Level</dsc>
+                    <len>3</len>
+                </item>
+                <item name="spare1" type="Spare"><len>2</len></item>
+                <item name="FSTLST" type="Fixed">
+                    <len>2</len>
+                    <values>
+                        <value val="0" dsc="Intermediate record of a contour"/>
+                        <value val="1" dsc="Last record of a contour of at least two records"/>
+                        <value val="2" dsc="First record of a contour of at least two records"/>
+                        <value val="3" dsc="First and only record, fully defining a contour"/>
+                    </values>
+                </item>
+                <item name="CSN" type="Fixed">
+                    <dsc>Contour Serial Number</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="050" type="Repetitive">
+            <dsc>Sequence of Contour Points in SPF Notation</dsc>
+            <items>
+                <item name="X1" type="Fixed">
+                    <len>8</len>
+                </item>
+                <item name="Y1" type="Fixed">
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="090" type="Fixed">
+            <dsc>Time of Day</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+        <item name="100" type="Extended">
+            <dsc>Processing Status</dsc>
+            <len>(24,8)</len>
+            <items>
+                <item name="F" type="Fixed">
+                    <dsc>Scaling Factor</dsc>
+                    <len>5</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1</lsb>
+                        <unit></unit>
+                    </convert>
+                </item>
+                <item name="R" type="Fixed">
+                    <dsc>Current Reduction Stage in Use</dsc>
+                    <len>3</len>
+                </item>
+                <item name="Q" type="Fixed">
+                    <dsc>Processing Parameters</dsc>
+                    <len>15</len>
+                </item>
+            </items>
+        </item>
+        <item name="110" type="Extended">
+            <dsc>Station Configuration Status</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="DATA" type="Fixed">
+                    <dsc>Unspecified Data</dsc>
+                    <len>7</len>
+                </item>
+            </items>
+        </item>
+        <item name="120" type="Fixed">
+            <dsc>Total Number of Items Constituting One Weather Picture</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned integer</type>
+            </convert>
+        </item>
+        <item name="RE" type="Explicit">
+            <dsc>Reserved Expansion Field</dsc>
+        </item>
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+    </items>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>000</item>
+            <item>020</item>
+            <item>036</item>
+            <item>034</item>
+            <item>040</item>
+            <item>050</item>
+            <item>090</item>
+            <item>100</item>
+            <item>110</item>
+            <item>120</item>
+            <item>038</item>
+            <item>RE</item>
+            <item>SP</item>
+        </uap>
+    </uaps>
+</category>

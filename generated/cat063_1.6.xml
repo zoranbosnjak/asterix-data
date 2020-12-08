@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: dca50e6219b26cfd1287048ddf56af43c07d29b6
+-->
+
+<category cat="063" edition="1.6">
+    <dsc>Asterix Category 063, edition 1.6</dsc>
+    <items>
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="015" type="Fixed">
+            <dsc>Service Identification</dsc>
+            <len>8</len>
+        </item>
+        <item name="030" type="Fixed">
+            <dsc>Time of Message</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+        <item name="050">
+            <dsc>Sensor Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="060" type="Extended">
+            <dsc>Sensor Configuration and Status</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="CON" type="Fixed">
+                    <len>2</len>
+                    <values>
+                        <value val="0" dsc="Operational"/>
+                        <value val="1" dsc="Degraded"/>
+                        <value val="2" dsc="Initialization"/>
+                        <value val="3" dsc="Not currently connected"/>
+                    </values>
+                </item>
+                <item name="PSR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="PSR GO"/>
+                        <value val="1" dsc="PSR NOGO"/>
+                    </values>
+                </item>
+                <item name="SSR" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="SSR GO"/>
+                        <value val="1" dsc="SSR NOGO"/>
+                    </values>
+                </item>
+                <item name="MDS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="MDS GO"/>
+                        <value val="1" dsc="MDS NOGO"/>
+                    </values>
+                </item>
+                <item name="ADS" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="ADS GO"/>
+                        <value val="1" dsc="ADS NOGO"/>
+                    </values>
+                </item>
+                <item name="MLT" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="MLT GO"/>
+                        <value val="1" dsc="MLT NOGO"/>
+                    </values>
+                </item>
+                <item name="OPS" type="Fixed">
+                    <dsc>Operational Release Status of the System</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="System is released for operational use"/>
+                        <value val="1" dsc="Operational use of System is inhibited"/>
+                    </values>
+                </item>
+                <item name="ODP" type="Fixed">
+                    <dsc>Data Processor Overload Indicator</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default, no overload"/>
+                        <value val="1" dsc="Overload in DP"/>
+                    </values>
+                </item>
+                <item name="OXT" type="Fixed">
+                    <dsc>Transmission Subsystem Overload Status</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default, no overload"/>
+                        <value val="1" dsc="Overload in transmission subsystem"/>
+                    </values>
+                </item>
+                <item name="MSC" type="Fixed">
+                    <dsc>Monitoring System Connected Status</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Monitoring system connected"/>
+                        <value val="1" dsc="Monitoring system disconnected"/>
+                    </values>
+                </item>
+                <item name="TSV" type="Fixed">
+                    <dsc>Time Source Validity</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Valid"/>
+                        <value val="1" dsc="Invalid"/>
+                    </values>
+                </item>
+                <item name="NPW" type="Fixed">
+                    <dsc>No Plot Warning</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default (no meaning)"/>
+                        <value val="1" dsc="No plots being received"/>
+                    </values>
+                </item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+            </items>
+        </item>
+        <item name="070" type="Fixed">
+            <dsc>Time Stamping Bias</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>1</lsb>
+                <unit>ms</unit>
+            </convert>
+        </item>
+        <item name="080">
+            <dsc>SSR / Mode S Range Gain and Bias</dsc>
+            <items>
+                <item name="SRG" type="Fixed">
+                    <dsc>Mode S Range Gain</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.00001</lsb>
+                        <unit></unit>
+                    </convert>
+                </item>
+                <item name="SRB" type="Fixed">
+                    <dsc>Mode S Range Bias</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="081" type="Fixed">
+            <dsc>SSR Mode S Azimuth Bias</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>360.0/65536</lsb>
+                <unit>deg</unit>
+            </convert>
+        </item>
+        <item name="090">
+            <dsc>PSR Range Gain and Bias</dsc>
+            <items>
+                <item name="PRG" type="Fixed">
+                    <dsc>PSR Range Gain</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>0.00001</lsb>
+                        <unit></unit>
+                    </convert>
+                </item>
+                <item name="PRB" type="Fixed">
+                    <dsc>PSR Range Bias</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="091" type="Fixed">
+            <dsc>PSR Azimuth Bias</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>360.0/65536</lsb>
+                <unit>deg</unit>
+            </convert>
+        </item>
+        <item name="092" type="Fixed">
+            <dsc>PSR Elevation Bias</dsc>
+            <len>16</len>
+            <convert>
+                <type>decimal</type>
+                <lsb>360.0/65536</lsb>
+                <unit>deg</unit>
+            </convert>
+        </item>
+        <item name="RE" type="Explicit">
+            <dsc>Reserved Expansion Field</dsc>
+        </item>
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+    </items>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>015</item>
+            <item>030</item>
+            <item>050</item>
+            <item>060</item>
+            <item>070</item>
+            <item>080</item>
+            <item>081</item>
+            <item>090</item>
+            <item>091</item>
+            <item>092</item>
+            <item></item>
+            <item>RE</item>
+            <item>SP</item>
+        </uap>
+    </uaps>
+</category>
