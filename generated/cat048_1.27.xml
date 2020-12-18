@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 6376ae507e7c91996985ad0a87de2a949a7d9098
+    sha1sum of the json input: 17ade491bf6e1d8a22527c9204eafae300af66ac
 -->
 
 <category cat="048" edition="1.27">
@@ -694,13 +694,9 @@
                         </item>
                     </items>
                 </item>
-                <item name="RDS">
+                <item name="RDS" type="Repetitive">
                     <dsc>Raw Doppler Speed</dsc>
                     <items>
-                        <item name="REP" type="Fixed">
-                            <dsc>Repetition Factor</dsc>
-                            <len>8</len>
-                        </item>
                         <item name="DOP" type="Fixed">
                             <dsc>Doppler Speed</dsc>
                             <len>16</len>
@@ -1043,13 +1039,9 @@
             <dsc>Aircraft Identification</dsc>
             <len>48</len>
         </item>
-        <item name="250">
+        <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
             <items>
-                <item name="REP" type="Fixed">
-                    <dsc>Repetition Factor</dsc>
-                    <len>8</len>
-                </item>
                 <item name="MBDATA" type="Fixed">
                     <dsc>Mode S Comm B Message Data</dsc>
                     <len>56</len>

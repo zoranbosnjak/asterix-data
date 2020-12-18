@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: 6d6d079a876425719392c80e18b7e7d58c5c5d73
+-->
+
+<category cat="002" edition="1.0">
+    <dsc>Asterix Category 002, edition 1.0</dsc>
+    <items>
+        <item name="000" type="Fixed">
+            <dsc>Message Type</dsc>
+            <len>8</len>
+            <values>
+                <value val="1" dsc="North marker message"/>
+                <value val="2" dsc="Sector crossing message"/>
+                <value val="3" dsc="South marker message"/>
+                <value val="8" dsc="Activation of blind zone filtering"/>
+                <value val="9" dsc="Stop of blind zone filtering"/>
+            </values>
+        </item>
+        <item name="010">
+            <dsc>Data Source Identifier</dsc>
+            <items>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
+            </items>
+        </item>
+        <item name="020" type="Fixed">
+            <dsc>Sector Number</dsc>
+            <len>8</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>360.0/256</lsb>
+                <unit>deg</unit>
+            </convert>
+        </item>
+        <item name="030" type="Fixed">
+            <dsc>Time of Day</dsc>
+            <len>24</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+        <item name="041" type="Fixed">
+            <dsc>Antenna Rotation Speed</dsc>
+            <len>16</len>
+            <convert>
+                <type>unsigned decimal</type>
+                <lsb>1.0/128</lsb>
+                <unit>s</unit>
+            </convert>
+        </item>
+        <item name="050" type="Extended">
+            <dsc>Station Configuration Status</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="SCS" type="Fixed">
+                    <len>7</len>
+                </item>
+            </items>
+        </item>
+        <item name="060" type="Extended">
+            <dsc>Station Processing Mode</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="SPM" type="Fixed">
+                    <len>7</len>
+                </item>
+            </items>
+        </item>
+        <item name="070" type="Repetitive">
+            <dsc>Plot Count Values</dsc>
+            <items>
+                <item name="A" type="Fixed">
+                    <dsc>Aerial Identification</dsc>
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Counter for antenna 1"/>
+                        <value val="1" dsc="Counter for antenna 2"/>
+                    </values>
+                </item>
+                <item name="IDENT" type="Fixed">
+                    <len>5</len>
+                    <values>
+                        <value val="1" dsc="Sole primary plots"/>
+                        <value val="2" dsc="Sole SSR plots"/>
+                        <value val="3" dsc="Combined plots"/>
+                    </values>
+                </item>
+                <item name="COUNTER" type="Fixed">
+                    <len>10</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="080" type="Extended">
+            <dsc>Warning/Error Conditions</dsc>
+            <len>(8,8)</len>
+            <items>
+                <item name="WE" type="Fixed">
+                    <dsc>W/E Value</dsc>
+                    <len>7</len>
+                </item>
+            </items>
+        </item>
+        <item name="090">
+            <dsc>Collimation Error</dsc>
+            <items>
+                <item name="RE" type="Fixed">
+                    <dsc>Range Error</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                    </convert>
+                </item>
+                <item name="AE" type="Fixed">
+                    <dsc>Azimuth Error</dsc>
+                    <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>360.0/16384</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+        <item name="100">
+            <dsc>Dynamic Window Type 1</dsc>
+            <items>
+                <item name="RS" type="Fixed">
+                    <dsc>Rho Start</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <max>512</max>
+                    </convert>
+                </item>
+                <item name="RE" type="Fixed">
+                    <dsc>Rho End</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <max>512</max>
+                    </convert>
+                </item>
+                <item name="TS" type="Fixed">
+                    <dsc>Theta Start</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+                <item name="TE" type="Fixed">
+                    <dsc>Theta End</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+            </items>
+        </item>
+    </items>
+    <uaps>
+        <uap>
+            <item>010</item>
+            <item>000</item>
+            <item>020</item>
+            <item>030</item>
+            <item>041</item>
+            <item>050</item>
+            <item>060</item>
+            <item>070</item>
+            <item>100</item>
+            <item>090</item>
+            <item>080</item>
+        </uap>
+    </uaps>
+</category>
