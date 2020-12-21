@@ -49,8 +49,8 @@
                         <type>decimal</type>
                         <lsb>180.0/2147483648</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -60,8 +60,8 @@
                         <type>decimal</type>
                         <lsb>180.0/2147483648</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -76,8 +76,8 @@
                         <type>decimal</type>
                         <lsb>1</lsb>
                         <unit>m</unit>
-                        <min>-32768</min>
-                        <max>32768</max>
+                        <min>-32768.0</min>
+                        <max>32768.0</max>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
@@ -87,8 +87,8 @@
                         <type>decimal</type>
                         <lsb>1</lsb>
                         <unit>m</unit>
-                        <min>-32768</min>
-                        <max>32768</max>
+                        <min>-32768.0</min>
+                        <max>32768.0</max>
                     </convert>
                 </item>
             </items>
@@ -110,8 +110,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>FL</unit>
-                <min>-12</min>
-                <max>1500</max>
+                <min>-12.0</min>
+                <max>1500.0</max>
             </convert>
         </item>
         <item name="092" type="Fixed">
@@ -121,8 +121,8 @@
                 <type>decimal</type>
                 <lsb>25.0/4</lsb>
                 <unit>ft</unit>
-                <min>-1500</min>
-                <max>150000</max>
+                <min>-1500.0</min>
+                <max>150000.0</max>
             </convert>
         </item>
         <item name="093">
@@ -143,8 +143,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>FL</unit>
-                        <min>-15</min>
-                        <max>1500</max>
+                        <min>-15.0</min>
+                        <max>1500.0</max>
                     </convert>
                 </item>
             </items>
@@ -348,8 +348,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
                 <item name="VY" type="Fixed">
@@ -359,8 +359,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
             </items>
@@ -375,8 +375,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
                 <item name="AY" type="Fixed">
@@ -386,8 +386,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
             </items>
@@ -399,8 +399,8 @@
                 <type>decimal</type>
                 <lsb>25.0/4</lsb>
                 <unit>ft/min</unit>
-                <min>-204800</min>
-                <max>204800</max>
+                <min>-204800.0</min>
+                <max>204800.0</max>
             </convert>
         </item>
         <item name="245">

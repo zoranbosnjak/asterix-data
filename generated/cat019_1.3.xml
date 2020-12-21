@@ -248,8 +248,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -259,8 +259,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -272,8 +272,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>m</unit>
-                <min>-8192</min>
-                <max>8192</max>
+                <min>-8192.0</min>
+                <max>8192.0</max>
             </convert>
         </item>
         <item name="620" type="Fixed">

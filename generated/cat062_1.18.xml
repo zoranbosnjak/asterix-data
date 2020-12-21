@@ -371,8 +371,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -382,8 +382,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -483,8 +483,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
@@ -494,8 +494,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                     </items>
@@ -519,7 +519,7 @@
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1000</min>
+                                <min>-1000.0</min>
                             </convert>
                         </item>
                     </items>
@@ -608,8 +608,8 @@
                 <type>unsigned decimal</type>
                 <lsb>6.25</lsb>
                 <unit>ft</unit>
-                <min>-1500</min>
-                <max>150000</max>
+                <min>-1500.0</min>
+                <max>150000.0</max>
             </convert>
         </item>
         <item name="135">
@@ -629,8 +629,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>FL</unit>
-                        <min>-15</min>
-                        <max>1500</max>
+                        <min>-15.0</min>
+                        <max>1500.0</max>
                     </convert>
                 </item>
             </items>
@@ -642,8 +642,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>FL</unit>
-                <min>-15</min>
-                <max>1500</max>
+                <min>-15.0</min>
+                <max>1500.0</max>
             </convert>
         </item>
         <item name="185">
@@ -656,7 +656,7 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
+                        <min>-8192.0</min>
                         <max>8191.75</max>
                     </convert>
                 </item>
@@ -667,7 +667,7 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
+                        <min>-8192.0</min>
                         <max>8191.75</max>
                     </convert>
                 </item>
@@ -1268,7 +1268,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>1.0/256</lsb>
                                 <unit>NM</unit>
-                                <max>256</max>
+                                <max>256.0</max>
                             </convert>
                         </item>
                         <item name="THETA" type="Fixed">
@@ -1316,8 +1316,8 @@
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>FL</unit>
-                                <min>-12</min>
-                                <max>1270</max>
+                                <min>-12.0</min>
+                                <max>1270.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1438,8 +1438,8 @@
                         <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>kt</unit>
-                        <min>0</min>
-                        <max>2046</max>
+                        <min>0.0</min>
+                        <max>2046.0</max>
                     </convert>
                 </item>
                 <item name="SAL">
@@ -1468,8 +1468,8 @@
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1300</min>
-                                <max>100000</max>
+                                <min>-1300.0</min>
+                                <max>100000.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1508,8 +1508,8 @@
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1300</min>
-                                <max>100000</max>
+                                <min>-1300.0</min>
+                                <max>100000.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1567,8 +1567,8 @@
                                 <type>decimal</type>
                                 <lsb>10</lsb>
                                 <unit>ft</unit>
-                                <min>-1500</min>
-                                <max>150000</max>
+                                <min>-1500.0</min>
+                                <max>150000.0</max>
                             </convert>
                         </item>
                         <item name="LAT" type="Fixed">
@@ -1578,8 +1578,8 @@
                                 <type>unsigned decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
@@ -1589,8 +1589,8 @@
                                 <type>unsigned decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                         <item name="PT" type="Fixed">
@@ -1653,7 +1653,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>0.01</lsb>
                                 <unit>Nm</unit>
-                                <min>0</min>
+                                <min>0.0</min>
                                 <max>655.35</max>
                             </convert>
                         </item>
@@ -1812,8 +1812,8 @@
                         <type>decimal</type>
                         <lsb>0.01</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
                 <item name="TAR">
@@ -1836,8 +1836,8 @@
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>deg/s</unit>
-                                <min>-15</min>
-                                <max>15</max>
+                                <min>-15.0</min>
+                                <max>15.0</max>
                             </convert>
                         </item>
                         <item name="spare2" type="Spare"><len>1</len></item>
@@ -1859,8 +1859,8 @@
                         <type>decimal</type>
                         <lsb>1.0/16384</lsb>
                         <unit>NM/s</unit>
-                        <min>-2</min>
-                        <max>2</max>
+                        <min>-2.0</min>
+                        <max>2.0</max>
                     </convert>
                 </item>
                 <item name="VUN" type="Fixed">
@@ -1910,8 +1910,8 @@
                                 <type>unsigned decimal</type>
                                 <lsb>1</lsb>
                                 <unit>kt</unit>
-                                <min>0</min>
-                                <max>300</max>
+                                <min>0.0</min>
+                                <max>300.0</max>
                             </convert>
                         </item>
                         <item name="WDD" type="Fixed">
@@ -1921,8 +1921,8 @@
                                 <type>unsigned decimal</type>
                                 <lsb>1</lsb>
                                 <unit>deg</unit>
-                                <min>1</min>
-                                <max>360</max>
+                                <min>1.0</min>
+                                <max>360.0</max>
                             </convert>
                         </item>
                         <item name="TMPD" type="Fixed">
@@ -1932,8 +1932,8 @@
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>degC</unit>
-                                <min>-100</min>
-                                <max>100</max>
+                                <min>-100.0</min>
+                                <max>100.0</max>
                             </convert>
                         </item>
                         <item name="TRBD" type="Fixed">
@@ -1987,8 +1987,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
@@ -1998,8 +1998,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                     </items>
@@ -2011,8 +2011,8 @@
                         <type>decimal</type>
                         <lsb>6.25</lsb>
                         <unit>ft</unit>
-                        <min>-1500</min>
-                        <max>150000</max>
+                        <min>-1500.0</min>
+                        <max>150000.0</max>
                     </convert>
                 </item>
                 <item name="PUN">
@@ -2036,8 +2036,8 @@
                         <type>decimal</type>
                         <lsb>1</lsb>
                         <unit>kt</unit>
-                        <min>0</min>
-                        <max>1100</max>
+                        <min>0.0</min>
+                        <max>1100.0</max>
                     </convert>
                 </item>
                 <item name="MAC" type="Fixed">
@@ -2047,7 +2047,7 @@
                         <type>decimal</type>
                         <lsb>0.008</lsb>
                         <unit>Mach</unit>
-                        <min>0</min>
+                        <min>0.0</min>
                         <max>4.096</max>
                     </convert>
                 </item>
@@ -2061,7 +2061,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>0.1</lsb>
                                 <unit>mb</unit>
-                                <min>0</min>
+                                <min>0.0</min>
                                 <max>409.5</max>
                             </convert>
                         </item>

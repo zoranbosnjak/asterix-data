@@ -157,8 +157,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -168,8 +168,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -184,8 +184,8 @@
                         <type>decimal</type>
                         <lsb>1.0/2</lsb>
                         <unit>m</unit>
-                        <min>-4194300</min>
-                        <max>4194300</max>
+                        <min>-4194300.0</min>
+                        <max>4194300.0</max>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
@@ -195,8 +195,8 @@
                         <type>decimal</type>
                         <lsb>1.0/2</lsb>
                         <unit>m</unit>
-                        <min>-4194300</min>
-                        <max>4194300</max>
+                        <min>-4194300.0</min>
+                        <max>4194300.0</max>
                     </convert>
                 </item>
             </items>
@@ -459,8 +459,8 @@
                 <type>decimal</type>
                 <lsb>6.25</lsb>
                 <unit>ft</unit>
-                <min>-204800</min>
-                <max>204800</max>
+                <min>-204800.0</min>
+                <max>204800.0</max>
             </convert>
         </item>
         <item name="110" type="Fixed">
@@ -470,8 +470,8 @@
                 <type>decimal</type>
                 <lsb>6.25</lsb>
                 <unit>ft</unit>
-                <min>-204800</min>
-                <max>204800</max>
+                <min>-204800.0</min>
+                <max>204800.0</max>
             </convert>
         </item>
         <item name="140" type="Fixed">
@@ -560,8 +560,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
                 <item name="VY" type="Fixed">
@@ -570,8 +570,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
             </items>
@@ -585,8 +585,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
                 <item name="AY" type="Fixed">
@@ -595,8 +595,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
             </items>

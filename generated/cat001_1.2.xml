@@ -140,7 +140,7 @@
                         <type>unsigned decimal</type>
                         <lsb>1.0/128</lsb>
                         <unit>NM</unit>
-                        <max>512</max>
+                        <max>512.0</max>
                     </convert>
                 </item>
                 <item name="THETA" type="Fixed">
@@ -163,8 +163,8 @@
                         <type>decimal</type>
                         <lsb>1.0/64</lsb>
                         <unit>NM</unit>
-                        <min>-512</min>
-                        <max>512</max>
+                        <min>-512.0</min>
+                        <max>512.0</max>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
@@ -174,8 +174,8 @@
                         <type>decimal</type>
                         <lsb>1.0/64</lsb>
                         <unit>NM</unit>
-                        <min>-512</min>
-                        <max>512</max>
+                        <min>-512.0</min>
+                        <max>512.0</max>
                     </convert>
                 </item>
             </items>

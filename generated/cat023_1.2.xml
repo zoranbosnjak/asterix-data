@@ -131,8 +131,8 @@
                         <type>decimal</type>
                         <lsb>1</lsb>
                         <unit>s</unit>
-                        <min>1</min>
-                        <max>127</max>
+                        <min>1.0</min>
+                        <max>127.0</max>
                     </convert>
                 </item>
             </items>
@@ -172,8 +172,8 @@
                         <type>decimal</type>
                         <lsb>1</lsb>
                         <unit>s</unit>
-                        <min>1</min>
-                        <max>127</max>
+                        <min>1.0</min>
+                        <max>127.0</max>
                     </convert>
                 </item>
             </items>

@@ -122,9 +122,9 @@ def renderVariation(variation):
 
             for i in value['constraints']:
                 if i['type'] in ['>', '>=']:
-                    tell('<min>{}</min>'.format(getNumber(i['value'])))
+                    tell('<min>{}</min>'.format(float(getNumber(i['value']))))
                 if i['type'] in ['<', '<=']:
-                    tell('<max>{}</max>'.format(getNumber(i['value'])))
+                    tell('<max>{}</max>'.format(float(getNumber(i['value']))))
         tell('</convert>')
 
     def renderElement():
