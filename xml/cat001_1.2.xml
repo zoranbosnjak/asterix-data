@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!--
-    Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
-
-    This file is part of asterix-data.
-
-    asterix-data is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    asterix-data is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with asterix-data.  If not, see <http://www.gnu.org/licenses/>.
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: c5f99466550648492334e9560df22606189cd6e8
 -->
 
 <category cat="001" edition="1.2">
     <dsc>Asterix Category 001, edition 1.2</dsc>
     <items>
-
         <item name="010">
             <dsc>Data Source Identifier</dsc>
             <items>
-                <item name="SAC" type="Fixed"><len>8</len></item>
-                <item name="SIC" type="Fixed"><len>8</len></item>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
             </items>
         </item>
-
         <item name="020" type="Extended">
             <dsc>Target Report Descriptor</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="TYP" type="Fixed"><len>1</len>
+                <item name="TYP" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Plot"/>
                         <value val="1" dsc="Track"/>
                     </values>
                 </item>
-                <item name="SIM" type="Fixed"><len>1</len>
+                <item name="SIM" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Actual plot or track"/>
                         <value val="1" dsc="Simulated plot or track"/>
                     </values>
                 </item>
-                <item name="SSR_PSR" type="Fixed"><len>2</len>
+                <item name="SSR_PSR" type="Fixed">
+                    <dsc>Radar Detection in Last Antenna Scan</dsc>
+                    <len>2</len>
                     <values>
                         <value val="0" dsc="No detection"/>
                         <value val="1" dsc="Sole primary detection"/>
@@ -55,79 +50,87 @@
                         <value val="3" dsc="Combined primary and secondary detection"/>
                     </values>
                 </item>
-                <item name="ANT" type="Fixed"><len>1</len>
+                <item name="ANT" type="Fixed">
+                    <len>1</len>
                     <values>
-                        <value val="0" dsc="Target report from anrenna 1"/>
-                        <value val="1" dsc="Target report from anrenna 2"/>
+                        <value val="0" dsc="Target report from antenna 1"/>
+                        <value val="1" dsc="Target report from antenna 2"/>
                     </values>
                 </item>
-                <item name="SPI" type="Fixed"><len>1</len>
+                <item name="SPI" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
-                        <value val="1" dsc="Special Position Identificator"/>
+                        <value val="1" dsc="Special Position Identification"/>
                     </values>
                 </item>
-                <item name="RAB" type="Fixed"><len>1</len>
+                <item name="RAB" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Plot or track from a fixed transponder"/>
                     </values>
                 </item>
-                <item name="TST" type="Fixed"><len>1</len>
+                <item name="TST" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Test target indicator"/>
                     </values>
                 </item>
-                <item name="DS1_DS2" type="Fixed"><len>2</len>
+                <item name="DS1_DS2" type="Fixed">
+                    <dsc>Radar Detection in Last Antenna Scan</dsc>
+                    <len>2</len>
                     <values>
                         <value val="0" dsc="Default"/>
-                        <value val="1" dsc="Unlawfull interference (code 7500)"/>
+                        <value val="1" dsc="Unlawful interference (code 7500)"/>
                         <value val="2" dsc="Radio-communication failure (code 7600)"/>
                         <value val="3" dsc="Emergency (code 7700)"/>
                     </values>
                 </item>
-                <item name="ME" type="Fixed"><len>1</len>
+                <item name="ME" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Military emergency"/>
                     </values>
                 </item>
-                <item name="MI" type="Fixed"><len>1</len>
+                <item name="MI" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Military identification"/>
                     </values>
                 </item>
-                <item name="spare" type="Spare"><len>2</len></item>
+                <item name="spare1" type="Spare"><len>2</len></item>
             </items>
         </item>
-
         <item name="030" type="Extended">
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="W_E" type="Fixed"><len>7</len>
+                <item name="W_E" type="Fixed">
+                    <dsc>WEVALUE</dsc>
+                    <len>7</len>
                     <values>
-                        <value val="0" dsc="no warning nor error condition"/>
-                        <value val="1" dsc="garbled reply"/>
-                        <value val="2" dsc="reflection"/>
-                        <value val="3" dsc="sidelobe reply"/>
-                        <value val="4" dsc="split plot"/>
-                        <value val="5" dsc="second time around reply"/>
-                        <value val="6" dsc="angels"/>
-                        <value val="7" dsc="terrestrial vehicles"/>
-                        <value val="64" dsc="possible wrong code in Mode-3/A"/>
-                        <value val="65" dsc="possible wrong altitude information, transmitted when the Code C credibility check fails together with the Mode-C code in binary notation"/>
-                        <value val="66" dsc="possible phantom MSSR plot"/>
-                        <value val="80" dsc="fixed PSR plot"/>
-                        <value val="81" dsc="slow PSR plot"/>
-                        <value val="82" dsc="low quality PSR plot"/>
+                        <value val="0" dsc="No warning nor error condition"/>
+                        <value val="1" dsc="Garbled reply"/>
+                        <value val="2" dsc="Reflection"/>
+                        <value val="3" dsc="Sidelobe reply"/>
+                        <value val="4" dsc="Split plot"/>
+                        <value val="5" dsc="Second time around reply"/>
+                        <value val="6" dsc="Angels"/>
+                        <value val="7" dsc="Terrestrial vehicles"/>
+                        <value val="64" dsc="Possible wrong code in Mode-3/A"/>
+                        <value val="65" dsc="Possible wrong altitude information, transmitted when the Code C credibility check fails together with the Mode-C code in binary notation"/>
+                        <value val="66" dsc="Possible phantom MSSR plot"/>
+                        <value val="80" dsc="Fixed PSR plot"/>
+                        <value val="81" dsc="Slow PSR plot"/>
+                        <value val="82" dsc="Low quality PSR plot"/>
                     </values>
                 </item>
             </items>
         </item>
-
         <item name="040">
             <dsc>Measured Position in Polar Coordinates</dsc>
             <items>
@@ -144,106 +147,135 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>360.0/pow(2,16)</lsb>
+                        <lsb>360.0/65536</lsb>
                         <unit>deg</unit>
                     </convert>
                 </item>
             </items>
         </item>
-
         <item name="042">
             <dsc>Calculated Position in Cartesian Coordinates</dsc>
             <items>
-                <item name="X" type="Fixed"><len>16</len></item>
-                <item name="Y" type="Fixed"><len>16</len></item>
-                 <!-- TODO: convert... -->
+                <item name="X" type="Fixed">
+                    <dsc>X-Component</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>NM</unit>
+                        <min>-512</min>
+                        <max>512</max>
+                    </convert>
+                </item>
+                <item name="Y" type="Fixed">
+                    <dsc>Y-Component</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>NM</unit>
+                        <min>-512</min>
+                        <max>512</max>
+                    </convert>
+                </item>
             </items>
         </item>
-
         <item name="050">
             <dsc>Mode-2 Code in Octal Representation</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len>
+                <item name="V" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
                         <value val="1" dsc="Code not validated"/>
                     </values>
                 </item>
-                <item name="G" type="Fixed"><len>1</len>
+                <item name="G" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Garbled code"/>
                     </values>
                 </item>
-                <item name="L" type="Fixed"><len>1</len>
+                <item name="L" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Mode-2 code as derived from the reply of the transponder"/>
                         <value val="1" dsc="Smoothed Mode-2 code as provided by a local tracker"/>
                     </values>
                 </item>
-                <item name="spare" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed"><len>12</len></item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+                <item name="MODE2" type="Fixed">
+                    <dsc>Mode-2 Code in Octal Representation</dsc>
+                    <len>12</len>
+                </item>
             </items>
         </item>
-
         <item name="060">
-            <dsc>Mode-2 Code Confidence Indikator</dsc>
+            <dsc>Mode-2 Code Confidence Indicator</dsc>
             <items>
                 <item name="spare" type="Spare"><len>4</len></item>
                 <item name="QX" type="Fixed"><len>12</len></item>
             </items>
         </item>
-
         <item name="070">
             <dsc>Mode-3/A Code in Octal Representation</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len>
+                <item name="V" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
                         <value val="1" dsc="Code not validated"/>
                     </values>
                 </item>
-                <item name="G" type="Fixed"><len>1</len>
+                <item name="G" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Garbled code"/>
                     </values>
                 </item>
-                <item name="L" type="Fixed"><len>1</len>
+                <item name="L" type="Fixed">
+                    <len>1</len>
                     <values>
-                        <value val="0" dsc="Mode-3/A code as derived from the reply of the transponder"/>
+                        <value val="0" dsc="Mode-3/A code derived from the reply of the transponder"/>
                         <value val="1" dsc="Smoothed Mode-3/A code as provided by a local tracker"/>
                     </values>
                 </item>
-                <item name="spare" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed"><len>12</len></item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+                <item name="ABCD" type="Fixed">
+                    <dsc>Mode-3/A Reply in Octal Representation</dsc>
+                    <len>12</len>
+                </item>
             </items>
         </item>
-
         <item name="080">
-            <dsc>Mode-3/A Code Confidence Indikator</dsc>
+            <dsc>Mode-3/A Code Confidence Indicator</dsc>
             <items>
                 <item name="spare" type="Spare"><len>4</len></item>
                 <item name="QX" type="Fixed"><len>12</len></item>
             </items>
         </item>
-
         <item name="090">
             <dsc>Mode-C Code in Binary Representation</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len>
+                <item name="V" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
                         <value val="1" dsc="Code not validated"/>
                     </values>
                 </item>
-                <item name="G" type="Fixed"><len>1</len>
+                <item name="G" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Garbled code"/>
                     </values>
                 </item>
-                <item name="HEIGHT" type="Fixed"><len>14</len>
+                <item name="HEIGHT" type="Fixed">
+                    <dsc>Mode-C HEIGHT</dsc>
+                    <len>14</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
@@ -252,17 +284,18 @@
                 </item>
             </items>
         </item>
-
         <item name="100">
             <dsc>Mode-C Code and Code Confidence Indicator</dsc>
             <items>
-                <item name="V" type="Fixed"><len>1</len>
+                <item name="V" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
                         <value val="1" dsc="Code not validated"/>
                     </values>
                 </item>
-                <item name="G" type="Fixed"><len>1</len>
+                <item name="G" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Garbled code"/>
@@ -274,24 +307,34 @@
                 <item name="QUALITY" type="Fixed"><len>12</len></item>
             </items>
         </item>
-
         <item name="120" type="Fixed">
             <dsc>Measured Radial Doppler Speed</dsc>
             <len>8</len>
-            <!-- TODO: convert... -->
+            <convert>
+                <type>decimal</type>
+                <lsb>1.0/256</lsb>
+                <unit>NM/s</unit>
+            </convert>
         </item>
-
         <item name="130" type="Extended">
             <dsc>Radar Plot Characteristics</dsc>
             <len>(8,8)</len>
+            <items>
+                <item name="IND" type="Fixed">
+                    <dsc>Indicator</dsc>
+                    <len>7</len>
+                </item>
+            </items>
         </item>
-
         <item name="131" type="Fixed">
             <dsc>Received Power</dsc>
             <len>8</len>
-            <!-- TODO: convert... -->
+            <convert>
+                <type>decimal</type>
+                <lsb>1</lsb>
+                <unit>dBm</unit>
+            </convert>
         </item>
-
         <item name="141" type="Fixed">
             <dsc>Truncated Time of Day</dsc>
             <len>16</len>
@@ -301,25 +344,27 @@
                 <unit>s</unit>
             </convert>
         </item>
-
         <item name="150">
             <dsc>Presence of X-Pulse</dsc>
             <items>
-                <item name="XA" type="Fixed"><len>1</len>
+                <item name="XA" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="X-pulse received in Mode-3/A reply"/>
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="XC" type="Fixed"><len>1</len>
+                <item name="XC" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="X-pulse received in Mode-C reply"/>
                     </values>
                 </item>
                 <item name="spare2" type="Spare"><len>2</len></item>
-                <item name="X2" type="Fixed"><len>1</len>
+                <item name="X2" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="X-pulse received in Mode-2 reply"/>
@@ -328,54 +373,60 @@
                 <item name="spare3" type="Spare"><len>2</len></item>
             </items>
         </item>
-
         <item name="161" type="Fixed">
             <dsc>Track Plot Number</dsc>
             <len>16</len>
         </item>
-
         <item name="170" type="Extended">
             <dsc>Track Status</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="CON" type="Fixed"><len>1</len>
+                <item name="CON" type="Fixed">
+                    <len>1</len>
                     <values>
-                        <value val="0" dsc="Confirmed track"/>
+                        <value val="0" dsc="Confirmed Track"/>
                         <value val="1" dsc="Track in initialisation phase"/>
                     </values>
                 </item>
-                <item name="RAD" type="Fixed"><len>1</len>
+                <item name="RAD" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Primary track"/>
                         <value val="1" dsc="SSR/Combined track"/>
                     </values>
                 </item>
-                <item name="MAN" type="Fixed"><len>1</len>
+                <item name="MAN" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Aircraft manoeuvring"/>
                     </values>
                 </item>
-                <item name="DOU" type="Fixed"><len>1</len>
+                <item name="DOU" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Doubtful plot to track association"/>
                     </values>
                 </item>
-                <item name="RDPC" type="Fixed"><len>1</len>
+                <item name="RDPC" type="Fixed">
+                    <dsc>Radar Data Processing Chain</dsc>
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="RDP Chain 1"/>
                         <value val="1" dsc="RDP Chain 2"/>
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="GHO" type="Fixed"><len>1</len>
+                <item name="GHO" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Ghost track"/>
                     </values>
                 </item>
-                <item name="TRE" type="Fixed"><len>1</len>
+                <item name="TRE" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Last report for a track"/>
@@ -384,7 +435,6 @@
                 <item name="spare2" type="Spare"><len>6</len></item>
             </items>
         </item>
-
         <item name="200">
             <dsc>Calculated Track Velocity in Polar Coordinates</dsc>
             <items>
@@ -393,7 +443,6 @@
             </items>
             <!-- TODO: convert... -->
         </item>
-
         <item name="210" type="Extended">
             <dsc>Track Quality</dsc>
             <len>(8,8)</len>
@@ -407,7 +456,6 @@
             <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
-
     <uaps>
         <plot>
             <item>010</item>
@@ -458,6 +506,5 @@
             <item>150</item>
         </track>
     </uaps>
-
 </category>
 

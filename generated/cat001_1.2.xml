@@ -132,7 +132,7 @@
             </items>
         </item>
         <item name="040">
-            <dsc>Measured Position in Polar Co-ordinates</dsc>
+            <dsc>Measured Position in Polar Coordinates</dsc>
             <items>
                 <item name="RHO" type="Fixed">
                     <len>16</len>
@@ -154,7 +154,7 @@
             </items>
         </item>
         <item name="042">
-            <dsc>Calculated Position in Cartesian Co-ordinates</dsc>
+            <dsc>Calculated Position in Cartesian Coordinates</dsc>
             <items>
                 <item name="X" type="Fixed">
                     <dsc>X-Component</dsc>
@@ -168,7 +168,7 @@
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
-                    <dsc>X-Component</dsc>
+                    <dsc>Y-Component</dsc>
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
@@ -688,7 +688,7 @@
             </items>
         </item>
         <item name="200">
-            <dsc>Calculated Track Velocity in Polar Co-ordinates</dsc>
+            <dsc>Calculated Track Velocity in Polar Coordinates</dsc>
             <items>
                 <item name="GSP" type="Fixed">
                     <dsc>Calculated Groundspeed</dsc>

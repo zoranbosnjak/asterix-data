@@ -352,9 +352,9 @@
                     <len>2</len>
                     <values>
                         <value val="3" dsc="Reserved"/>
-                        <value val="2" dsc="TOMRv whole seconds = (I021/075) Whole seconds - 1"/>
-                        <value val="1" dsc="TOMRv whole seconds = (I021/075) Whole seconds + 1"/>
-                        <value val="0" dsc="TOMRv whole seconds = (I021/075) Whole seconds"/>
+                        <value val="2" dsc="TOMRp whole seconds = (I021/075) Whole seconds - 1"/>
+                        <value val="1" dsc="TOMRp whole seconds = (I021/075) Whole seconds + 1"/>
+                        <value val="0" dsc="TOMRp whole seconds = (I021/075) Whole seconds"/>
                     </values>
                 </item>
                 <item name="TOMRP" type="Fixed">
@@ -474,7 +474,7 @@
                             <len>6</len>
                         </item>
                         <item name="ALT" type="Fixed">
-                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
+                            <dsc>Altitude in Two's Complement Form</dsc>
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
@@ -485,7 +485,7 @@
                             </convert>
                         </item>
                         <item name="LAT" type="Fixed">
-                            <dsc>In WGS.84 in Two&apos;s Complement</dsc>
+                            <dsc>In WGS.84 in Two's Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
@@ -496,7 +496,7 @@
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
-                            <dsc>In WGS.84 in Two&apos;s Complement</dsc>
+                            <dsc>In WGS.84 in Two's Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>

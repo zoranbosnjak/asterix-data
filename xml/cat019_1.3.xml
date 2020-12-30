@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 513bc7430ee878a85bc3909f38cd29f0890d97bd
+    sha1sum of the json input: 44236cf7765d2e850a7a262b7ee0b4c4cce1b5ac
 -->
 
 <category cat="019" edition="1.3">
@@ -26,7 +26,7 @@
                     <len>8</len>
                 </item>
                 <item name="SIC" type="Fixed">
-                    <dsc>System Identification code</dsc>
+                    <dsc>System Identification Code</dsc>
                     <len>8</len>
                 </item>
             </items>
@@ -50,11 +50,11 @@
                         <value val="0" dsc="Operational"/>
                         <value val="1" dsc="Degraded"/>
                         <value val="2" dsc="NOGO"/>
-                        <value val="3" dsc="undefined"/>
+                        <value val="3" dsc="Undefined"/>
                     </values>
                 </item>
                 <item name="OVL" type="Fixed">
-                    <dsc>Overload indicator</dsc>
+                    <dsc>Overload Indicator</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="No overload"/>
@@ -65,8 +65,8 @@
                     <dsc>Time Source Validity</dsc>
                     <len>1</len>
                     <values>
-                        <value val="0" dsc="valid"/>
-                        <value val="1" dsc="invalid"/>
+                        <value val="0" dsc="Valid"/>
+                        <value val="1" dsc="Invalid"/>
                     </values>
                 </item>
                 <item name="TTF" type="Fixed">
@@ -145,7 +145,7 @@
             <dsc>Remote Sensor Detailed Status</dsc>
             <items>
                 <item name="RSI" type="Fixed">
-                    <dsc>8-bit Identification number of RS</dsc>
+                    <dsc>8-bit Identification Number of RS</dsc>
                     <len>8</len>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
@@ -154,7 +154,7 @@
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Not present"/>
-                        <value val="1" dsc="present"/>
+                        <value val="1" dsc="Present"/>
                     </values>
                 </item>
                 <item name="TX1030" type="Fixed">
@@ -162,7 +162,7 @@
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Not present"/>
-                        <value val="1" dsc="present"/>
+                        <value val="1" dsc="Present"/>
                     </values>
                 </item>
                 <item name="TX1090" type="Fixed">
@@ -170,7 +170,7 @@
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Not present"/>
-                        <value val="1" dsc="present"/>
+                        <value val="1" dsc="Present"/>
                     </values>
                 </item>
                 <item name="RSS" type="Fixed">

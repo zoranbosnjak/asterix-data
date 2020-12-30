@@ -318,7 +318,7 @@
             </items>
         </item>
         <item name="100">
-            <dsc>Calculated Track Position</dsc>
+            <dsc>Calculated Track Position (Cartesian)</dsc>
             <items>
                 <item name="X" type="Fixed">
                     <dsc>X Coordinate</dsc>
@@ -350,8 +350,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -361,8 +361,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -587,7 +587,7 @@
                 <type>unsigned decimal</type>
                 <lsb>6.25</lsb>
                 <unit>ft</unit>
-                <min>-1500</min>
+                <min>-1500.0</min>
                 <max>150000</max>
             </convert>
         </item>
@@ -608,8 +608,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>FL</unit>
-                        <min>-15</min>
-                        <max>1500</max>
+                        <min>-15.0</min>
+                        <max>1500.0</max>
                     </convert>
                 </item>
             </items>
@@ -621,8 +621,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>FL</unit>
-                <min>-15</min>
-                <max>1500</max>
+                <min>-15.0</min>
+                <max>1500.0</max>
             </convert>
         </item>
         <item name="185">
@@ -635,7 +635,7 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
+                        <min>-8192.0</min>
                         <max>8191.75</max>
                     </convert>
                 </item>
@@ -646,7 +646,7 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
+                        <min>-8192.0</min>
                         <max>8191.75</max>
                     </convert>
                 </item>
@@ -1428,20 +1428,20 @@
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="No source information provided"/>
-                                <value val="1" dsc="Source information provided"/>
+                                <value val="1" dsc="Source Information provided"/>
                             </values>
                         </item>
                         <item name="SRC" type="Fixed">
                             <len>2</len>
                             <values>
                                 <value val="0" dsc="Unknown"/>
-                                <value val="1" dsc="Aircraft altitude"/>
-                                <value val="2" dsc="FCU/MCP selected altitude"/>
-                                <value val="3" dsc="FMS selected altitude"/>
+                                <value val="1" dsc="Aircraft Altitude"/>
+                                <value val="2" dsc="FCU/MCP Selected Altitude"/>
+                                <value val="3" dsc="FMS Selected Altitude"/>
                             </values>
                         </item>
                         <item name="ALT" type="Fixed">
-                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
+                            <dsc>Altitude in Two's Complement Form</dsc>
                             <len>13</len>
                             <convert>
                                 <type>decimal</type>
@@ -1501,16 +1501,16 @@
                             <dsc>TID Available</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Trajectory intent data is available for this aircraft"/>
-                                <value val="1" dsc="Trajectory intent data is not available for this aircraft"/>
+                                <value val="0" dsc="Trajectory Intent Data is available for this aircraft"/>
+                                <value val="1" dsc="Trajectory Intent Data is not available for this aircraft"/>
                             </values>
                         </item>
                         <item name="NVB" type="Fixed">
                             <dsc>TID Valid</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Trajectory intent data is valid"/>
-                                <value val="1" dsc="Trajectory intent data is not valid"/>
+                                <value val="0" dsc="Trajectory Intent Data is valid"/>
+                                <value val="1" dsc="Trajectory Intent Data is not valid"/>
                             </values>
                         </item>
                         <item name="spare1" type="Spare"><len>5</len></item>
@@ -1540,7 +1540,7 @@
                             <len>6</len>
                         </item>
                         <item name="ALT" type="Fixed">
-                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
+                            <dsc>Altitude in Two's Complement Form</dsc>
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
@@ -1551,7 +1551,7 @@
                             </convert>
                         </item>
                         <item name="LAT" type="Fixed">
-                            <dsc>Latitude in WGS.84 in Two&apos;s Complement</dsc>
+                            <dsc>Latitude in WGS.84 in Two's Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>unsigned decimal</type>
@@ -1562,7 +1562,7 @@
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
-                            <dsc>Longitude in WGS.84 in Two&apos;s Complement</dsc>
+                            <dsc>Longitude in WGS.84 in Two's Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>unsigned decimal</type>
@@ -1739,7 +1739,7 @@
                             <dsc>Ground Bit Set</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Transponder ground bit not set or unknown"/>
+                                <value val="0" dsc="Transponder Ground Bit not set or unknown"/>
                                 <value val="1" dsc="Transponder Ground Bit set"/>
                             </values>
                         </item>
@@ -1807,7 +1807,7 @@
                         </item>
                         <item name="spare1" type="Spare"><len>6</len></item>
                         <item name="ROT" type="Fixed">
-                            <dsc>Rate of Turn in Two&apos;s Complement Form</dsc>
+                            <dsc>Rate of Turn in Two's Complement Form</dsc>
                             <len>7</len>
                             <convert>
                                 <type>decimal</type>
@@ -1872,7 +1872,7 @@
                             </values>
                         </item>
                         <item name="TRB" type="Fixed">
-                            <dsc>Turbolence Valid Flag</dsc>
+                            <dsc>Turbulence Valid Flag</dsc>
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="Not valid Turbulence"/>
@@ -1928,12 +1928,12 @@
                     <dsc>Emitter Category</dsc>
                     <len>8</len>
                     <values>
-                        <value val="1" dsc="Light aircraft =&lt; 7000 kg"/>
+                        <value val="1" dsc="Light aircraft less than 7000 kg"/>
                         <value val="2" dsc="Reserved"/>
-                        <value val="3" dsc="7000 kg &lt; medium aircraft &lt; 136000 kg"/>
+                        <value val="3" dsc="More than 7000kg, less than 136000kg"/>
                         <value val="4" dsc="Reserved"/>
-                        <value val="5" dsc="136000 kg =&lt; heavy aircraft"/>
-                        <value val="6" dsc="Highly manoeuvrable (5g acceleration capability) and high speed (&gt;400 knots cruise)"/>
+                        <value val="5" dsc="More than 136000kg - heavy aircraft"/>
+                        <value val="6" dsc="Highly manoeuvrable (5g acceleration capability) and high speed (more than 400 knots cruise)"/>
                         <value val="7" dsc="Reserved"/>
                         <value val="8" dsc="Reserved"/>
                         <value val="9" dsc="Reserved"/>
@@ -1949,7 +1949,7 @@
                         <value val="19" dsc="Reserved"/>
                         <value val="20" dsc="Surface emergency vehicle"/>
                         <value val="21" dsc="Surface service vehicle"/>
-                        <value val="22" dsc="Item ground or tethered obstruction"/>
+                        <value val="22" dsc="Fixed ground or tethered obstruction"/>
                         <value val="23" dsc="Reserved"/>
                         <value val="24" dsc="Reserved"/>
                     </values>
@@ -1958,7 +1958,7 @@
                     <dsc>Position</dsc>
                     <items>
                         <item name="LAT" type="Fixed">
-                            <dsc>Latitude in WGS.84 in Two&apos;s Complement Form</dsc>
+                            <dsc>Latitude in WGS.84 in Two's Complement Form</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
@@ -1969,7 +1969,7 @@
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
-                            <dsc>Longitude in WGS.84 in Two&apos;s Complement Form</dsc>
+                            <dsc>Longitude in WGS.84 in Two's Complement Form</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
@@ -2527,3 +2527,4 @@
         </uap>
     </uaps>
 </category>
+
