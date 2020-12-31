@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 14e1699cd2a5101984f9682ce5d6771493b8daf6
+    sha1sum of the json input: d4b61d3a86ca815bab03a914b46aebbc3260a2af
 -->
 
 <category cat="062" edition="1.17">
@@ -318,7 +318,7 @@
             </items>
         </item>
         <item name="100">
-            <dsc>Calculated Track Position</dsc>
+            <dsc>Calculated Track Position (Cartesian)</dsc>
             <items>
                 <item name="X" type="Fixed">
                     <dsc>X Coordinate</dsc>
@@ -1872,7 +1872,7 @@
                             </values>
                         </item>
                         <item name="TRB" type="Fixed">
-                            <dsc>Turbolence Valid Flag</dsc>
+                            <dsc>Turbulence Valid Flag</dsc>
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="Not valid Turbulence"/>
@@ -1949,7 +1949,7 @@
                         <value val="19" dsc="Reserved"/>
                         <value val="20" dsc="Surface emergency vehicle"/>
                         <value val="21" dsc="Surface service vehicle"/>
-                        <value val="22" dsc="Item ground or tethered obstruction"/>
+                        <value val="22" dsc="Fixed ground or tethered obstruction"/>
                         <value val="23" dsc="Reserved"/>
                         <value val="24" dsc="Reserved"/>
                     </values>

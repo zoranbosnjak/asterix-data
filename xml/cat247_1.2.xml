@@ -1,41 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!--
-    Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
-
-    This file is part of asterix-data.
-
-    asterix-data is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    asterix-data is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with asterix-data.  If not, see <http://www.gnu.org/licenses/>.
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: 169df1fe68f133799c4c11fc6776c85e9a548bf5
 -->
 
 <category cat="247" edition="1.2">
     <dsc>Asterix Category 247, edition 1.2</dsc>
     <items>
-
         <item name="010">
             <dsc>Data Source Identifier</dsc>
             <items>
-                <item name="SAC" type="Fixed"><len>8</len></item>
-                <item name="SIC" type="Fixed"><len>8</len></item>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
             </items>
         </item>
-
         <item name="015" type="Fixed">
             <dsc>Service Identification</dsc>
             <len>8</len>
         </item>
-
         <item name="140" type="Fixed">
             <dsc>Time of Day</dsc>
             <len>24</len>
@@ -45,7 +35,6 @@
                 <unit>s</unit>
             </convert>
         </item>
-
         <item name="550" type="Repetitive">
             <dsc>Category Version Number Report</dsc>
             <convert>
@@ -58,13 +47,15 @@
                         <type>unsigned integer</type>
                     </convert>
                 </item>
-                <item name="main_ver_num" type="Fixed">
+                <item name="Mmain_ver_num" type="Fixed">
+                    <dsc>Main Version Number</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned integer</type>
                     </convert>
                 </item>
                 <item name="sub_ver_num" type="Fixed">
+                    <dsc>Sub Version Number</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned integer</type>
@@ -72,17 +63,13 @@
                 </item>
             </items>
         </item>
-
         <item name="RE" type="Explicit">
             <dsc>Reserved Expansion Field</dsc>
         </item>
-
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
         </item>
-
     </items>
-
     <uaps>
         <uap>
             <item>010</item>
@@ -93,7 +80,5 @@
             <item>SP</item>
             <item>RE</item>
         </uap>
-    </uaps>
-
-</category>
+    </uaps></category>
 

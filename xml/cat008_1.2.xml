@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!--
-    Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
-
-    This file is part of asterix-data.
-
-    asterix-data is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    asterix-data is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with asterix-data.  If not, see <http://www.gnu.org/licenses/>.
+    Do not edit directly!
+    This file is auto-generated from the original json specs file.
+    sha1sum of the json input: ccebe0e6433ea112199d1e95cff86cf92939f9a2
 -->
 
 <category cat="008" edition="1.2">
     <dsc>Asterix Category 008, edition 1.2</dsc>
     <items>
-
         <item name="000" type="Fixed">
             <dsc>Message Type</dsc>
             <len>8</len>
@@ -35,27 +21,40 @@
                 <value val="255" dsc="EOP message"/>
             </values>
         </item>
-
         <item name="010">
             <dsc>Data Source Identifier</dsc>
             <items>
-                <item name="SAC" type="Fixed"><len>8</len></item>
-                <item name="SIC" type="Fixed"><len>8</len></item>
+                <item name="SAC" type="Fixed">
+                    <dsc>System Area Code</dsc>
+                    <len>8</len>
+                </item>
+                <item name="SIC" type="Fixed">
+                    <dsc>System Identification Code</dsc>
+                    <len>8</len>
+                </item>
             </items>
         </item>
-
         <item name="020" type="Extended">
             <dsc>Vector Qualifier</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="ORG" type="Fixed"><len>1</len>
+                <item name="ORG" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Local Coordinates"/>
-                        <value val="1" dsc="System Coordinaes"/>
+                        <value val="1" dsc="System Coordinates"/>
                     </values>
                 </item>
-                <item name="I" type="Fixed"><len>3</len></item>
-                <item name="S" type="Fixed"><len>3</len>
+                <item name="I" type="Fixed">
+                    <dsc>Intensity Level</dsc>
+                    <len>3</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+                <item name="S" type="Fixed">
+                    <dsc>Shading Orientation with Respect to North</dsc>
+                    <len>3</len>
                     <values>
                         <value val="0" dsc="0 deg"/>
                         <value val="1" dsc="22.5 deg"/>
@@ -67,14 +66,16 @@
                         <value val="7" dsc="157.5 deg"/>
                     </values>
                 </item>
-                <item name="spare" type="Spare"><len>5</len></item>
-                <item name="TST" type="Fixed"><len>1</len>
+                <item name="spare1" type="Spare"><len>5</len></item>
+                <item name="TST" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
-                        <value val="1" dsc="Test Vector"/>
+                        <value val="1" dsc="Test vector"/>
                     </values>
                 </item>
-                <item name="ER" type="Fixed"><len>1</len>
+                <item name="ER" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Error condition encountered"/>
@@ -82,17 +83,28 @@
                 </item>
             </items>
         </item>
-
         <item name="034" type="Repetitive">
             <dsc>Sequence of Polar Vectors in SPF Notation</dsc>
             <items>
-                <item name="SR" type="Fixed"><len>8</len></item>
-                <item name="ER" type="Fixed"><len>8</len></item>
-                <item name="AZIMUTH" type="Fixed"><len>16</len></item>
+                <item name="SR" type="Fixed">
+                    <dsc>Start Range</dsc>
+                    <len>8</len>
+                </item>
+                <item name="ER" type="Fixed">
+                    <dsc>End Range</dsc>
+                    <len>8</len>
+                </item>
+                <item name="AZIMUTH" type="Fixed">
+                    <dsc>Azimuth</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
-
         <item name="036" type="Repetitive">
             <dsc>Sequence of Cartesian Vectors in SPF Notation</dsc>
             <items>
@@ -102,30 +114,45 @@
             </items>
             <!-- TODO: convert... -->
         </item>
-
         <item name="038" type="Repetitive">
             <dsc>Sequence of Weather Vectors in SPF Notation</dsc>
             <items>
-                <item name="X1" type="Fixed"><len>8</len></item>
-                <item name="Y1" type="Fixed"><len>8</len></item>
-                <item name="X2" type="Fixed"><len>8</len></item>
-                <item name="Y2" type="Fixed"><len>8</len></item>
+                <item name="X1" type="Fixed">
+                    <dsc>X1-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y1" type="Fixed">
+                    <dsc>Y1-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="X2" type="Fixed">
+                    <dsc>X2-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y2" type="Fixed">
+                    <dsc>Y2-Component</dsc>
+                    <len>8</len>
+                </item>
             </items>
             <!-- TODO: convert... -->
         </item>
-
         <item name="040">
             <dsc>Contour Identifier</dsc>
             <items>
-                <item name="ORG" type="Fixed"><len>1</len>
+                <item name="ORG" type="Fixed">
+                    <len>1</len>
                     <values>
                         <value val="0" dsc="Local Coordinates"/>
-                        <value val="1" dsc="System Coordinaes"/>
+                        <value val="1" dsc="System Coordinates"/>
                     </values>
                 </item>
-                <item name="I" type="Fixed"><len>3</len></item>
-                <item name="spare" type="Spare"><len>2</len></item>
-                <item name="FST_LST" type="Fixed"><len>2</len>
+                <item name="I" type="Fixed">
+                    <dsc>Intensity Level</dsc>
+                    <len>3</len>
+                </item>
+                <item name="spare1" type="Spare"><len>2</len></item>
+                <item name="FST_LST" type="Fixed">
+                    <len>2</len>
                     <values>
                         <value val="0" dsc="Intermediate record of a contour"/>
                         <value val="1" dsc="Last record of a contour of at least two records"/>
@@ -133,19 +160,24 @@
                         <value val="3" dsc="First and only record, fully defining a contour"/>
                     </values>
                 </item>
-                <item name="CSN" type="Fixed"><len>8</len></item>
+                <item name="CSN" type="Fixed">
+                    <dsc>Contour Serial Number</dsc>
+                    <len>8</len>
+                </item>
             </items>
         </item>
-
         <item name="050" type="Repetitive">
             <dsc>Sequence of Contour Points in SPF Notation</dsc>
             <items>
-                <item name="X1" type="Fixed"><len>8</len></item>
-                <item name="Y1" type="Fixed"><len>8</len></item>
+                <item name="X1" type="Fixed">
+                    <len>8</len>
+                </item>
+                <item name="Y1" type="Fixed">
+                    <len>8</len>
+                </item>
             </items>
             <!-- TODO: convert... -->
         </item>
-
         <item name="090" type="Fixed">
             <dsc>Time of Day</dsc>
             <len>24</len>
@@ -155,30 +187,45 @@
                 <unit>s</unit>
             </convert>
         </item>
-
         <item name="100" type="Extended">
             <dsc>Processing Status</dsc>
             <len>(24,8)</len>
             <items>
                 <item name="F" type="Fixed">
+                    <dsc>Scaling Factor</dsc>
                     <len>5</len>
                     <convert><type>integer</type></convert>
                 </item>
-                <item name="R" type="Fixed"><len>3</len></item>
-                <item name="Q" type="Fixed"><len>15</len></item>
+                <item name="R" type="Fixed">
+                    <dsc>Current Reduction Stage in Use</dsc>
+                    <len>3</len>
+                </item>
+                <item name="Q" type="Fixed">
+                    <dsc>Processing Parameters</dsc>
+                    <len>15</len>
+                </item>
             </items>
         </item>
-
         <item name="110" type="Extended">
             <dsc>Station Configuration Status</dsc>
             <len>(8,8)</len>
+            <items>
+                <item name="DATA" type="Fixed">
+                    <dsc>Unspecified Data</dsc>
+                    <len>7</len>
+                </item>
+            </items>
         </item>
-
         <item name="120" type="Fixed">
-            <dsc>Total Number of Items Constituting One Weather Picture"</dsc>
+            <dsc>Total Number of Items Constituting One Weather Picture</dsc>
             <len>16</len>
+            <convert>
+                <type>unsigned integer</type>
+            </convert>
         </item>
-
+        <item name="RE" type="Explicit">
+            <dsc>Reserved Expansion Field</dsc>
+        </item>
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
         </item>
@@ -187,7 +234,6 @@
             <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
-
     <uaps>
         <uap>
             <item>010</item>
@@ -207,4 +253,3 @@
         </uap>
     </uaps>
 </category>
-

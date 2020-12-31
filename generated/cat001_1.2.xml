@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: c5f99466550648492334e9560df22606189cd6e8
+    sha1sum of the json input: 7e16a1f85e0d78a1153ee07aac7c029ac36b2f26
 -->
 
 <category cat="001" edition="1.2">
@@ -168,7 +168,7 @@
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
-                    <dsc>X-Component</dsc>
+                    <dsc>Y-Component</dsc>
                     <len>16</len>
                     <convert>
                         <type>decimal</type>

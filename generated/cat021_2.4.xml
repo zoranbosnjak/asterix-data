@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 2db60c80abef56806a0b6ed3ccab2652304b98b6
+    sha1sum of the json input: f111b2b8536fbcd680b1bd49546213822a83f870
 -->
 
 <category cat="021" edition="2.4">
@@ -352,9 +352,9 @@
                     <len>2</len>
                     <values>
                         <value val="3" dsc="Reserved"/>
-                        <value val="2" dsc="TOMRv whole seconds = (I021/075) Whole seconds - 1"/>
-                        <value val="1" dsc="TOMRv whole seconds = (I021/075) Whole seconds + 1"/>
-                        <value val="0" dsc="TOMRv whole seconds = (I021/075) Whole seconds"/>
+                        <value val="2" dsc="TOMRp whole seconds = (I021/075) Whole seconds - 1"/>
+                        <value val="1" dsc="TOMRp whole seconds = (I021/075) Whole seconds + 1"/>
+                        <value val="0" dsc="TOMRp whole seconds = (I021/075) Whole seconds"/>
                     </values>
                 </item>
                 <item name="TOMRP" type="Fixed">

@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 767a9b273ebd4f2dfc12f7e41ed129a9a828d36e
+    sha1sum of the json input: eea4223e9d7a8acfae1d5048dc4695283ed943ef
 -->
 
 <category cat="020" edition="1.9">
@@ -17,7 +17,7 @@
                     <len>8</len>
                 </item>
                 <item name="SIC" type="Fixed">
-                    <dsc>System Identification code</dsc>
+                    <dsc>System Identification Code</dsc>
                     <len>8</len>
                 </item>
             </items>
@@ -30,49 +30,49 @@
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Non-Mode S 1090MHz multilateration"/>
-                        <value val="1" dsc="no Non-Mode S 1090MHz multilat."/>
+                        <value val="1" dsc="No Non-Mode S 1090MHz multilat"/>
                     </values>
                 </item>
                 <item name="MS" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Mode-S 1090 MHz multilateration"/>
-                        <value val="1" dsc="no Mode-S 1090 MHz multilateration"/>
+                        <value val="1" dsc="No Mode-S 1090 MHz multilateration"/>
                     </values>
                 </item>
                 <item name="HF" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="HF multilateration"/>
-                        <value val="1" dsc="no HF multilateration"/>
+                        <value val="1" dsc="No HF multilateration"/>
                     </values>
                 </item>
                 <item name="VDL4" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="VDL Mode 4 multilateration"/>
-                        <value val="1" dsc="no VDL Mode 4 multilateration"/>
+                        <value val="1" dsc="No VDL Mode 4 multilateration"/>
                     </values>
                 </item>
                 <item name="UAT" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="UAT multilateration"/>
-                        <value val="1" dsc="no UAT multilateration"/>
+                        <value val="1" dsc="No UAT multilateration"/>
                     </values>
                 </item>
                 <item name="DME" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="DME/TACAN multilateration"/>
-                        <value val="1" dsc="no DME/TACAN multilateration"/>
+                        <value val="1" dsc="No DME/TACAN multilateration"/>
                     </values>
                 </item>
                 <item name="OT" type="Fixed">
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Other Technology Multilateration"/>
-                        <value val="1" dsc="no Other Technology Multilateration"/>
+                        <value val="1" dsc="No Other Technology Multilateration"/>
                     </values>
                 </item>
                 <item name="RAB" type="Fixed">
@@ -133,7 +133,7 @@
                 <item name="WE" type="Fixed">
                     <len>7</len>
                     <values>
-                        <value val="0" dsc="Not defined; never used."/>
+                        <value val="0" dsc="Not defined; never used"/>
                         <value val="1" dsc="Multipath Reply (Reflection)"/>
                         <value val="3" dsc="Split plot"/>
                         <value val="10" dsc="Phantom SSR plot"/>
@@ -178,7 +178,7 @@
             <dsc>Position in Cartesian Coordinates</dsc>
             <items>
                 <item name="X" type="Fixed">
-                    <dsc>x-coordinate</dsc>
+                    <dsc>X-coordinate</dsc>
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
@@ -189,7 +189,7 @@
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
-                    <dsc>y-coordinate</dsc>
+                    <dsc>Y-coordinate</dsc>
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
@@ -205,7 +205,7 @@
             <dsc>Mode-2 Code in Octal Representation</dsc>
             <items>
                 <item name="V" type="Fixed">
-                    <dsc>validated</dsc>
+                    <dsc>Validated</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
@@ -213,7 +213,7 @@
                     </values>
                 </item>
                 <item name="G" type="Fixed">
-                    <dsc>garbled</dsc>
+                    <dsc>Garbled</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
@@ -229,7 +229,7 @@
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
                 <item name="ABCD" type="Fixed">
-                    <dsc>Mode-2 reply in octal representation</dsc>
+                    <dsc>Mode-2 Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
             </items>
@@ -238,7 +238,7 @@
             <dsc>Mode-1 Code in Octal Representation</dsc>
             <items>
                 <item name="V" type="Fixed">
-                    <dsc>validated</dsc>
+                    <dsc>Validated</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
@@ -246,7 +246,7 @@
                     </values>
                 </item>
                 <item name="G" type="Fixed">
-                    <dsc>garbled</dsc>
+                    <dsc>Garbled</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
@@ -261,7 +261,7 @@
                     </values>
                 </item>
                 <item name="ABCD" type="Fixed">
-                    <dsc>Mode-1 Code in octal representation</dsc>
+                    <dsc>Mode-1 Code in Octal Representation</dsc>
                     <len>5</len>
                 </item>
             </items>
@@ -270,7 +270,7 @@
             <dsc>Mode-3/A Code in Octal Representation</dsc>
             <items>
                 <item name="V" type="Fixed">
-                    <dsc>validated</dsc>
+                    <dsc>Validated</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
@@ -278,7 +278,7 @@
                     </values>
                 </item>
                 <item name="G" type="Fixed">
-                    <dsc>garbled</dsc>
+                    <dsc>Garbled</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
@@ -294,7 +294,7 @@
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
                 <item name="ABCD" type="Fixed">
-                    <dsc>Mode-3/A reply in octal representation</dsc>
+                    <dsc>Mode-3/A Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
             </items>
@@ -303,7 +303,7 @@
             <dsc>Flight Level in Binary Representation</dsc>
             <items>
                 <item name="V" type="Fixed">
-                    <dsc>validated</dsc>
+                    <dsc>Validated</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
@@ -311,7 +311,7 @@
                     </values>
                 </item>
                 <item name="G" type="Fixed">
-                    <dsc>garbled</dsc>
+                    <dsc>Garbled</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
@@ -333,7 +333,7 @@
             <dsc>Mode C Code</dsc>
             <items>
                 <item name="V" type="Fixed">
-                    <dsc>validated</dsc>
+                    <dsc>Validated</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Code validated"/>
@@ -341,7 +341,7 @@
                     </values>
                 </item>
                 <item name="G" type="Fixed">
-                    <dsc>garbled</dsc>
+                    <dsc>Garbled</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="Default"/>
@@ -350,12 +350,12 @@
                 </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
                 <item name="ABCD" type="Fixed">
-                    <dsc>Mode-C reply in Gray notation</dsc>
+                    <dsc>Mode-C Reply in Gray Notation</dsc>
                     <len>12</len>
                 </item>
                 <item name="spare2" type="Spare"><len>4</len></item>
                 <item name="QC1" type="Fixed">
-                    <dsc>Quality pulse C1</dsc>
+                    <dsc>Quality Pulse C1</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse C1"/>
@@ -363,7 +363,7 @@
                     </values>
                 </item>
                 <item name="QA1" type="Fixed">
-                    <dsc>Quality pulse A1</dsc>
+                    <dsc>Quality Pulse A1</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse A1"/>
@@ -371,7 +371,7 @@
                     </values>
                 </item>
                 <item name="QC2" type="Fixed">
-                    <dsc>Quality pulse C2</dsc>
+                    <dsc>Quality Pulse C2</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse C2"/>
@@ -379,7 +379,7 @@
                     </values>
                 </item>
                 <item name="QA2" type="Fixed">
-                    <dsc>Quality pulse A2</dsc>
+                    <dsc>Quality Pulse A2</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse A2"/>
@@ -387,7 +387,7 @@
                     </values>
                 </item>
                 <item name="QC4" type="Fixed">
-                    <dsc>Quality pulse C4</dsc>
+                    <dsc>Quality Pulse C4</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse C4"/>
@@ -395,7 +395,7 @@
                     </values>
                 </item>
                 <item name="QA4" type="Fixed">
-                    <dsc>Quality pulse A4</dsc>
+                    <dsc>Quality Pulse A4</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse A4"/>
@@ -403,7 +403,7 @@
                     </values>
                 </item>
                 <item name="QB1" type="Fixed">
-                    <dsc>Quality pulse B1</dsc>
+                    <dsc>Quality Pulse B1</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse B1"/>
@@ -411,7 +411,7 @@
                     </values>
                 </item>
                 <item name="QD1" type="Fixed">
-                    <dsc>Quality pulse D1</dsc>
+                    <dsc>Quality Pulse D1</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse D1"/>
@@ -419,7 +419,7 @@
                     </values>
                 </item>
                 <item name="QB2" type="Fixed">
-                    <dsc>Quality pulse B2</dsc>
+                    <dsc>Quality Pulse B2</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse B2"/>
@@ -427,7 +427,7 @@
                     </values>
                 </item>
                 <item name="QD2" type="Fixed">
-                    <dsc>Quality pulse D2</dsc>
+                    <dsc>Quality Pulse D2</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse B2"/>
@@ -435,7 +435,7 @@
                     </values>
                 </item>
                 <item name="QB4" type="Fixed">
-                    <dsc>Quality pulse B4</dsc>
+                    <dsc>Quality Pulse B4</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse B4"/>
@@ -443,7 +443,7 @@
                     </values>
                 </item>
                 <item name="QD4" type="Fixed">
-                    <dsc>Quality pulse D4</dsc>
+                    <dsc>Quality Pulse D4</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="High quality pulse D4"/>
@@ -609,7 +609,7 @@
             <dsc>Communications/ACAS Capability and Flight Status</dsc>
             <items>
                 <item name="COM" type="Fixed">
-                    <dsc>Communications capability of the transponder</dsc>
+                    <dsc>Communications Capability of the Transponder</dsc>
                     <len>3</len>
                     <values>
                         <value val="0" dsc="No communications capability (surveillance only)"/>
@@ -646,7 +646,7 @@
                     </values>
                 </item>
                 <item name="ARC" type="Fixed">
-                    <dsc>Altitude reporting capability</dsc>
+                    <dsc>Altitude Reporting Capability</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="100 ft resolution"/>
@@ -654,7 +654,7 @@
                     </values>
                 </item>
                 <item name="AIC" type="Fixed">
-                    <dsc>Aircraft identification capability</dsc>
+                    <dsc>Aircraft Identification Capability</dsc>
                     <len>1</len>
                     <values>
                         <value val="0" dsc="No"/>
@@ -662,11 +662,11 @@
                     </values>
                 </item>
                 <item name="B1A" type="Fixed">
-                    <dsc>BDS 1,0 bit 16</dsc>
+                    <dsc>BDS 1,0 Bit 16</dsc>
                     <len>1</len>
                 </item>
                 <item name="B1B" type="Fixed">
-                    <dsc>BDS 1,0 bits 37/40</dsc>
+                    <dsc>BDS 1,0 Bits 37/40</dsc>
                     <len>4</len>
                 </item>
             </items>
@@ -685,7 +685,7 @@
                 </item>
                 <item name="spare1" type="Spare"><len>6</len></item>
                 <item name="CHR" type="Fixed">
-                    <dsc>Characters 1-8 (coded on 6 bits each) defining target identification</dsc>
+                    <dsc>Characters 1-8 (coded on 6 Bits each) Defining Target Identification</dsc>
                     <len>48</len>
                 </item>
             </items>
@@ -694,7 +694,7 @@
             <dsc>Mode S MB Data</dsc>
             <items>
                 <item name="MBData" type="Fixed">
-                    <dsc>56-bit message conveying Mode S Comm B message data</dsc>
+                    <dsc>56-bit Message Conveying Mode S Comm B Message Data</dsc>
                     <len>56</len>
                 </item>
                 <item name="BDS1" type="Fixed">
@@ -748,7 +748,7 @@
                     <len>7</len>
                     <values>
                         <value val="1" dsc="Towing aircraft"/>
-                        <value val="2" dsc="Follow me operation"/>
+                        <value val="2" dsc="FOLLOW-ME operation"/>
                         <value val="3" dsc="Runway check"/>
                         <value val="4" dsc="Emergency operation (fire, medical...)"/>
                         <value val="5" dsc="Work in progress (maintenance, birds scarer, sweepers...)"/>
@@ -829,7 +829,7 @@
             <dsc>Position Accuracy</dsc>
             <items>
                 <item name="DOP">
-                    <dsc>DOP of position</dsc>
+                    <dsc>DOP of Position</dsc>
                     <items>
                         <item name="X" type="Fixed">
                             <dsc>DOP (X-Component)</dsc>
