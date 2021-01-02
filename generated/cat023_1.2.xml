@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: c8f97468efc8c8655d939b8823e635b24ee6469f
+    sha1sum of the json input: 7fb1b58ab18790d5deb67703704de46014f7cab3
 -->
 
 <category cat="023" edition="1.2">
@@ -128,7 +128,7 @@
                     <dsc>Ground Station Status Reporting Period</dsc>
                     <len>7</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>s</unit>
                         <min>1.0</min>
@@ -165,11 +165,11 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>4</len></item>
-                <item name="SSSP" type="Fixed">
+                <item name="SSRP" type="Fixed">
                     <dsc>Service Status Reporting Period</dsc>
                     <len>7</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>s</unit>
                         <min>1.0</min>
@@ -208,6 +208,7 @@
                         <value val="1" dsc="Number of too old messages received"/>
                         <value val="2" dsc="Number of failed message conversions"/>
                         <value val="3" dsc="Total Number of messages received"/>
+                        <value val="4" dsc="Total Number of messages transmitted"/>
                         <value val="20" dsc="Number of TIS-B management messages received"/>
                         <value val="21" dsc="Number of Basic messages received"/>
                         <value val="22" dsc="Number of High Dynamic messages received"/>

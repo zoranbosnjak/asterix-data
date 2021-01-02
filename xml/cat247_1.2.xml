@@ -37,24 +37,22 @@
         </item>
         <item name="550" type="Repetitive">
             <dsc>Category Version Number Report</dsc>
-            <convert>
-                <type>CATver</type>
-            </convert>
             <items>
                 <item name="CAT" type="Fixed">
+                    <dsc>Category</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned integer</type>
                     </convert>
                 </item>
-                <item name="Mmain_ver_num" type="Fixed">
+                <item name="MAIN" type="Fixed">
                     <dsc>Main Version Number</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned integer</type>
                     </convert>
                 </item>
-                <item name="sub_ver_num" type="Fixed">
+                <item name="SUB" type="Fixed">
                     <dsc>Sub Version Number</dsc>
                     <len>8</len>
                     <convert>
@@ -80,5 +78,5 @@
             <item>SP</item>
             <item>RE</item>
         </uap>
-    </uaps></category>
-
+    </uaps>
+</category>

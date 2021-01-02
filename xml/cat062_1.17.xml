@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 14e1699cd2a5101984f9682ce5d6771493b8daf6
+    sha1sum of the json input: b5ece2d5a69ca3c2309c1823110f33b91ccead26
 -->
 
 <category cat="062" edition="1.17">
@@ -58,7 +58,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE3A" type="Fixed">
                     <dsc>Mode-3/A Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -462,8 +462,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
@@ -473,8 +473,8 @@
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                     </items>
@@ -498,7 +498,7 @@
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1000</min>
+                                <min>-1000.0</min>
                             </convert>
                         </item>
                     </items>
@@ -574,7 +574,7 @@
             <dsc>Track Mode 2 Code</dsc>
             <items>
                 <item name="spare1" type="Spare"><len>4</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE2" type="Fixed">
                     <dsc>Mode-2 Code in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -585,10 +585,10 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft</unit>
                 <min>-1500.0</min>
-                <max>150000</max>
+                <max>150000.0</max>
             </convert>
         </item>
         <item name="135">
@@ -601,7 +601,7 @@
                         <value val="1" dsc="QNH correction applied"/>
                     </values>
                 </item>
-                <item name="ALT" type="Fixed">
+                <item name="CTB" type="Fixed">
                     <dsc>Calculated Track Barometric Altitude</dsc>
                     <len>15</len>
                     <convert>
@@ -722,7 +722,7 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft/min</unit>
             </convert>
         </item>
@@ -738,19 +738,11 @@
                         <value val="3" dsc="Invalid"/>
                     </values>
                 </item>
-                <item name="spare" type="Spare"><len>6</len></item>
-                <item name="ID">
+                <item name="spare1" type="Spare"><len>6</len></item>
+                <item name="CHR" type="Fixed">
+                    <dsc>Characters 1-8 (Coded on 6 Bits Each) Defining Target Identification</dsc>
+                    <len>48</len>
                     <convert><type>ACID</type></convert>
-                    <items>
-                        <item name="C1" type="Fixed"><len>6</len></item>
-                        <item name="C2" type="Fixed"><len>6</len></item>
-                        <item name="C3" type="Fixed"><len>6</len></item>
-                        <item name="C4" type="Fixed"><len>6</len></item>
-                        <item name="C5" type="Fixed"><len>6</len></item>
-                        <item name="C6" type="Fixed"><len>6</len></item>
-                        <item name="C7" type="Fixed"><len>6</len></item>
-                        <item name="C8" type="Fixed"><len>6</len></item>
-                    </items>
                 </item>
             </items>
         </item>
@@ -758,7 +750,7 @@
             <dsc>Target Size and Orientation</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="LEN" type="Fixed">
+                <item name="LENGTH" type="Fixed">
                     <dsc>Length</dsc>
                     <len>7</len>
                     <convert>
@@ -767,7 +759,8 @@
                         <unit>m</unit>
                     </convert>
                 </item>
-                <item name="ORIENT" type="Fixed">
+                <item name="ORIENTATION" type="Fixed">
+                    <dsc>Orientation</dsc>
                     <len>7</len>
                     <convert>
                         <type>unsigned decimal</type>
@@ -1255,7 +1248,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>1.0/256</lsb>
                                 <unit>NM</unit>
-                                <max>256</max>
+                                <max>256.0</max>
                             </convert>
                         </item>
                         <item name="THETA" type="Fixed">
@@ -1303,8 +1296,8 @@
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>FL</unit>
-                                <min>-12</min>
-                                <max>1270</max>
+                                <min>-12.0</min>
+                                <max>1270.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1408,15 +1401,13 @@
                     <dsc>Indicated Airspeed/Mach No</dsc>
                     <items>
                         <item name="IM" type="Fixed">
-                            <dsc>Indicated Airspeed / Mach No</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Air Speed = IAS (LSB 2^-14 NM/s)"/>
-                                <value val="1" dsc="Air Speed = Mach (LSB 0.001)"/>
+                                <value val="0" dsc="Air Speed = IAS, LSB (Bit-1) = 2^-14 NM/s"/>
+                                <value val="1" dsc="Air Speed = Mach, LSB (Bit-1) = 0.001"/>
                             </values>
                         </item>
-                        <item name="AS" type="Fixed">
-                            <dsc>Air Speed</dsc>
+                        <item name="IAS" type="Fixed">
                             <len>15</len>
                         </item>
                     </items>
@@ -1428,8 +1419,8 @@
                         <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>kt</unit>
-                        <min>0</min>
-                        <max>2046</max>
+                        <min>0.0</min>
+                        <max>2046.0</max>
                     </convert>
                 </item>
                 <item name="SAL">
@@ -1439,27 +1430,27 @@
                             <len>1</len>
                             <values>
                                 <value val="0" dsc="No source information provided"/>
-                                <value val="1" dsc="Source Information provided"/>
+                                <value val="1" dsc="Source information provided"/>
                             </values>
                         </item>
                         <item name="SRC" type="Fixed">
                             <len>2</len>
                             <values>
                                 <value val="0" dsc="Unknown"/>
-                                <value val="1" dsc="Aircraft Altitude"/>
-                                <value val="2" dsc="FCU/MCP Selected Altitude"/>
-                                <value val="3" dsc="FMS Selected Altitude"/>
+                                <value val="1" dsc="Aircraft altitude"/>
+                                <value val="2" dsc="FCU/MCP selected altitude"/>
+                                <value val="3" dsc="FMS selected altitude"/>
                             </values>
                         </item>
                         <item name="ALT" type="Fixed">
-                            <dsc>Altitude in Two's Complement Form</dsc>
+                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
                             <len>13</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1300</min>
-                                <max>100000</max>
+                                <min>-1300.0</min>
+                                <max>100000.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1491,15 +1482,15 @@
                                 <value val="1" dsc="Active"/>
                             </values>
                         </item>
-                        <item name="Altitude" type="Fixed">
-                            <dsc>Altitude</dsc>
+                        <item name="ALT" type="Fixed">
+                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
                             <len>13</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>25</lsb>
                                 <unit>ft</unit>
-                                <min>-1300</min>
-                                <max>100000</max>
+                                <min>-1300.0</min>
+                                <max>100000.0</max>
                             </convert>
                         </item>
                     </items>
@@ -1508,36 +1499,23 @@
                     <dsc>Trajectory Intent Status</dsc>
                     <len>(8,8)</len>
                     <items>
-                        <item name="NAV_M" type="Fixed">
+                        <item name="NAV" type="Fixed">
                             <dsc>TID Available</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Trajectory Intent Data is available for this aircraft"/>
-                                <value val="1" dsc="Trajectory Intent Data is not available for this aircraft"/>
+                                <value val="0" dsc="Trajectory intent data is available for this aircraft"/>
+                                <value val="1" dsc="Trajectory intent data is not available for this aircraft"/>
                             </values>
                         </item>
-                        <item name="NVB_M" type="Fixed">
+                        <item name="NVB" type="Fixed">
                             <dsc>TID Valid</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Trajectory Intent Data is valid"/>
-                                <value val="1" dsc="Trajectory Intent Data is not valid"/>
+                                <value val="0" dsc="Trajectory intent data is valid"/>
+                                <value val="1" dsc="Trajectory intent data is not valid"/>
                             </values>
                         </item>
-                        <item name="spare_M" type="Spare"><len>5</len></item>
-                        <item name="NAV_S" type="Fixed"><len>1</len>
-                            <values>
-                                <value val="0" dsc="Trajectory Intent Data is available for this aircraft"/>
-                                <value val="1" dsc="Trajectory Intent Data is not available for this aircraft"/>
-                            </values>
-                        </item>
-                        <item name="NVB_S" type="Fixed"><len>1</len>
-                            <values>
-                                <value val="0" dsc="Trajectory Intent Data is valid"/>
-                                <value val="1" dsc="Trajectory Intent Data is not valid"/>
-                            </values>
-                        </item>
-                        <item name="spare_S" type="Spare"><len>5</len></item>
+                        <item name="spare1" type="Spare"><len>5</len></item>
                     </items>
                 </item>
                 <item name="TID" type="Repetitive">
@@ -1559,41 +1537,41 @@
                                 <value val="1" dsc="TCP non-compliance"/>
                             </values>
                         </item>
-                        <item name="TCPNUM" type="Fixed">
+                        <item name="TCPN" type="Fixed">
                             <dsc>Trajectory Change Point Number</dsc>
                             <len>6</len>
                         </item>
                         <item name="ALT" type="Fixed">
-                            <dsc>Altitude in Two's Complement Form</dsc>
+                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>10</lsb>
                                 <unit>ft</unit>
-                                <min>-1500</min>
-                                <max>150000</max>
+                                <min>-1500.0</min>
+                                <max>150000.0</max>
                             </convert>
                         </item>
                         <item name="LAT" type="Fixed">
-                            <dsc>Latitude in WGS.84 in Two's Complement</dsc>
+                            <dsc>Latitude in WGS.84 in Two&apos;s Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
-                            <dsc>Longitude in WGS.84 in Two's Complement</dsc>
+                            <dsc>Longitude in WGS.84 in Two&apos;s Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                         <item name="PT" type="Fixed">
@@ -1656,7 +1634,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>0.01</lsb>
                                 <unit>Nm</unit>
-                                <min>0</min>
+                                <min>0.0</min>
                                 <max>655.35</max>
                             </convert>
                         </item>
@@ -1763,7 +1741,7 @@
                             <dsc>Ground Bit Set</dsc>
                             <len>1</len>
                             <values>
-                                <value val="0" dsc="Transponder Ground Bit not set or unknown"/>
+                                <value val="0" dsc="Transponder ground bit not set or unknown"/>
                                 <value val="1" dsc="Transponder Ground Bit set"/>
                             </values>
                         </item>
@@ -1793,7 +1771,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>ft/min</unit>
                     </convert>
                 </item>
@@ -1802,7 +1780,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>ft/min</unit>
                     </convert>
                 </item>
@@ -1813,8 +1791,8 @@
                         <type>decimal</type>
                         <lsb>0.01</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
                 <item name="TAR">
@@ -1832,14 +1810,14 @@
                         </item>
                         <item name="spare1" type="Spare"><len>6</len></item>
                         <item name="ROT" type="Fixed">
-                            <dsc>Rate of Turn in Two's Complement Form</dsc>
+                            <dsc>Rate of Turn in Two&apos;s Complement Form</dsc>
                             <len>7</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>deg/s</unit>
-                                <min>-15</min>
-                                <max>15</max>
+                                <min>-15.0</min>
+                                <max>15.0</max>
                             </convert>
                         </item>
                         <item name="spare2" type="Spare"><len>1</len></item>
@@ -1854,15 +1832,15 @@
                         <unit>deg</unit>
                     </convert>
                 </item>
-                <item name="GSP" type="Fixed">
+                <item name="GS" type="Fixed">
                     <dsc>Ground Speed</dsc>
                     <len>16</len>
                     <convert>
-                        <type>unsigned decimal</type>
+                        <type>decimal</type>
                         <lsb>1.0/16384</lsb>
                         <unit>NM/s</unit>
-                        <min>-2</min>
-                        <max>2</max>
+                        <min>-2.0</min>
+                        <max>2.0</max>
                     </convert>
                 </item>
                 <item name="VUN" type="Fixed">
@@ -1905,40 +1883,40 @@
                             </values>
                         </item>
                         <item name="spare1" type="Spare"><len>4</len></item>
-                        <item name="WS D" type="Fixed">
+                        <item name="WSD" type="Fixed">
                             <dsc>Wind Speed</dsc>
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
                                 <lsb>1</lsb>
                                 <unit>kt</unit>
-                                <min>0</min>
-                                <max>300</max>
+                                <min>0.0</min>
+                                <max>300.0</max>
                             </convert>
                         </item>
-                        <item name="WD_D" type="Fixed">
+                        <item name="WDD" type="Fixed">
                             <dsc>Wind Direction</dsc>
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
                                 <lsb>1</lsb>
                                 <unit>deg</unit>
-                                <min>1</min>
-                                <max>360</max>
+                                <min>1.0</min>
+                                <max>360.0</max>
                             </convert>
                         </item>
-                        <item name="TMP_D" type="Fixed">
+                        <item name="TMPD" type="Fixed">
                             <dsc>Temperature in Degrees Celsius</dsc>
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>1.0/4</lsb>
                                 <unit>degC</unit>
-                                <min>-100</min>
-                                <max>100</max>
+                                <min>-100.0</min>
+                                <max>100.0</max>
                             </convert>
                         </item>
-                        <item name="TRB_D" type="Fixed">
+                        <item name="TRBD" type="Fixed">
                             <dsc>Turbulence</dsc>
                             <len>8</len>
                             <convert>
@@ -1953,12 +1931,12 @@
                     <dsc>Emitter Category</dsc>
                     <len>8</len>
                     <values>
-                        <value val="1" dsc="Light aircraft less than 7000 kg"/>
+                        <value val="1" dsc="Light aircraft =&lt; 7000 kg"/>
                         <value val="2" dsc="Reserved"/>
-                        <value val="3" dsc="More than 7000kg, less than 136000kg"/>
+                        <value val="3" dsc="7000 kg &lt; medium aircraft &lt; 136000 kg"/>
                         <value val="4" dsc="Reserved"/>
-                        <value val="5" dsc="More than 136000kg - heavy aircraft"/>
-                        <value val="6" dsc="Highly manoeuvrable (5g acceleration capability) and high speed (more than 400 knots cruise)"/>
+                        <value val="5" dsc="136000 kg &lt;= heavy aircraft"/>
+                        <value val="6" dsc="Highly manoeuvrable (5g acceleration capability) and high speed (&gt;400 knots cruise)"/>
                         <value val="7" dsc="Reserved"/>
                         <value val="8" dsc="Reserved"/>
                         <value val="9" dsc="Reserved"/>
@@ -1983,25 +1961,25 @@
                     <dsc>Position</dsc>
                     <items>
                         <item name="LAT" type="Fixed">
-                            <dsc>Latitude in WGS.84 in Two's Complement Form</dsc>
+                            <dsc>Latitude in WGS.84 in Two&apos;s Complement Form</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
                         <item name="LON" type="Fixed">
-                            <dsc>Longitude in WGS.84 in Two's Complement Form</dsc>
+                            <dsc>Longitude in WGS.84 in Two&apos;s Complement Form</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                     </items>
@@ -2011,10 +1989,10 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>ft</unit>
-                        <min>-1500</min>
-                        <max>150000</max>
+                        <min>-1500.0</min>
+                        <max>150000.0</max>
                     </convert>
                 </item>
                 <item name="PUN">
@@ -2028,9 +2006,20 @@
                     </items>
                 </item>
                 <item name="MB" type="Repetitive">
-                    <!-- TODO: extend description of subfields below... -->
+                    <dsc>MODE S MB DATA</dsc>
                     <items>
-                        <item name="item" type="Fixed"><len>64</len></item>
+                        <item name="DATA" type="Fixed">
+                            <dsc>MB Data</dsc>
+                            <len>56</len>
+                        </item>
+                        <item name="BDS1" type="Fixed">
+                            <dsc>Comm B Data Buffer Store 1 Address</dsc>
+                            <len>4</len>
+                        </item>
+                        <item name="BDS2" type="Fixed">
+                            <dsc>Comm B Data Buffer Store 2 Address</dsc>
+                            <len>4</len>
+                        </item>
                     </items>
                 </item>
                 <item name="IAR" type="Fixed">
@@ -2040,18 +2029,18 @@
                         <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>kt</unit>
-                        <min>0</min>
-                        <max>1100</max>
+                        <min>0.0</min>
+                        <max>1100.0</max>
                     </convert>
                 </item>
-                <item name="MACH" type="Fixed">
+                <item name="MAC" type="Fixed">
                     <dsc>Mach Number</dsc>
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
                         <lsb>0.008</lsb>
                         <unit>Mach</unit>
-                        <min>0</min>
+                        <min>0.0</min>
                         <max>4.096</max>
                     </convert>
                 </item>
@@ -2065,7 +2054,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>0.1</lsb>
                                 <unit>mb</unit>
-                                <min>0</min>
+                                <min>0.0</min>
                                 <max>409.5</max>
                             </convert>
                         </item>
@@ -2112,7 +2101,6 @@
                             <len>27</len>
                             <convert>
                                 <type>unsigned integer</type>
-                                <unit></unit>
                                 <min>0</min>
                                 <max>99999999</max>
                             </convert>
@@ -2122,7 +2110,7 @@
                 <item name="FCT">
                     <dsc>Flight Category</dsc>
                     <items>
-                        <item name="GAT_OAT" type="Fixed">
+                        <item name="GATOAT" type="Fixed">
                             <len>2</len>
                             <values>
                                 <value val="0" dsc="Unknown"/>
@@ -2131,7 +2119,7 @@
                                 <value val="3" dsc="Not applicable"/>
                             </values>
                         </item>
-                        <item name="FR1_FR2" type="Fixed">
+                        <item name="FR1FR2" type="Fixed">
                             <len>2</len>
                             <values>
                                 <value val="0" dsc="Instrument Flight Rules"/>
@@ -2201,7 +2189,7 @@
                     <dsc>Current Cleared Flight Level</dsc>
                     <len>16</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>FL</unit>
                     </convert>
@@ -2255,7 +2243,7 @@
                             <dsc>Hours</dsc>
                             <len>5</len>
                             <convert>
-                                <type>unsigned decimal</type>
+                                <type>unsigned integer</type>
                                 <min>0</min>
                                 <max>23</max>
                             </convert>
@@ -2265,7 +2253,7 @@
                             <dsc>Minutes</dsc>
                             <len>6</len>
                             <convert>
-                                <type>unsigned decimal</type>
+                                <type>unsigned integer</type>
                                 <min>0</min>
                                 <max>59</max>
                             </convert>
@@ -2283,7 +2271,7 @@
                             <dsc>Seconds</dsc>
                             <len>6</len>
                             <convert>
-                                <type>unsigned decimal</type>
+                                <type>unsigned integer</type>
                                 <min>0</min>
                                 <max>59</max>
                             </convert>
@@ -2340,7 +2328,7 @@
                                 <value val="1" dsc="Valid Mode 3/A available"/>
                             </values>
                         </item>
-                        <item name="ABCD" type="Fixed">
+                        <item name="MODE3A" type="Fixed">
                             <dsc>Mode-3/A Reply in Octal Representation</dsc>
                             <len>12</len>
                         </item>
@@ -2386,7 +2374,6 @@
                         <type>decimal</type>
                         <lsb>1.0/2</lsb>
                         <unit>m</unit>
-                        <max>16.383</max>
                     </convert>
                 </item>
                 <item name="APW">
@@ -2417,7 +2404,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>ft</unit>
                     </convert>
                 </item>
@@ -2481,7 +2468,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>ft/min</unit>
                     </convert>
                 </item>
@@ -2491,10 +2478,22 @@
             <dsc>Composed Track Number</dsc>
             <len>(24,24)</len>
             <items>
-                <item name="SUI_M" type="Fixed"><len>8</len></item>
-                <item name="STN_M" type="Fixed"><len>15</len></item>
-                <item name="SUI_S" type="Fixed"><len>8</len></item>
-                <item name="STN_S" type="Fixed"><len>15</len></item>
+                <item name="MIDENT" type="Fixed">
+                    <dsc>Master System Unit Identification</dsc>
+                    <len>8</len>
+                </item>
+                <item name="MTRACK" type="Fixed">
+                    <dsc>Master System Track Number</dsc>
+                    <len>15</len>
+                </item>
+                <item name="SIDENT" type="Fixed">
+                    <dsc>Slave System Unit Identification</dsc>
+                    <len>8</len>
+                </item>
+                <item name="STRACK" type="Fixed">
+                    <dsc>Slave System Track Number</dsc>
+                    <len>15</len>
+                </item>
             </items>
         </item>
         <item name="RE" type="Explicit">
@@ -2544,4 +2543,3 @@
         </uap>
     </uaps>
 </category>
-

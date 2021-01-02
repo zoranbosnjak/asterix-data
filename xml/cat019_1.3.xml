@@ -196,7 +196,7 @@
             <dsc>Reference Transponder Detailed Status</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="REFTr1" type="Fixed">
+                <item name="REFTR1" type="Fixed">
                     <dsc>Ref Trans 1 Status</dsc>
                     <len>2</len>
                     <values>
@@ -206,7 +206,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
-                <item name="REFTr2" type="Fixed">
+                <item name="REFTR2" type="Fixed">
                     <dsc>Ref Trans 2 Status</dsc>
                     <len>2</len>
                     <values>
@@ -216,7 +216,7 @@
                     </values>
                 </item>
                 <item name="spare2" type="Spare"><len>1</len></item>
-                <item name="REFTr3" type="Fixed">
+                <item name="REFTR3" type="Fixed">
                     <dsc>Ref Trans 3 Status</dsc>
                     <len>2</len>
                     <values>
@@ -226,7 +226,7 @@
                     </values>
                 </item>
                 <item name="spare3" type="Spare"><len>2</len></item>
-                <item name="REFTr4" type="Fixed">
+                <item name="REFTR4" type="Fixed">
                     <dsc>Ref Trans 4 Status</dsc>
                     <len>2</len>
                     <values>
@@ -248,8 +248,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -259,8 +259,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -272,8 +272,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>m</unit>
-                <min>-8192</min>
-                <max>8192</max>
+                <min>-8192.0</min>
+                <max>8192.0</max>
             </convert>
         </item>
         <item name="620" type="Fixed">

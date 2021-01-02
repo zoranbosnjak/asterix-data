@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: c5f99466550648492334e9560df22606189cd6e8
+    sha1sum of the json input: a76597e17869cb6e179b6af62037a97e2ffc9575
 -->
 
 <category cat="001" edition="1.2">
@@ -40,7 +40,7 @@
                         <value val="1" dsc="Simulated plot or track"/>
                     </values>
                 </item>
-                <item name="SSR_PSR" type="Fixed">
+                <item name="SSRPSR" type="Fixed">
                     <dsc>Radar Detection in Last Antenna Scan</dsc>
                     <len>2</len>
                     <values>
@@ -78,7 +78,7 @@
                         <value val="1" dsc="Test target indicator"/>
                     </values>
                 </item>
-                <item name="DS1_DS2" type="Fixed">
+                <item name="DS1DS2" type="Fixed">
                     <dsc>Radar Detection in Last Antenna Scan</dsc>
                     <len>2</len>
                     <values>
@@ -109,7 +109,7 @@
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="W_E" type="Fixed">
+                <item name="WE" type="Fixed">
                     <dsc>WEVALUE</dsc>
                     <len>7</len>
                     <values>
@@ -132,7 +132,7 @@
             </items>
         </item>
         <item name="040">
-            <dsc>Measured Position in Polar Coordinates</dsc>
+            <dsc>Measured Position in Polar Co-ordinates</dsc>
             <items>
                 <item name="RHO" type="Fixed">
                     <len>16</len>
@@ -140,7 +140,7 @@
                         <type>unsigned decimal</type>
                         <lsb>1.0/128</lsb>
                         <unit>NM</unit>
-                        <max>512</max>
+                        <max>512.0</max>
                     </convert>
                 </item>
                 <item name="THETA" type="Fixed">
@@ -154,7 +154,7 @@
             </items>
         </item>
         <item name="042">
-            <dsc>Calculated Position in Cartesian Coordinates</dsc>
+            <dsc>Calculated Position in Cartesian Co-ordinates</dsc>
             <items>
                 <item name="X" type="Fixed">
                     <dsc>X-Component</dsc>
@@ -163,8 +163,8 @@
                         <type>decimal</type>
                         <lsb>1.0/64</lsb>
                         <unit>NM</unit>
-                        <min>-512</min>
-                        <max>512</max>
+                        <min>-512.0</min>
+                        <max>512.0</max>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
@@ -174,8 +174,8 @@
                         <type>decimal</type>
                         <lsb>1.0/64</lsb>
                         <unit>NM</unit>
-                        <min>-512</min>
-                        <max>512</max>
+                        <min>-512.0</min>
+                        <max>512.0</max>
                     </convert>
                 </item>
             </items>
@@ -214,8 +214,91 @@
         <item name="060">
             <dsc>Mode-2 Code Confidence Indicator</dsc>
             <items>
-                <item name="spare" type="Spare"><len>4</len></item>
-                <item name="QX" type="Fixed"><len>12</len></item>
+                <item name="spare1" type="Spare"><len>4</len></item>
+                <item name="QA4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A4"/>
+                        <value val="1" dsc="Low quality pulse A4"/>
+                    </values>
+                </item>
+                <item name="QA2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A2"/>
+                        <value val="1" dsc="Low quality pulse A2"/>
+                    </values>
+                </item>
+                <item name="QA1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A1"/>
+                        <value val="1" dsc="Low quality pulse A1"/>
+                    </values>
+                </item>
+                <item name="QB4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B4"/>
+                        <value val="1" dsc="Low quality pulse B4"/>
+                    </values>
+                </item>
+                <item name="QB2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B2"/>
+                        <value val="1" dsc="Low quality pulse B2"/>
+                    </values>
+                </item>
+                <item name="QB1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B1"/>
+                        <value val="1" dsc="Low quality pulse B1"/>
+                    </values>
+                </item>
+                <item name="QC4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C4"/>
+                        <value val="1" dsc="Low quality pulse C4"/>
+                    </values>
+                </item>
+                <item name="QC2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C2"/>
+                        <value val="1" dsc="Low quality pulse C2"/>
+                    </values>
+                </item>
+                <item name="QC1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C1"/>
+                        <value val="1" dsc="Low quality pulse C1"/>
+                    </values>
+                </item>
+                <item name="QD4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D4"/>
+                        <value val="1" dsc="Low quality pulse D4"/>
+                    </values>
+                </item>
+                <item name="QD2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D2"/>
+                        <value val="1" dsc="Low quality pulse D2"/>
+                    </values>
+                </item>
+                <item name="QD1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D1"/>
+                        <value val="1" dsc="Low quality pulse D1"/>
+                    </values>
+                </item>
             </items>
         </item>
         <item name="070">
@@ -243,7 +326,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE3A" type="Fixed">
                     <dsc>Mode-3/A Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -252,8 +335,91 @@
         <item name="080">
             <dsc>Mode-3/A Code Confidence Indicator</dsc>
             <items>
-                <item name="spare" type="Spare"><len>4</len></item>
-                <item name="QX" type="Fixed"><len>12</len></item>
+                <item name="spare1" type="Spare"><len>4</len></item>
+                <item name="QA4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A4"/>
+                        <value val="1" dsc="Low quality pulse A4"/>
+                    </values>
+                </item>
+                <item name="QA2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A2"/>
+                        <value val="1" dsc="Low quality pulse A2"/>
+                    </values>
+                </item>
+                <item name="QA1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A1"/>
+                        <value val="1" dsc="Low quality pulse A1"/>
+                    </values>
+                </item>
+                <item name="QB4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B4"/>
+                        <value val="1" dsc="Low quality pulse B4"/>
+                    </values>
+                </item>
+                <item name="QB2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B2"/>
+                        <value val="1" dsc="Low quality pulse B2"/>
+                    </values>
+                </item>
+                <item name="QB1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B1"/>
+                        <value val="1" dsc="Low quality pulse B1"/>
+                    </values>
+                </item>
+                <item name="QC4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C4"/>
+                        <value val="1" dsc="Low quality pulse C4"/>
+                    </values>
+                </item>
+                <item name="QC2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C2"/>
+                        <value val="1" dsc="Low quality pulse C2"/>
+                    </values>
+                </item>
+                <item name="QC1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C1"/>
+                        <value val="1" dsc="Low quality pulse C1"/>
+                    </values>
+                </item>
+                <item name="QD4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D4"/>
+                        <value val="1" dsc="Low quality pulse D4"/>
+                    </values>
+                </item>
+                <item name="QD2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D2"/>
+                        <value val="1" dsc="Low quality pulse D2"/>
+                    </values>
+                </item>
+                <item name="QD1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D1"/>
+                        <value val="1" dsc="Low quality pulse D1"/>
+                    </values>
+                </item>
             </items>
         </item>
         <item name="090">
@@ -273,7 +439,7 @@
                         <value val="1" dsc="Garbled code"/>
                     </values>
                 </item>
-                <item name="HEIGHT" type="Fixed">
+                <item name="HGT" type="Fixed">
                     <dsc>Mode-C HEIGHT</dsc>
                     <len>14</len>
                     <convert>
@@ -302,9 +468,95 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
-                <item name="HEIGHT" type="Fixed"><len>12</len></item>
+                <item name="MODEC" type="Fixed">
+                    <dsc>Mode-C Reply in Gray Notation</dsc>
+                    <len>12</len>
+                </item>
                 <item name="spare2" type="Spare"><len>4</len></item>
-                <item name="QUALITY" type="Fixed"><len>12</len></item>
+                <item name="QC1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C1"/>
+                        <value val="1" dsc="Low quality pulse C1"/>
+                    </values>
+                </item>
+                <item name="QA1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A1"/>
+                        <value val="1" dsc="Low quality pulse A1"/>
+                    </values>
+                </item>
+                <item name="QC2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C2"/>
+                        <value val="1" dsc="Low quality pulse C2"/>
+                    </values>
+                </item>
+                <item name="QA2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A2"/>
+                        <value val="1" dsc="Low quality pulse A2"/>
+                    </values>
+                </item>
+                <item name="QC4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse C4"/>
+                        <value val="1" dsc="Low quality pulse C4"/>
+                    </values>
+                </item>
+                <item name="QA4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse A4"/>
+                        <value val="1" dsc="Low quality pulse A4"/>
+                    </values>
+                </item>
+                <item name="QB1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B1"/>
+                        <value val="1" dsc="Low quality pulse B1"/>
+                    </values>
+                </item>
+                <item name="QD1" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D1"/>
+                        <value val="1" dsc="Low quality pulse D1"/>
+                    </values>
+                </item>
+                <item name="QB2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B2"/>
+                        <value val="1" dsc="Low quality pulse B2"/>
+                    </values>
+                </item>
+                <item name="QD2" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D2"/>
+                        <value val="1" dsc="Low quality pulse D2"/>
+                    </values>
+                </item>
+                <item name="QB4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse B4"/>
+                        <value val="1" dsc="Low quality pulse B4"/>
+                    </values>
+                </item>
+                <item name="QD4" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="High quality pulse D4"/>
+                        <value val="1" dsc="Low quality pulse D4"/>
+                    </values>
+                </item>
             </items>
         </item>
         <item name="120" type="Fixed">
@@ -436,28 +688,47 @@
             </items>
         </item>
         <item name="200">
-            <dsc>Calculated Track Velocity in Polar Coordinates</dsc>
+            <dsc>Calculated Track Velocity in Polar Co-ordinates</dsc>
             <items>
-                <item name="GS" type="Fixed"><len>16</len></item>
-                <item name="CH" type="Fixed"><len>16</len></item>
+                <item name="GSP" type="Fixed">
+                    <dsc>Calculated Groundspeed</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/16384</lsb>
+                        <unit>NM/s</unit>
+                    </convert>
+                </item>
+                <item name="HDG" type="Fixed">
+                    <dsc>Calculated Heading</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
         <item name="210" type="Extended">
             <dsc>Track Quality</dsc>
             <len>(8,8)</len>
+            <items>
+                <item name="QI" type="Fixed">
+                    <dsc>Relative Track Quality</dsc>
+                    <len>7</len>
+                </item>
+            </items>
         </item>
-
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
         </item>
-
-        <item name="RFS" type="Rfs">
+        <item name="RFS" type="Explicit">
             <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
     <uaps>
-        <plot>
+        <uapPlot>
             <item>010</item>
             <item>020</item>
             <item>040</item>
@@ -478,10 +749,9 @@
             <item></item>
             <item></item>
             <item>SP</item>
-            <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
-        </plot>
-
-        <track>
+            <item>RFS</item>
+        </uapPlot>
+        <uapTrack>
             <item>010</item>
             <item>020</item>
             <item>161</item>
@@ -502,9 +772,8 @@
             <item>060</item>
             <item>030</item>
             <item>SP</item>
-            <item></item>    <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+            <item>RFS</item>
             <item>150</item>
-        </track>
+        </uapTrack>
     </uaps>
 </category>
-

@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: aa7a8a13f2776e86b385082ab3dcd0298b2e5e1a
+    sha1sum of the json input: 0b39e75a123d3174e0e5de4e5df307a4d4e0de04
 -->
 
 <category cat="011" edition="1.2">
@@ -375,6 +375,7 @@
                 <item name="TID" type="Fixed">
                     <dsc>Target Identification</dsc>
                     <len>48</len>
+                    <convert><type>ACID</type></convert>
                 </item>
             </items>
         </item>
@@ -576,7 +577,20 @@
             <items>
                 <item name="MB" type="Repetitive">
                     <dsc>BDS</dsc>
-                    <len>8</len>
+                    <items>
+                        <item name="DATA" type="Fixed">
+                            <dsc>MB Data</dsc>
+                            <len>56</len>
+                        </item>
+                        <item name="BDS1" type="Fixed">
+                            <dsc>Comm B Data Buffer Store 1 Address</dsc>
+                            <len>4</len>
+                        </item>
+                        <item name="BDS2" type="Fixed">
+                            <dsc>Comm B Data Buffer Store 2 Address</dsc>
+                            <len>4</len>
+                        </item>
+                    </items>
                 </item>
                 <item name="ADR" type="Fixed">
                     <dsc>24 Bits Aircraft Address</dsc>
@@ -1059,7 +1073,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.5</lsb>
+                        <lsb>1.0/2</lsb>
                         <unit>m</unit>
                     </convert>
                 </item>

@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: ccebe0e6433ea112199d1e95cff86cf92939f9a2
+    sha1sum of the json input: 225e5bb98ff530ad58773fb65b11eddcec3d4e90
 -->
 
 <category cat="008" edition="1.2">
@@ -86,15 +86,15 @@
         <item name="034" type="Repetitive">
             <dsc>Sequence of Polar Vectors in SPF Notation</dsc>
             <items>
-                <item name="SR" type="Fixed">
+                <item name="STR" type="Fixed">
                     <dsc>Start Range</dsc>
                     <len>8</len>
                 </item>
-                <item name="ER" type="Fixed">
+                <item name="ENDR" type="Fixed">
                     <dsc>End Range</dsc>
                     <len>8</len>
                 </item>
-                <item name="AZIMUTH" type="Fixed">
+                <item name="AZ" type="Fixed">
                     <dsc>Azimuth</dsc>
                     <len>16</len>
                     <convert>
@@ -108,11 +108,19 @@
         <item name="036" type="Repetitive">
             <dsc>Sequence of Cartesian Vectors in SPF Notation</dsc>
             <items>
-                <item name="X" type="Fixed"><len>8</len><convert><type>integer</type></convert></item>
-                <item name="Y" type="Fixed"><len>8</len><convert><type>integer</type></convert></item>
-                <item name="LENGTH" type="Fixed"><len>8</len><convert><type>unsigned integer</type></convert></item>
+                <item name="X" type="Fixed">
+                    <dsc>X-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="Y" type="Fixed">
+                    <dsc>Y-Component</dsc>
+                    <len>8</len>
+                </item>
+                <item name="LENGTH" type="Fixed">
+                    <dsc>Length</dsc>
+                    <len>8</len>
+                </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
         <item name="038" type="Repetitive">
             <dsc>Sequence of Weather Vectors in SPF Notation</dsc>
@@ -134,7 +142,6 @@
                     <len>8</len>
                 </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
         <item name="040">
             <dsc>Contour Identifier</dsc>
@@ -151,7 +158,7 @@
                     <len>3</len>
                 </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
-                <item name="FST_LST" type="Fixed">
+                <item name="FSTLST" type="Fixed">
                     <len>2</len>
                     <values>
                         <value val="0" dsc="Intermediate record of a contour"/>
@@ -176,7 +183,6 @@
                     <len>8</len>
                 </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
         <item name="090" type="Fixed">
             <dsc>Time of Day</dsc>
@@ -194,7 +200,11 @@
                 <item name="F" type="Fixed">
                     <dsc>Scaling Factor</dsc>
                     <len>5</len>
-                    <convert><type>integer</type></convert>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1</lsb>
+                        <unit></unit>
+                    </convert>
                 </item>
                 <item name="R" type="Fixed">
                     <dsc>Current Reduction Stage in Use</dsc>
@@ -223,14 +233,10 @@
                 <type>unsigned integer</type>
             </convert>
         </item>
-        <item name="RE" type="Explicit">
-            <dsc>Reserved Expansion Field</dsc>
-        </item>
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
         </item>
-
-        <item name="RFS" type="Rfs">
+        <item name="RFS" type="Explicit">
             <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
@@ -249,7 +255,7 @@
             <item>120</item>
             <item>038</item>
             <item>SP</item>
-            <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+            <item>RFS</item>
         </uap>
     </uaps>
 </category>

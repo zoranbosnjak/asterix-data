@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 6d6d079a876425719392c80e18b7e7d58c5c5d73
+    sha1sum of the json input: 69afd1682c7e740294de0ee1968f5ddc64502435
 -->
 
 <category cat="002" edition="1.0">
@@ -141,19 +141,50 @@
         <item name="100">
             <dsc>Dynamic Window Type 1</dsc>
             <items>
-                <item name="RHO_START" type="Fixed"><len>16</len></item>
-                <item name="RHO_END" type="Fixed"><len>16</len></item>
-                <item name="THETA_START" type="Fixed"><len>16</len></item>
-                <item name="THETA_END" type="Fixed"><len>16</len></item>
+                <item name="RS" type="Fixed">
+                    <dsc>Rho Start</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <max>512.0</max>
+                    </convert>
+                </item>
+                <item name="RE" type="Fixed">
+                    <dsc>Rho End</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>NM</unit>
+                        <max>512.0</max>
+                    </convert>
+                </item>
+                <item name="TS" type="Fixed">
+                    <dsc>Theta Start</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
+                <item name="TE" type="Fixed">
+                    <dsc>Theta End</dsc>
+                    <len>16</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>360.0/65536</lsb>
+                        <unit>deg</unit>
+                    </convert>
+                </item>
             </items>
-            <!-- TODO: convert... -->
         </item>
-
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
         </item>
-
-        <item name="RFS" type="Rfs">
+        <item name="RFS" type="Explicit">
             <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
@@ -172,8 +203,7 @@
             <item>080</item>
             <item></item>
             <item>SP</item>
-            <!--    <item>RFS</item>  TODO: Random Field Sequencing... -->
+            <item>RFS</item>
         </uap>
     </uaps>
 </category>
-

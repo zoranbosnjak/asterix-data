@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: ccebe0e6433ea112199d1e95cff86cf92939f9a2
+    sha1sum of the json input: 225e5bb98ff530ad58773fb65b11eddcec3d4e90
 -->
 
 <category cat="008" edition="1.2">
@@ -116,7 +116,7 @@
                     <dsc>Y-Component</dsc>
                     <len>8</len>
                 </item>
-                <item name="L" type="Fixed">
+                <item name="LENGTH" type="Fixed">
                     <dsc>Length</dsc>
                     <len>8</len>
                 </item>
@@ -233,11 +233,11 @@
                 <type>unsigned integer</type>
             </convert>
         </item>
-        <item name="RE" type="Explicit">
-            <dsc>Reserved Expansion Field</dsc>
-        </item>
         <item name="SP" type="Explicit">
             <dsc>Special Purpose Field</dsc>
+        </item>
+        <item name="RFS" type="Explicit">
+            <dsc>Random Field Sequencing</dsc>
         </item>
     </items>
     <uaps>
@@ -254,8 +254,8 @@
             <item>110</item>
             <item>120</item>
             <item>038</item>
-            <item>RE</item>
             <item>SP</item>
+            <item>RFS</item>
         </uap>
     </uaps>
 </category>

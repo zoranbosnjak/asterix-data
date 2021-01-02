@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: f111b2b8536fbcd680b1bd49546213822a83f870
+    sha1sum of the json input: 0a53ab14b9b32e52c73e3eba7ee267d197164886
 -->
 
 <category cat="021" edition="2.4">
@@ -639,7 +639,7 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft</unit>
                 <min>-1500.0</min>
                 <max>150000.0</max>
@@ -793,7 +793,7 @@
                     <len>15</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>feet/min</unit>
                     </convert>
                 </item>
@@ -815,7 +815,7 @@
                     <len>15</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>feet/min</unit>
                     </convert>
                 </item>
@@ -884,6 +884,7 @@
         <item name="170" type="Fixed">
             <dsc>Target Identification</dsc>
             <len>48</len>
+            <convert><type>ACID</type></convert>
         </item>
         <item name="200">
             <dsc>Target Status</dsc>
@@ -1034,7 +1035,20 @@
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
-            <len>8</len>
+            <items>
+                <item name="DATA" type="Fixed">
+                    <dsc>MB Data</dsc>
+                    <len>56</len>
+                </item>
+                <item name="BDS1" type="Fixed">
+                    <dsc>Comm B Data Buffer Store 1 Address</dsc>
+                    <len>4</len>
+                </item>
+                <item name="BDS2" type="Fixed">
+                    <dsc>Comm B Data Buffer Store 2 Address</dsc>
+                    <len>4</len>
+                </item>
+            </items>
         </item>
         <item name="260">
             <dsc>ACAS Resolution Advisory Report</dsc>

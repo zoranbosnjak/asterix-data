@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: eea4223e9d7a8acfae1d5048dc4695283ed943ef
+    sha1sum of the json input: 0b13fde70c46358593bac1f314d3c7ced028ede5
 -->
 
 <category cat="020" edition="1.9">
@@ -157,8 +157,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -168,8 +168,8 @@
                         <type>decimal</type>
                         <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -184,8 +184,8 @@
                         <type>decimal</type>
                         <lsb>1.0/2</lsb>
                         <unit>m</unit>
-                        <min>-4194300</min>
-                        <max>4194300</max>
+                        <min>-4194300.0</min>
+                        <max>4194300.0</max>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
@@ -195,8 +195,8 @@
                         <type>decimal</type>
                         <lsb>1.0/2</lsb>
                         <unit>m</unit>
-                        <min>-4194300</min>
-                        <max>4194300</max>
+                        <min>-4194300.0</min>
+                        <max>4194300.0</max>
                     </convert>
                 </item>
             </items>
@@ -228,7 +228,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE2" type="Fixed">
                     <dsc>Mode-2 Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -260,7 +260,7 @@
                         <value val="1" dsc="Smoothed Mode-1 code as provided by a local tracker"/>
                     </values>
                 </item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE1" type="Fixed">
                     <dsc>Mode-1 Code in Octal Representation</dsc>
                     <len>5</len>
                 </item>
@@ -293,7 +293,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE3A" type="Fixed">
                     <dsc>Mode-3/A Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -349,7 +349,7 @@
                     </values>
                 </item>
                 <item name="spare1" type="Spare"><len>2</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODEC" type="Fixed">
                     <dsc>Mode-C Reply in Gray Notation</dsc>
                     <len>12</len>
                 </item>
@@ -457,10 +457,10 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft</unit>
-                <min>-204800</min>
-                <max>204800</max>
+                <min>-204800.0</min>
+                <max>204800.0</max>
             </convert>
         </item>
         <item name="110" type="Fixed">
@@ -468,10 +468,10 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft</unit>
-                <min>-204800</min>
-                <max>204800</max>
+                <min>-204800.0</min>
+                <max>204800.0</max>
             </convert>
         </item>
         <item name="140" type="Fixed">
@@ -554,24 +554,24 @@
         <item name="202">
             <dsc>Calculated Track Velocity in Cartesian Coordinates</dsc>
             <items>
-                <item name="Vx" type="Fixed">
+                <item name="VX" type="Fixed">
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
-                <item name="Vy" type="Fixed">
+                <item name="VY" type="Fixed">
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s</unit>
-                        <min>-8192</min>
-                        <max>8192</max>
+                        <min>-8192.0</min>
+                        <max>8192.0</max>
                     </convert>
                 </item>
             </items>
@@ -579,24 +579,24 @@
         <item name="210">
             <dsc>Calculated Acceleration</dsc>
             <items>
-                <item name="Ax" type="Fixed">
+                <item name="AX" type="Fixed">
                     <len>8</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
-                <item name="Ay" type="Fixed">
+                <item name="AY" type="Fixed">
                     <len>8</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m/s2</unit>
-                        <min>-31</min>
-                        <max>31</max>
+                        <min>-31.0</min>
+                        <max>31.0</max>
                     </convert>
                 </item>
             </items>
@@ -687,13 +687,14 @@
                 <item name="CHR" type="Fixed">
                     <dsc>Characters 1-8 (coded on 6 Bits each) Defining Target Identification</dsc>
                     <len>48</len>
+                    <convert><type>ACID</type></convert>
                 </item>
             </items>
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
             <items>
-                <item name="MBData" type="Fixed">
+                <item name="MBDATA" type="Fixed">
                     <dsc>56-bit Message Conveying Mode S Comm B Message Data</dsc>
                     <len>56</len>
                 </item>

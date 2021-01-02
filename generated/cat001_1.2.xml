@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 7e16a1f85e0d78a1153ee07aac7c029ac36b2f26
+    sha1sum of the json input: a76597e17869cb6e179b6af62037a97e2ffc9575
 -->
 
 <category cat="001" edition="1.2">
@@ -146,7 +146,7 @@
                 <item name="THETA" type="Fixed">
                     <len>16</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>360.0/65536</lsb>
                         <unit>deg</unit>
                     </convert>
@@ -443,7 +443,7 @@
                     <dsc>Mode-C HEIGHT</dsc>
                     <len>14</len>
                     <convert>
-                        <type>unsigned decimal</type>
+                        <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>FL</unit>
                     </convert>
@@ -720,6 +720,12 @@
                 </item>
             </items>
         </item>
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+        <item name="RFS" type="Explicit">
+            <dsc>Random Field Sequencing</dsc>
+        </item>
     </items>
     <uaps>
         <uapPlot>
@@ -738,6 +744,12 @@
             <item>060</item>
             <item>030</item>
             <item>150</item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item>SP</item>
+            <item>RFS</item>
         </uapPlot>
         <uapTrack>
             <item>010</item>
@@ -759,8 +771,8 @@
             <item>100</item>
             <item>060</item>
             <item>030</item>
-            <item></item>
-            <item></item>
+            <item>SP</item>
+            <item>RFS</item>
             <item>150</item>
         </uapTrack>
     </uaps>

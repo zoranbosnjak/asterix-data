@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 2db60c80abef56806a0b6ed3ccab2652304b98b6
+    sha1sum of the json input: 0a53ab14b9b32e52c73e3eba7ee267d197164886
 -->
 
 <category cat="021" edition="2.4">
@@ -46,7 +46,7 @@
                         <value val="1" dsc="Capable of generate ARV-reports"/>
                     </values>
                 </item>
-                <item name="CDTI_A" type="Fixed">
+                <item name="CDTIA" type="Fixed">
                     <dsc>Cockpit Display of Traffic Information Airborne</dsc>
                     <len>1</len>
                     <values>
@@ -278,7 +278,7 @@
             <dsc>Mode 3/A Code in Octal Representation</dsc>
             <items>
                 <item name="spare1" type="Spare"><len>4</len></item>
-                <item name="ABCD" type="Fixed">
+                <item name="MODE3A" type="Fixed">
                     <dsc>Mode-3/A Reply in Octal Representation</dsc>
                     <len>12</len>
                 </item>
@@ -385,11 +385,11 @@
             <dsc>Quality Indicators</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="NUCR_NACV" type="Fixed">
+                <item name="NUCRNACV" type="Fixed">
                     <dsc>Navigation Uncertainty Category for Velocity NUCr or the Navigation Accuracy Category for Velocity NACv</dsc>
                     <len>3</len>
                 </item>
-                <item name="NUCP_NIC" type="Fixed">
+                <item name="NUCPNIC" type="Fixed">
                     <dsc>Navigation Uncertainty Category for Position NUCp or Navigation Integrity Category NIC</dsc>
                     <len>4</len>
                 </item>
@@ -470,40 +470,40 @@
                                 <value val="1" dsc="TCP non-compliance"/>
                             </values>
                         </item>
-                        <item name="TCPNumber" type="Fixed">
+                        <item name="TCPN" type="Fixed">
                             <len>6</len>
                         </item>
-                        <item name="Altitude" type="Fixed">
-                            <dsc>Altitude in Two's Complement Form</dsc>
+                        <item name="ALT" type="Fixed">
+                            <dsc>Altitude in Two&apos;s Complement Form</dsc>
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>10</lsb>
                                 <unit>ft</unit>
-                                <min>-1500</min>
-                                <max>150000</max>
+                                <min>-1500.0</min>
+                                <max>150000.0</max>
                             </convert>
                         </item>
-                        <item name="Latitude" type="Fixed">
-                            <dsc>In WGS.84 in Two's Complement</dsc>
+                        <item name="LAT" type="Fixed">
+                            <dsc>In WGS.84 in Two&apos;s Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-90</min>
-                                <max>90</max>
+                                <min>-90.0</min>
+                                <max>90.0</max>
                             </convert>
                         </item>
-                        <item name="Longitude" type="Fixed">
-                            <dsc>In WGS.84 in Two's Complement</dsc>
+                        <item name="LON" type="Fixed">
+                            <dsc>In WGS.84 in Two&apos;s Complement</dsc>
                             <len>24</len>
                             <convert>
                                 <type>decimal</type>
                                 <lsb>180.0/8388608</lsb>
                                 <unit>deg</unit>
-                                <min>-180</min>
-                                <max>180</max>
+                                <min>-180.0</min>
+                                <max>180.0</max>
                             </convert>
                         </item>
                         <item name="PT" type="Fixed">
@@ -563,7 +563,7 @@
                                 <type>unsigned decimal</type>
                                 <lsb>0.01</lsb>
                                 <unit>Nm</unit>
-                                <min>0</min>
+                                <min>0.0</min>
                                 <max>655.35</max>
                             </convert>
                         </item>
@@ -581,8 +581,8 @@
                         <type>decimal</type>
                         <lsb>180.0/8388608</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -592,8 +592,8 @@
                         <type>decimal</type>
                         <lsb>180.0/8388608</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -608,8 +608,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-90</min>
-                        <max>90</max>
+                        <min>-90.0</min>
+                        <max>90.0</max>
                     </convert>
                 </item>
                 <item name="LON" type="Fixed">
@@ -619,8 +619,8 @@
                         <type>decimal</type>
                         <lsb>180.0/1073741824</lsb>
                         <unit>deg</unit>
-                        <min>-180</min>
-                        <max>180</max>
+                        <min>-180.0</min>
+                        <max>180.0</max>
                     </convert>
                 </item>
             </items>
@@ -639,10 +639,10 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>6.25</lsb>
+                <lsb>25.0/4</lsb>
                 <unit>ft</unit>
-                <min>-1500</min>
-                <max>150000</max>
+                <min>-1500.0</min>
+                <max>150000.0</max>
             </convert>
         </item>
         <item name="145" type="Fixed">
@@ -652,8 +652,8 @@
                 <type>decimal</type>
                 <lsb>1.0/4</lsb>
                 <unit>FL</unit>
-                <min>-15</min>
-                <max>1500</max>
+                <min>-15.0</min>
+                <max>1500.0</max>
             </convert>
         </item>
         <item name="146">
@@ -684,8 +684,8 @@
                         <type>decimal</type>
                         <lsb>25</lsb>
                         <unit>ft</unit>
-                        <min>-1300</min>
-                        <max>100000</max>
+                        <min>-1300.0</min>
+                        <max>100000.0</max>
                     </convert>
                 </item>
             </items>
@@ -724,8 +724,8 @@
                         <type>decimal</type>
                         <lsb>25</lsb>
                         <unit>ft</unit>
-                        <min>-1300</min>
-                        <max>100000</max>
+                        <min>-1300.0</min>
+                        <max>100000.0</max>
                     </convert>
                 </item>
             </items>
@@ -740,7 +740,7 @@
                         <value val="1" dsc="Air Speed = Mach, LSB (Bit-1) = 0.001"/>
                     </values>
                 </item>
-                <item name="IAS" type="Fixed">
+                <item name="AS" type="Fixed">
                     <dsc>Air Speed (IAS or Mach)</dsc>
                     <len>15</len>
                 </item>
@@ -793,7 +793,7 @@
                     <len>15</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>feet/min</unit>
                     </convert>
                 </item>
@@ -815,7 +815,7 @@
                     <len>15</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>6.25</lsb>
+                        <lsb>25.0/4</lsb>
                         <unit>feet/min</unit>
                     </convert>
                 </item>
@@ -839,8 +839,8 @@
                         <type>unsigned decimal</type>
                         <lsb>1.0/16384</lsb>
                         <unit>NM/s</unit>
-                        <min>0</min>
-                        <max>2</max>
+                        <min>0.0</min>
+                        <max>2.0</max>
                     </convert>
                 </item>
                 <item name="TA" type="Fixed">
@@ -875,8 +875,8 @@
                         <type>decimal</type>
                         <lsb>1.0/32</lsb>
                         <unit>deg/s</unit>
-                        <min>-16</min>
-                        <max>16</max>
+                        <min>-16.0</min>
+                        <max>16.0</max>
                     </convert>
                 </item>
             </items>
@@ -884,6 +884,7 @@
         <item name="170" type="Fixed">
             <dsc>Target Identification</dsc>
             <len>48</len>
+            <convert><type>ACID</type></convert>
         </item>
         <item name="200">
             <dsc>Target Status</dsc>
@@ -984,8 +985,8 @@
                         <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>kt</unit>
-                        <min>0</min>
-                        <max>300</max>
+                        <min>0.0</min>
+                        <max>300.0</max>
                     </convert>
                 </item>
                 <item name="WD" type="Fixed">
@@ -995,8 +996,8 @@
                         <type>unsigned decimal</type>
                         <lsb>1</lsb>
                         <unit>deg</unit>
-                        <min>1</min>
-                        <max>360</max>
+                        <min>1.0</min>
+                        <max>360.0</max>
                     </convert>
                 </item>
                 <item name="TMP" type="Fixed">
@@ -1006,8 +1007,8 @@
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>degC</unit>
-                        <min>-100</min>
-                        <max>100</max>
+                        <min>-100.0</min>
+                        <max>100.0</max>
                     </convert>
                 </item>
                 <item name="TRB" type="Fixed">
@@ -1028,15 +1029,15 @@
                 <type>decimal</type>
                 <lsb>0.01</lsb>
                 <unit>deg</unit>
-                <min>-180</min>
-                <max>180</max>
+                <min>-180.0</min>
+                <max>180.0</max>
             </convert>
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
             <items>
-                <item name="MBDATA" type="Fixed">
-                    <dsc>56-bit message conveying Mode S Comm B message data</dsc>
+                <item name="DATA" type="Fixed">
+                    <dsc>MB Data</dsc>
                     <len>56</len>
                 </item>
                 <item name="BDS1" type="Fixed">
@@ -1099,7 +1100,7 @@
                         <value val="1" dsc="Position transmitted is the ADS-B position reference point"/>
                     </values>
                 </item>
-                <item name="CDTI_S" type="Fixed">
+                <item name="CDTIS" type="Fixed">
                     <dsc>Cockpit Display of Traffic Information Surface</dsc>
                     <len>1</len>
                     <values>
@@ -1107,7 +1108,7 @@
                         <value val="1" dsc="CDTI operational"/>
                     </values>
                 </item>
-                <item name="B2low" type="Fixed">
+                <item name="B2LOW" type="Fixed">
                     <dsc>Class B2 Transmit Power Less Than 70 Watts</dsc>
                     <len>1</len>
                     <values>

@@ -143,7 +143,7 @@ def renderVariation(variation):
             elif t == 'String':
                 f = case('string variatioin', rule['variation'],
                     ('StringAscii', lambda: tell('<convert><type>string</type></convert>')),
-                    ('StringICAO', lambda: None),
+                    ('StringICAO', lambda: tell('<convert><type>ACID</type></convert>')),
                     ('StringOctal', lambda: None),
                     )
                 f ()

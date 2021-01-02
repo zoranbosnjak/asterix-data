@@ -1038,6 +1038,7 @@
         <item name="240" type="Fixed">
             <dsc>Aircraft Identification</dsc>
             <len>48</len>
+            <convert><type>ACID</type></convert>
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>

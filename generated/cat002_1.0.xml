@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 6d6d079a876425719392c80e18b7e7d58c5c5d73
+    sha1sum of the json input: 69afd1682c7e740294de0ee1968f5ddc64502435
 -->
 
 <category cat="002" edition="1.0">
@@ -181,6 +181,12 @@
                 </item>
             </items>
         </item>
+        <item name="SP" type="Explicit">
+            <dsc>Special Purpose Field</dsc>
+        </item>
+        <item name="RFS" type="Explicit">
+            <dsc>Random Field Sequencing</dsc>
+        </item>
     </items>
     <uaps>
         <uap>
@@ -195,6 +201,9 @@
             <item>100</item>
             <item>090</item>
             <item>080</item>
+            <item></item>
+            <item>SP</item>
+            <item>RFS</item>
         </uap>
     </uaps>
 </category>
