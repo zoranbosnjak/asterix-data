@@ -4,7 +4,7 @@ XML description of ASTERIX data format as specified in
 http://www.eurocontrol.int/services/asterix.
 Each ASTERIX category and revision is specified in a separate `.xml` file.
 
-**_NOTE:_** This projet obsolete in favor of
+**_NOTE:_** This projet is obsolete in favor of
 https://github.com/zoranbosnjak/asterix-specs.
 Instead of editing *.xml* files directly, please write new category
 definitions in *.ast* format. For existing projects, it is still possible
@@ -18,7 +18,7 @@ Use `nix` to build `asterix-specs` project. This includes building *.json* files
 nix-build -o asterix-specs https://github.com/zoranbosnjak/asterix-specs/archive/master.tar.gz
 ```
 
-## Test on single file
+## Test on a single file
 
 Render generated *.json* to *.xml* (single file)
 
@@ -26,16 +26,19 @@ Render generated *.json* to *.xml* (single file)
 ./asterix-specs/bin/render --script render-json/xml.py render asterix-specs/specs/.../definition.json > xml/catABC_X.Y.xml
 ```
 
-## Automatic procedure
+## Semi automatic procedure
 
 ```bash
-mkdir generated
-./update-from-asterix-specs.py asterix-specs/ generated/
-./update-from-asterix-specs.py asterix-specs/ generated/ | sh
+./update-from-asterix-specs.py asterix-specs/ xml/
 ./update-from-asterix-specs.py asterix-specs/ xml/ | sh
 
-# check/compare files...
-# git add/commit files...
+git add xml
+
+# review changes
+git diff --cached
+
+# commit with reference to asterix-specs revision
+git commit -m "sync with asterix-specs <rev>"
 ```
 
 # Install
