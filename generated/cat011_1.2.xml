@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 0b39e75a123d3174e0e5de4e5df307a4d4e0de04
+    sha1sum of the json input: c29ef7b2d218ae2d5a89b48d785390bf4bf6e7ca
 -->
 
 <category cat="011" edition="1.2">
@@ -577,20 +577,7 @@
             <items>
                 <item name="MB" type="Repetitive">
                     <dsc>BDS</dsc>
-                    <items>
-                        <item name="DATA" type="Fixed">
-                            <dsc>MB Data</dsc>
-                            <len>56</len>
-                        </item>
-                        <item name="BDS1" type="Fixed">
-                            <dsc>Comm B Data Buffer Store 1 Address</dsc>
-                            <len>4</len>
-                        </item>
-                        <item name="BDS2" type="Fixed">
-                            <dsc>Comm B Data Buffer Store 2 Address</dsc>
-                            <len>4</len>
-                        </item>
-                    </items>
+                    <len>64</len>
                 </item>
                 <item name="ADR" type="Fixed">
                     <dsc>24 Bits Aircraft Address</dsc>

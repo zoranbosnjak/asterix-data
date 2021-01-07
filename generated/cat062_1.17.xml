@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: b5ece2d5a69ca3c2309c1823110f33b91ccead26
+    sha1sum of the json input: c05313fafd37a12ec3d17ad99cc0da99cf0fae9f
 -->
 
 <category cat="062" edition="1.17">
@@ -2007,20 +2007,7 @@
                 </item>
                 <item name="MB" type="Repetitive">
                     <dsc>MODE S MB DATA</dsc>
-                    <items>
-                        <item name="DATA" type="Fixed">
-                            <dsc>MB Data</dsc>
-                            <len>56</len>
-                        </item>
-                        <item name="BDS1" type="Fixed">
-                            <dsc>Comm B Data Buffer Store 1 Address</dsc>
-                            <len>4</len>
-                        </item>
-                        <item name="BDS2" type="Fixed">
-                            <dsc>Comm B Data Buffer Store 2 Address</dsc>
-                            <len>4</len>
-                        </item>
-                    </items>
+                    <len>64</len>
                 </item>
                 <item name="IAR" type="Fixed">
                     <dsc>Indicated Airspeed</dsc>

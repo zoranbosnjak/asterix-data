@@ -3,7 +3,7 @@
 <!--
     Do not edit directly!
     This file is auto-generated from the original json specs file.
-    sha1sum of the json input: 0a53ab14b9b32e52c73e3eba7ee267d197164886
+    sha1sum of the json input: 83faa11140c424f6d6bf3e427607f82aba23a4d5
 -->
 
 <category cat="021" edition="2.4">
@@ -1035,20 +1035,7 @@
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
-            <items>
-                <item name="DATA" type="Fixed">
-                    <dsc>MB Data</dsc>
-                    <len>56</len>
-                </item>
-                <item name="BDS1" type="Fixed">
-                    <dsc>Comm B Data Buffer Store 1 Address</dsc>
-                    <len>4</len>
-                </item>
-                <item name="BDS2" type="Fixed">
-                    <dsc>Comm B Data Buffer Store 2 Address</dsc>
-                    <len>4</len>
-                </item>
-            </items>
+            <len>64</len>
         </item>
         <item name="260">
             <dsc>ACAS Resolution Advisory Report</dsc>
