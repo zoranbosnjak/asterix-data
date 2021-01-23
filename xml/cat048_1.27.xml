@@ -663,7 +663,7 @@
                     <len>14</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>25</lsb>
+                        <lsb>25.0</lsb>
                         <unit>ft</unit>
                     </convert>
                 </item>
@@ -688,7 +688,7 @@
                             <len>10</len>
                             <convert>
                                 <type>decimal</type>
-                                <lsb>1</lsb>
+                                <lsb>1.0</lsb>
                                 <unit>m/s</unit>
                             </convert>
                         </item>
@@ -702,7 +702,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>1</lsb>
+                                <lsb>1.0</lsb>
                                 <unit>m/s</unit>
                             </convert>
                         </item>
@@ -711,7 +711,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>1</lsb>
+                                <lsb>1.0</lsb>
                                 <unit>m/s</unit>
                             </convert>
                         </item>
@@ -720,7 +720,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>1</lsb>
+                                <lsb>1.0</lsb>
                                 <unit>Mhz</unit>
                             </convert>
                         </item>
@@ -752,7 +752,7 @@
                     <len>8</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>dBm</unit>
                     </convert>
                 </item>
@@ -770,7 +770,7 @@
                     <len>8</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>dBm</unit>
                     </convert>
                 </item>

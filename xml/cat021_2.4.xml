@@ -478,7 +478,7 @@
                             <len>16</len>
                             <convert>
                                 <type>decimal</type>
-                                <lsb>10</lsb>
+                                <lsb>10.0</lsb>
                                 <unit>ft</unit>
                                 <min>-1500.0</min>
                                 <max>150000.0</max>
@@ -552,7 +552,7 @@
                             <len>24</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>1</lsb>
+                                <lsb>1.0</lsb>
                                 <unit>s</unit>
                             </convert>
                         </item>
@@ -630,7 +630,7 @@
             <len>8</len>
             <convert>
                 <type>decimal</type>
-                <lsb>1</lsb>
+                <lsb>1.0</lsb>
                 <unit>dBm</unit>
             </convert>
         </item>
@@ -682,7 +682,7 @@
                     <len>13</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>25</lsb>
+                        <lsb>25.0</lsb>
                         <unit>ft</unit>
                         <min>-1300.0</min>
                         <max>100000.0</max>
@@ -722,7 +722,7 @@
                     <len>13</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>25</lsb>
+                        <lsb>25.0</lsb>
                         <unit>ft</unit>
                         <min>-1300.0</min>
                         <max>100000.0</max>
@@ -762,7 +762,7 @@
                     <len>15</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>kt</unit>
                     </convert>
                 </item>
@@ -983,7 +983,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>kt</unit>
                         <min>0.0</min>
                         <max>300.0</max>
@@ -994,7 +994,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>deg</unit>
                         <min>1.0</min>
                         <max>360.0</max>

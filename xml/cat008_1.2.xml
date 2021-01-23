@@ -202,7 +202,7 @@
                     <len>5</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit></unit>
                     </convert>
                 </item>

@@ -129,7 +129,7 @@
                     <len>7</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>s</unit>
                         <min>1.0</min>
                         <max>127.0</max>
@@ -170,7 +170,7 @@
                     <len>7</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>s</unit>
                         <min>1.0</min>
                         <max>127.0</max>
@@ -244,7 +244,7 @@
             <len>8</len>
             <convert>
                 <type>unsigned decimal</type>
-                <lsb>1</lsb>
+                <lsb>1.0</lsb>
                 <unit>NM</unit>
             </convert>
         </item>

@@ -74,7 +74,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>m</unit>
                         <min>-32768.0</min>
                         <max>32768.0</max>
@@ -85,7 +85,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>m</unit>
                         <min>-32768.0</min>
                         <max>32768.0</max>
@@ -388,7 +388,7 @@
                     <len>7</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>m</unit>
                     </convert>
                 </item>
@@ -406,7 +406,7 @@
                     <len>7</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>m</unit>
                     </convert>
                 </item>

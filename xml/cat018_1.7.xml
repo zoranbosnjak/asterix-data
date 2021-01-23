@@ -463,7 +463,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>1</lsb>
+                        <lsb>1.0</lsb>
                         <unit>s</unit>
                     </convert>
                 </item>
@@ -503,7 +503,7 @@
             <len>16</len>
             <convert>
                 <type>unsigned decimal</type>
-                <lsb>1</lsb>
+                <lsb>1.0</lsb>
                 <unit>s</unit>
             </convert>
         </item>

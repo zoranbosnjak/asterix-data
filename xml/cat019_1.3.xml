@@ -281,7 +281,7 @@
             <len>8</len>
             <convert>
                 <type>decimal</type>
-                <lsb>1</lsb>
+                <lsb>1.0</lsb>
                 <unit>m</unit>
             </convert>
         </item>

@@ -89,6 +89,13 @@ def renderTopItem(item):
         renderVariation(item['variation'])
     tell('</item>')
 
+def ffloat(val):
+    val = format(float(val), '.16f')
+    val = val.rstrip('0')
+    if val[-1] == '.':
+        val += '0'
+    return val
+
 def renderVariation(variation):
 
     def renderInteger(value):
@@ -112,9 +119,9 @@ def renderVariation(variation):
 
             fract = value['fractionalBits']
             if fract == 0:
-                tell('<lsb>{}</lsb>'.format(k))
+                tell('<lsb>{}</lsb>'.format(ffloat(k)))
             else:
-                tell('<lsb>{}/{}</lsb>'.format(float(k), pow(2,fract)))
+                tell('<lsb>{}/{}</lsb>'.format(ffloat(k), pow(2,fract)))
 
             unit = value['unit']
             if unit is not None:
