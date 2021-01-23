@@ -2030,7 +2030,12 @@
                 </item>
                 <item name="MB" type="Repetitive">
                     <dsc>MODE S MB DATA</dsc>
-                    <len>64</len>
+                    <items>
+                        <item name="item" type="Fixed">
+                            <dsc>title</dsc>
+                            <len>64</len>
+                        </item>
+                    </items>
                 </item>
                 <item name="IAR" type="Fixed">
                     <dsc>Indicated Airspeed</dsc>

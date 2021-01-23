@@ -1035,7 +1035,12 @@
         </item>
         <item name="250" type="Repetitive">
             <dsc>Mode S MB Data</dsc>
-            <len>64</len>
+            <items>
+                <item name="item" type="Fixed">
+                    <dsc>title</dsc>
+                    <len>64</len>
+                </item>
+            </items>
         </item>
         <item name="260">
             <dsc>ACAS Resolution Advisory Report</dsc>

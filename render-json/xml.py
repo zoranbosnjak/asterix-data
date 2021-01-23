@@ -190,7 +190,24 @@ def renderVariation(variation):
         renderGroup()
 
     def renderRepetitive():
-        renderVariation(variation['variation'])
+        var = variation['variation']
+        if var['type'] == 'Element':
+            # repetitive type expects additional level
+            # so just make a 'Group' with a single item.
+            renderVariation({
+                "type": "Group",
+                "items": [{
+                    "definition": None,
+                    "description": None,
+                    "name": "item",
+                    "remark": None,
+                    "spare": False,
+                    "title": "title",
+                    "variation": var
+                    }]
+            })
+        else:
+            renderVariation(var)
 
     def renderExplicit():
         pass

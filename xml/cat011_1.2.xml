@@ -577,7 +577,12 @@
             <items>
                 <item name="MB" type="Repetitive">
                     <dsc>BDS</dsc>
-                    <len>64</len>
+                    <items>
+                        <item name="item" type="Fixed">
+                            <dsc>title</dsc>
+                            <len>64</len>
+                        </item>
+                    </items>
                 </item>
                 <item name="ADR" type="Fixed">
                     <dsc>24 Bits Aircraft Address</dsc>

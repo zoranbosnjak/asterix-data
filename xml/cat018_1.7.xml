@@ -101,7 +101,12 @@
         </item>
         <item name="006" type="Repetitive">
             <dsc>Mode S Address List</dsc>
-            <len>24</len>
+            <items>
+                <item name="item" type="Fixed">
+                    <dsc>title</dsc>
+                    <len>24</len>
+                </item>
+            </items>
         </item>
         <item name="007">
             <dsc>Aircraft Data Link Command</dsc>
@@ -394,10 +399,15 @@
         </item>
         <item name="017" type="Repetitive">
             <dsc>Packet Number List</dsc>
-            <len>32</len>
-            <convert>
-                <type>unsigned integer</type>
-            </convert>
+            <items>
+                <item name="item" type="Fixed">
+                    <dsc>title</dsc>
+                    <len>32</len>
+                    <convert>
+                        <type>unsigned integer</type>
+                    </convert>
+                </item>
+            </items>
         </item>
         <item name="018">
             <dsc>Mode S Packet Properties</dsc>
