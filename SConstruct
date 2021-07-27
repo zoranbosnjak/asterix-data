@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #   Copyright (c) 2016 Sloveniacontrol Ltd. (www.sloveniacontrol.si)
@@ -47,7 +47,7 @@ def validate(target, source, env):
     """Validate xml files"""
 
     # check non asci
-    cmd = 'python charvalidate.py ' + ' '.join(map(str,source))
+    cmd = 'python3 charvalidate.py ' + ' '.join(map(str,source))
     rv = env.Execute(cmd)
     assert rv==0
 
