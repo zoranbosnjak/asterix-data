@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: dfeabbbead7df9d231c5a91c102aef479034cdf5
+    sha1sum of the json input: edc6521de142ebcf59bb7cccb305a3185ad6d0f9
 -->
 
-<category cat="048" edition="1.27">
-    <dsc>Asterix Category 048, edition 1.27</dsc>
+<category cat="048" edition="1.28">
+    <dsc>Asterix Category 048, edition 1.28</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identifier</dsc>
@@ -156,6 +156,9 @@
                         <value val="29" dsc="Track Update in the Zenithal Gap"/>
                         <value val="30" dsc="Mode S Track re-acquired"/>
                         <value val="31" dsc="Duplicated Mode 5 Pair NO/PIN detected"/>
+                        <value val="32" dsc="Wrong DF reply format detected"/>
+                        <value val="33" dsc="Transponder anomaly (MS XPD replies with Mode A/C to Mode A/C-only all-call)"/>
+                        <value val="34" dsc="Transponder anomaly (SI capability report wrong)"/>
                     </values>
                 </item>
             </items>

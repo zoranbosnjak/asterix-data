@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 9ca74855641a0468d6c35a57a5bdd06c2dec4cb0
+    sha1sum of the json input: 80c9cef3b90478b73c20f88a2ccd34540d0a6351
 -->
 
-<category cat="001" edition="1.2">
-    <dsc>Asterix Category 001, edition 1.2</dsc>
+<category cat="001" edition="1.3">
+    <dsc>Asterix Category 001, edition 1.3</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identifier</dsc>

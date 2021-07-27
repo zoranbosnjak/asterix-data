@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 6b92a15271e079c96426daf43e059f1ad1a083cd
+    sha1sum of the json input: e008b92f2c925734493fe089ece7913aef389c5e
 -->
 
-<category cat="020" edition="1.9">
-    <dsc>Asterix Category 020, edition 1.9</dsc>
+<category cat="020" edition="1.10">
+    <dsc>Asterix Category 020, edition 1.10</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identifier</dsc>
@@ -518,8 +518,8 @@
                 <item name="CST" type="Fixed">
                     <len>1</len>
                     <values>
-                        <value val="0" dsc="Not extrapolated"/>
-                        <value val="1" dsc="Extrapolated"/>
+                        <value val="0" dsc="Not Coasted"/>
+                        <value val="1" dsc="Coasted"/>
                     </values>
                 </item>
                 <item name="CDM" type="Fixed">
@@ -696,7 +696,7 @@
             </items>
         </item>
         <item name="250" type="Repetitive">
-            <dsc>Mode S MB Data</dsc>
+            <dsc>BDS Register Data</dsc>
             <items>
                 <item name="MBDATA" type="Fixed">
                     <dsc>56-bit Message Conveying Mode S Comm B Message Data</dsc>

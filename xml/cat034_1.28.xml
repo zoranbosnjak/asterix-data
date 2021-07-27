@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 6d322c1767c02472c7b570527015ef2128ce0789
+    sha1sum of the json input: cac023e2dbb163967e15ec9b5176567a9f764a5a
 -->
 
-<category cat="034" edition="1.27">
-    <dsc>Asterix Category 034, edition 1.27</dsc>
+<category cat="034" edition="1.28">
+    <dsc>Asterix Category 034, edition 1.28</dsc>
     <items>
         <item name="000" type="Fixed">
             <dsc>Message Type</dsc>
@@ -21,6 +21,7 @@
                 <value val="2" dsc="Sector crossing message"/>
                 <value val="3" dsc="Geographical filtering message"/>
                 <value val="4" dsc="Jamming strobe message"/>
+                <value val="5" dsc="Solar Storm Message"/>
             </values>
         </item>
         <item name="010">
@@ -437,6 +438,10 @@
                         <value val="14" dsc="Filter for PSR+Enhanced Surveillance"/>
                         <value val="15" dsc="Filter for PSR+Enhanced Surveillance + SSR/Mode S data not in Area of Prime Interest"/>
                         <value val="16" dsc="Filter for PSR+Enhanced Surveillance + all SSR/Mode S data"/>
+                        <value val="17" dsc="Re-Interrogations (per sector)"/>
+                        <value val="18" dsc="BDS Swap and wrong DF replies(per sector)"/>
+                        <value val="19" dsc="Mode A/C FRUIT (per sector)"/>
+                        <value val="20" dsc="Mode S FRUIT (per sector)"/>
                     </values>
                 </item>
                 <item name="COUNT" type="Fixed">
