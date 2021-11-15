@@ -2,7 +2,12 @@
 
 pkgs.stdenv.mkDerivation {
   name = "asterix-data";
-  src = ./.;
+  src = builtins.filterSource
+    (path: type:
+      (type != "directory" || baseNameOf path != ".git")
+      && (type != "symlink" || baseNameOf path != "result"))
+      ./.;
+
   buildInputs = with pkgs; [
     scons
     jing

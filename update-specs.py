@@ -6,6 +6,7 @@
 # Convert from asterix-specs JSON to XML.
 
 import os
+import sys
 import argparse
 import json
 import hashlib
@@ -16,8 +17,9 @@ import render.xml
 # Path to default upstream repository
 upstream_repo = 'https://zoranbosnjak.github.io/asterix-specs'
 
-def download_url(path):
-    print('loading', path)
+def download_url(path, show=True):
+    if show:
+        print('loading', path)
     with urllib.request.urlopen(upstream_repo + path) as url:
         return url.read()
 
@@ -62,8 +64,15 @@ parser = argparse.ArgumentParser(description='Update XML definitions from asteri
 parser.add_argument('--src', metavar='SRC', action='append',
     help='json spec file(s), use upstream repository in no input is given')
 parser.add_argument('dst', metavar='DST', help='path to xml output')
+parser.add_argument('--reference', action='store_true',
+    help='print upstream reference and exit')
 
 args = parser.parse_args()
+
+if args.reference:
+    gitrev_short = download_url('/gitrev.txt', show=False).decode().strip()[0:10]
+    print(gitrev_short)
+    sys.exit(0)
 
 jsons = load_jsons(args.src)
 

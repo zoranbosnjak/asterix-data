@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import unicodedata
+
 def case(msg, val, *cases):
     """'case' statement as a function."""
     for (a,b) in cases:
@@ -69,6 +71,7 @@ class Indent(object):
 
     def tell(self, s):
         s = replaceOutput(s) # This program requires ascii only.
+        s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode('utf-8')
         s = ' '*self.indentLevel*4 + s
         self.accumulator.append(s.rstrip())
 

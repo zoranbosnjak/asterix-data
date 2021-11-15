@@ -12,10 +12,10 @@ from the upstream `asterix-specs` repository. Do not edit *.xml* files directly.
 
 ## Specification update procedure
 
-See <https://zoranbosnjak.github.io/asterix-specs/specs.html>
-for current repository revision.
-
 ```bash
+export ASTERIX_SPECS_REV=$(./update-specs.py xml --reference)
+echo $ASTERIX_SPECS_REV
+
 git rm xml/*
 ./update-specs.py xml
 git add xml
@@ -24,7 +24,7 @@ git add xml
 git diff --cached
 
 # commit with reference to asterix-specs revision
-git commit -m "sync with asterix-specs #<rev>"
+git commit -m "Sync with asterix-specs #$ASTERIX_SPECS_REV"
 ```
 
 # Install
@@ -34,7 +34,7 @@ git commit -m "sync with asterix-specs #<rev>"
 
 ## Data validation
 
-To validate XML (not strictly necessary), use
+To validate XML (not strictly necessary), use:
 
 ```bash
 scons validate
@@ -42,7 +42,7 @@ scons validate
 
 ## Installation
 
-To install files to default location `/usr/local/share/asterix-data`, use
+To install files to default location `/usr/local/share/asterix-data`, use:
 
 ```bash
 scons install
