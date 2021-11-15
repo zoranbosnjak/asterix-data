@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: cac023e2dbb163967e15ec9b5176567a9f764a5a
+    sha1sum of the json input: 65a0bff16ab0f29f2835105eb48a48e6d549e02a
 -->
 
 <category cat="034" edition="1.28">
@@ -283,7 +283,6 @@
                         <item name="spare1" type="Spare"><len>7</len></item>
                     </items>
                 </item>
-                <item></item>
             </items>
         </item>
         <item name="060" type="Compound">
@@ -337,7 +336,7 @@
                                 <value val="1" dsc="Circular polarization"/>
                             </values>
                         </item>
-                        <item name="REDRAP" type="Fixed">
+                        <item name="REDRAD" type="Fixed">
                             <dsc>Reduction Steps in Use as Result of An Overload Within the PSR Subsystem</dsc>
                             <len>3</len>
                             <values>

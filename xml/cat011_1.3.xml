@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 33d174b6aa9c65d14c46f72f3d5a6aa4b63c43bc
+    sha1sum of the json input: a1db09934b45642f13693b2950c99d9419913eb3
 -->
 
 <category cat="011" edition="1.3">
@@ -799,7 +799,6 @@
                         <item name="spare1" type="Spare"><len>5</len></item>
                     </items>
                 </item>
-                <item></item>
             </items>
         </item>
         <item name="390" type="Compound">
