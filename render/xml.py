@@ -85,7 +85,7 @@ def replaceOutput(s):
         u'–': '-',
         u'“': '',
         u'”': '',
-        u'°': ' deg',
+        u'°': 'deg',
     })
 
 def xmlquote(s):

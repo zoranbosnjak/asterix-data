@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 8f4be07c787b2ca554f071dfb6ecc215927c1cf5
+    sha1sum of the json input: e45debc7f7f2d3e11d1fdc3eaa3055ec4ea82d27
 -->
 
-<category cat="048" edition="1.27">
-    <dsc>Asterix Category 048, edition 1.27</dsc>
+<category cat="048" edition="1.31">
+    <dsc>Asterix Category 048, edition 1.31</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identifier</dsc>
@@ -115,6 +115,70 @@
                         <value val="3" dsc="No reply"/>
                     </values>
                 </item>
+                <item name="ADSB">
+                    <dsc>On-Site ADS-B Information</dsc>
+                    <items>
+                        <item name="EP" type="Fixed">
+                            <dsc>ADSB Element Populated Bit</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="ADSB not populated"/>
+                                <value val="1" dsc="ADSB populated"/>
+                            </values>
+                        </item>
+                        <item name="VAL" type="Fixed">
+                            <dsc>On-Site ADS-B Information</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Not available"/>
+                                <value val="1" dsc="Available"/>
+                            </values>
+                        </item>
+                    </items>
+                </item>
+                <item name="SCN">
+                    <dsc>Surveillance Cluster Network Information</dsc>
+                    <items>
+                        <item name="EP" type="Fixed">
+                            <dsc>SCN Element Populated Bit</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="SCN not populated"/>
+                                <value val="1" dsc="SCN populated"/>
+                            </values>
+                        </item>
+                        <item name="VAL" type="Fixed">
+                            <dsc>Surveillance Cluster Network Information</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Not available"/>
+                                <value val="1" dsc="Available"/>
+                            </values>
+                        </item>
+                    </items>
+                </item>
+                <item name="PAI">
+                    <dsc>Passive Acquisition Interface Information</dsc>
+                    <items>
+                        <item name="EP" type="Fixed">
+                            <dsc>PAI Element Populated Bit</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="PAI not populated"/>
+                                <value val="1" dsc="PAI populated"/>
+                            </values>
+                        </item>
+                        <item name="VAL" type="Fixed">
+                            <dsc>Passive Acquisition Interface Information</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Not available"/>
+                                <value val="1" dsc="Available"/>
+                            </values>
+                        </item>
+                    </items>
+                </item>
+                <item name="spare1" type="Spare"><len>1</len></item>
             </items>
         </item>
         <item name="030" type="Extended">
@@ -156,6 +220,11 @@
                         <value val="29" dsc="Track Update in the Zenithal Gap"/>
                         <value val="30" dsc="Mode S Track re-acquired"/>
                         <value val="31" dsc="Duplicated Mode 5 Pair NO/PIN detected"/>
+                        <value val="32" dsc="Wrong DF reply format detected"/>
+                        <value val="33" dsc="Transponder anomaly (MS XPD replies with Mode A/C to Mode A/C-only all-call)"/>
+                        <value val="34" dsc="Transponder anomaly (SI capability report wrong)"/>
+                        <value val="35" dsc="Potential IC Conflict"/>
+                        <value val="36" dsc="IC Conflict detection possible-no conflict currently detected"/>
                     </values>
                 </item>
             </items>
@@ -1045,7 +1114,7 @@
             <convert><type>ACID</type></convert>
         </item>
         <item name="250" type="Repetitive">
-            <dsc>Mode S MB Data</dsc>
+            <dsc>BDS Register Data</dsc>
             <items>
                 <item name="MBDATA" type="Fixed">
                     <dsc>Mode S Comm B Message Data</dsc>

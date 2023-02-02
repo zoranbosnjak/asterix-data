@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 452532d80e695b68bb369a8ada8d753e9d7db19c
+    sha1sum of the json input: 14bb150570668c612bf1dc91d6b0f3f27a4d9950
 -->
 
 <category cat="004" edition="1.12">
@@ -809,7 +809,7 @@
             <dsc>Aircraft Identification and Characteristics 1</dsc>
             <items>
                 <item name="AI1" type="Fixed">
-                    <dsc>Aircraft Identifier (in 7 characters) of Aircraft 1 Involved in the Conflict</dsc>
+                    <dsc>Aircraft Identifier (in 7 Characters) of Aircraft 1 Involved in the Conflict</dsc>
                     <len>56</len>
                     <convert><type>string</type></convert>
                 </item>
@@ -1007,7 +1007,7 @@
                     <convert>
                         <type>unsigned decimal</type>
                         <lsb>1.0/4</lsb>
-                        <unit>fl</unit>
+                        <unit>FL</unit>
                     </convert>
                 </item>
             </items>
@@ -1016,7 +1016,7 @@
             <dsc>Aircraft Identification and Characteristics 2</dsc>
             <items>
                 <item name="AI2" type="Fixed">
-                    <dsc>Aircraft Identifier (in 7 characters) of Aircraft 2 Involved in the Conflict</dsc>
+                    <dsc>Aircraft Identifier (in 7 Characters) of Aircraft 2 Involved in the Conflict</dsc>
                     <len>56</len>
                     <convert><type>string</type></convert>
                 </item>
@@ -1214,7 +1214,7 @@
                     <convert>
                         <type>unsigned decimal</type>
                         <lsb>1.0/4</lsb>
-                        <unit>fl</unit>
+                        <unit>FL</unit>
                     </convert>
                 </item>
             </items>

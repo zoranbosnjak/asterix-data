@@ -58,14 +58,14 @@
                     <dsc>Shading Orientation with Respect to North</dsc>
                     <len>3</len>
                     <values>
-                        <value val="0" dsc="0 deg"/>
-                        <value val="1" dsc="22.5 deg"/>
-                        <value val="2" dsc="45 deg"/>
-                        <value val="3" dsc="67.5 deg"/>
-                        <value val="4" dsc="90 deg"/>
-                        <value val="5" dsc="112.5 deg"/>
-                        <value val="6" dsc="135 deg"/>
-                        <value val="7" dsc="157.5 deg"/>
+                        <value val="0" dsc="0deg"/>
+                        <value val="1" dsc="22.5deg"/>
+                        <value val="2" dsc="45deg"/>
+                        <value val="3" dsc="67.5deg"/>
+                        <value val="4" dsc="90deg"/>
+                        <value val="5" dsc="112.5deg"/>
+                        <value val="6" dsc="135deg"/>
+                        <value val="7" dsc="157.5deg"/>
                     </values>
                 </item>
             </items>

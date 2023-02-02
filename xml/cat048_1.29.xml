@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 835df3a5bde5461c018fc7c09da543098f7ff1a8
+    sha1sum of the json input: 304d9514e98aad4981935bc5af52e29a061fdac7
 -->
 
 <category cat="048" edition="1.29">
@@ -728,7 +728,7 @@
                             <convert>
                                 <type>unsigned decimal</type>
                                 <lsb>1.0</lsb>
-                                <unit>Mhz</unit>
+                                <unit>MHz</unit>
                             </convert>
                         </item>
                     </items>
@@ -744,7 +744,7 @@
                     <convert>
                         <type>unsigned decimal</type>
                         <lsb>360.0/8192</lsb>
-                        <unit>dg</unit>
+                        <unit>deg</unit>
                     </convert>
                 </item>
                 <item name="SRR" type="Fixed">
@@ -769,7 +769,7 @@
                     <convert>
                         <type>unsigned decimal</type>
                         <lsb>360.0/8192</lsb>
-                        <unit>dg</unit>
+                        <unit>deg</unit>
                     </convert>
                 </item>
                 <item name="PAM" type="Fixed">
@@ -796,7 +796,7 @@
                     <convert>
                         <type>decimal</type>
                         <lsb>360.0/16384</lsb>
-                        <unit>dg</unit>
+                        <unit>deg</unit>
                     </convert>
                 </item>
             </items>

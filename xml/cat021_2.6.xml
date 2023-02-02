@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: a23fabbb6055ae4f911d7951b58e1d4617cf5f75
+    sha1sum of the json input: 784246e83d8577b70f30e6851a92b4f4d74b93b3
 -->
 
-<category cat="021" edition="2.5">
-    <dsc>Asterix Category 021, edition 2.5</dsc>
+<category cat="021" edition="2.6">
+    <dsc>Asterix Category 021, edition 2.6</dsc>
     <items>
         <item name="008">
             <dsc>Aircraft Operational Status</dsc>
@@ -275,6 +275,46 @@
                         <value val="0" dsc="Default"/>
                         <value val="1" dsc="Range Check failed"/>
                     </values>
+                </item>
+                <item name="TBC">
+                    <dsc>Total Bits Corrected</dsc>
+                    <items>
+                        <item name="EP" type="Fixed">
+                            <dsc>Element Populated Bit</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Element not populated"/>
+                                <value val="1" dsc="Element populated"/>
+                            </values>
+                        </item>
+                        <item name="VAL" type="Fixed">
+                            <dsc>Value</dsc>
+                            <len>6</len>
+                            <convert>
+                                <type>unsigned integer</type>
+                            </convert>
+                        </item>
+                    </items>
+                </item>
+                <item name="MBC">
+                    <dsc>Maximum Bits Corrected</dsc>
+                    <items>
+                        <item name="EP" type="Fixed">
+                            <dsc>Element Populated Bit</dsc>
+                            <len>1</len>
+                            <values>
+                                <value val="0" dsc="Element not populated"/>
+                                <value val="1" dsc="Element populated"/>
+                            </values>
+                        </item>
+                        <item name="VAL" type="Fixed">
+                            <dsc>Value</dsc>
+                            <len>6</len>
+                            <convert>
+                                <type>unsigned integer</type>
+                            </convert>
+                        </item>
+                    </items>
                 </item>
             </items>
         </item>
@@ -1219,8 +1259,8 @@
                         <max>25.5</max>
                     </convert>
                 </item>
-                <item name="ISA" type="Fixed">
-                    <dsc>Intermediate State Selected Altitude Age</dsc>
+                <item name="SAL" type="Fixed">
+                    <dsc>Selected Altitude Age</dsc>
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>

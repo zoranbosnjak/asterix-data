@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: e008b92f2c925734493fe089ece7913aef389c5e
+    sha1sum of the json input: febc6565f1de0652f61dfe3b6b9c4e0039cdc987
 -->
 
 <category cat="020" edition="1.10">
@@ -689,7 +689,7 @@
                 </item>
                 <item name="spare1" type="Spare"><len>6</len></item>
                 <item name="CHR" type="Fixed">
-                    <dsc>Characters 1-8 (coded on 6 Bits each) Defining Target Identification</dsc>
+                    <dsc>Characters 1-8 (coded on 6 Bits Each) Defining Target Identification</dsc>
                     <len>48</len>
                     <convert><type>ACID</type></convert>
                 </item>
