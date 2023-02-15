@@ -10,7 +10,10 @@ For the existing projects, it is still possible to use these xml definitions,
 but it is important to note, that the definitions are automatically generated
 from the upstream `asterix-specs` repository. Do not edit *.xml* files directly.
 
-## Specification update procedure
+## Manual specification update procedure
+
+**_NOTE:_** This is normally not necessary. The *.xml* files are updated
+periodically from github actions.
 
 ```bash
 export ASTERIX_SPECS_REV=$(./update-specs.py xml --reference)

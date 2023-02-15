@@ -1,0 +1,35 @@
+name: Auto update from upstream
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'
+
+jobs:
+  update:
+    env:
+      GH_TOKEN: ${{ github.token }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          export ASTERIX_SPECS_REV=$(./update-specs.py xml --reference)
+          echo $ASTERIX_SPECS_REV > upstream-revision.txt
+          git add upstream-revision.txt
+          update=$(git status --short upstream-revision.txt)
+          if [ -n "$update" ]; then
+            git rm xml/*
+            if ./update-specs.py xml; then
+              git add xml
+              git commit -m "Periodic sync with asterix-specs #$ASTERIX_SPECS_REV"
+              git push
+            else
+              git restore --staged xml/*
+              git checkout xml/*
+              git commit -m "Update error with asterix-specs #$ASTERIX_SPECS_REV"
+              git push
+              gh issue create --title "Can not sync with asterix-specs #$ASTERIX_SPECS_REV" --body "Auto update error."
+            fi
+          fi
+
