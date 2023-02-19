@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: cce35adc1b4b8c99cd2a03b9bdceb66c3ae39145
+    sha1sum of the json input: e009923eba406daab9807f1649ac718c27b336f0
 -->
 
 <category cat="010" edition="1.1">
@@ -617,7 +617,7 @@
                     <dsc>Standard Deviation of X Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m</unit>
                     </convert>
@@ -626,14 +626,14 @@
                     <dsc>Standard Deviation of Y Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
+                        <type>unsigned decimal</type>
                         <lsb>1.0/4</lsb>
                         <unit>m</unit>
                     </convert>
                 </item>
                 <item name="COVXY" type="Fixed">
                     <dsc>Covariance in Twos Complement Form</dsc>
-                    <len>8</len>
+                    <len>16</len>
                     <convert>
                         <type>decimal</type>
                         <lsb>1.0/4</lsb>
