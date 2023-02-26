@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 89dade47fcfe21970ea31f36ac41fe88d331a88c
+    sha1sum of the json input: b44acf515edd9fe2bb8ffd98b5bf2b782c5c9b4c
 -->
 
-<category cat="021" edition="0.23">
-    <dsc>Asterix Category 021, edition 0.23</dsc>
+<category cat="021" edition="0.25">
+    <dsc>Asterix Category 021, edition 0.25</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identification</dsc>
@@ -360,10 +360,10 @@
             <items>
                 <item name="LAT" type="Fixed">
                     <dsc>Latitude</dsc>
-                    <len>24</len>
+                    <len>32</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>180.0/8388608</lsb>
+                        <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
                         <min>-90.0</min>
                         <max>90.0</max>
@@ -371,10 +371,10 @@
                 </item>
                 <item name="LON" type="Fixed">
                     <dsc>Longitude</dsc>
-                    <len>24</len>
+                    <len>32</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>180.0/8388608</lsb>
+                        <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
                         <min>-180.0</min>
                         <max>180.0</max>

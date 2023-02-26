@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 89dade47fcfe21970ea31f36ac41fe88d331a88c
+    sha1sum of the json input: d513844a9a4edf0b1583d79206a99b84553a510c
 -->
 
-<category cat="021" edition="0.23">
-    <dsc>Asterix Category 021, edition 0.23</dsc>
+<category cat="021" edition="0.26">
+    <dsc>Asterix Category 021, edition 0.26</dsc>
     <items>
         <item name="010">
             <dsc>Data Source Identification</dsc>
@@ -158,6 +158,37 @@
                     </values>
                 </item>
                 <item name="spare2" type="Spare"><len>3</len></item>
+            </items>
+        </item>
+        <item name="070">
+            <dsc>Mode 3/A Code in Octal Representation</dsc>
+            <items>
+                <item name="V" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Code validated"/>
+                        <value val="1" dsc="Code not validated"/>
+                    </values>
+                </item>
+                <item name="G" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Default"/>
+                        <value val="1" dsc="Garbled code"/>
+                    </values>
+                </item>
+                <item name="L" type="Fixed">
+                    <len>1</len>
+                    <values>
+                        <value val="0" dsc="Mode-3/A code derived during last update"/>
+                        <value val="1" dsc="Mode-3/A code not extracted during the last update"/>
+                    </values>
+                </item>
+                <item name="spare1" type="Spare"><len>1</len></item>
+                <item name="MODE3A" type="Fixed">
+                    <dsc>Mode-3/A Reply in Octal Representation</dsc>
+                    <len>12</len>
+                </item>
             </items>
         </item>
         <item name="080" type="Fixed">
@@ -360,10 +391,10 @@
             <items>
                 <item name="LAT" type="Fixed">
                     <dsc>Latitude</dsc>
-                    <len>24</len>
+                    <len>32</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>180.0/8388608</lsb>
+                        <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
                         <min>-90.0</min>
                         <max>90.0</max>
@@ -371,16 +402,20 @@
                 </item>
                 <item name="LON" type="Fixed">
                     <dsc>Longitude</dsc>
-                    <len>24</len>
+                    <len>32</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>180.0/8388608</lsb>
+                        <lsb>180.0/33554432</lsb>
                         <unit>deg</unit>
                         <min>-180.0</min>
                         <max>180.0</max>
                     </convert>
                 </item>
             </items>
+        </item>
+        <item name="131" type="Fixed">
+            <dsc>Signal Amplitude</dsc>
+            <len>8</len>
         </item>
         <item name="140" type="Fixed">
             <dsc>Geometric Altitude</dsc>
@@ -738,8 +773,8 @@
             <item>146</item>
             <item>148</item>
             <item>110</item>
-            <item></item>
-            <item></item>
+            <item>070</item>
+            <item>131</item>
             <item></item>
             <item></item>
             <item></item>
