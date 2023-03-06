@@ -87,8 +87,11 @@ for s in jsons:
     out = os.path.join(args.dst, out)
 
     os.makedirs(args.dst, exist_ok=True)
-    result = render.xml.render(root, cks)
-    with open(out, 'w') as f:
-        print('writing', out)
-        f.write(result)
+    try:
+        result = render.xml.render(root, cks)
+        with open(out, 'w') as f:
+            print('writing', out)
+            f.write(result)
+    except Exception as e:
+        print('skip', out, e)
 

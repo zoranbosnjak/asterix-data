@@ -221,6 +221,9 @@ def renderVariation(indent, variation):
     def renderExtended():
         n1 = variation['first']
         n2 = variation['extents']
+        fx = variation['fx']
+        if fx != 'regular':
+            raise Exception('iregular extended item')
         tell('<len>({},{})</len>'.format(n1, n2))
         renderGroup()
 
