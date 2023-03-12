@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: d562a9a828e20141aeaa0890fe797ca2b1fc50a1
+    sha1sum of the json input: 0e41ecf821cae27e3d966ee073188dc8378cf92e
 -->
 
-<category cat="021" edition="2.4">
-    <dsc>Asterix Category 021, edition 2.4</dsc>
+<category cat="021" edition="2.2">
+    <dsc>Asterix Category 021, edition 2.2</dsc>
     <items>
         <item name="008">
             <dsc>Aircraft Operational Status</dsc>
@@ -227,15 +227,7 @@
                         <value val="3" dsc="Reserved for future use"/>
                     </values>
                 </item>
-                <item name="spare1" type="Spare"><len>1</len></item>
-                <item name="LLC" type="Fixed">
-                    <dsc>List Lookup Check</dsc>
-                    <len>1</len>
-                    <values>
-                        <value val="0" dsc="Default"/>
-                        <value val="1" dsc="List Lookup failed (see note)"/>
-                    </values>
-                </item>
+                <item name="spare1" type="Spare"><len>2</len></item>
                 <item name="IPC" type="Fixed">
                     <dsc>Independent Position Check</dsc>
                     <len>1</len>

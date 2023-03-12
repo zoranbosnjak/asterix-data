@@ -7,11 +7,11 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: d562a9a828e20141aeaa0890fe797ca2b1fc50a1
+    sha1sum of the json input: 65344af199d0e3edf411aef4d6b062d4b2c61ba8
 -->
 
-<category cat="021" edition="2.4">
-    <dsc>Asterix Category 021, edition 2.4</dsc>
+<category cat="021" edition="2.3">
+    <dsc>Asterix Category 021, edition 2.3</dsc>
     <items>
         <item name="008">
             <dsc>Aircraft Operational Status</dsc>
