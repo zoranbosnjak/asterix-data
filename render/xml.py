@@ -107,6 +107,28 @@ def itemLine(item):
         return '<item name="{}">'.format(item['name'])
 
 def renderTopItem(indent, item):
+    # manipulate 'repetitive fx' item
+    if item['variation']['type'] == 'Repetitive' and item['variation']['rep']['type'] == 'Fx':
+        var = item['variation']['variation'].copy()
+        if var['type'] != 'Element':
+            raise Exception("Expecting 'Element'")
+        n = var['size']
+        item = item.copy()
+        item['variation'] = {
+            'type': 'Extended',
+            'first': n+1,
+            'extents': n+1,
+            'fx': 'Regular',
+            'items': [{
+                'definition': None,
+                'description': None,
+                'name': 'Subitem',
+                'remark': None,
+                'spare': False,
+                'title': 'Subitem',
+                'variation': var,
+                }]
+        }
     tell = indent.tell
     tell(itemLine(item))
     with indent:
@@ -222,12 +244,16 @@ def renderVariation(indent, variation):
         n1 = variation['first']
         n2 = variation['extents']
         fx = variation['fx']
-        if fx != 'regular':
-            raise Exception('iregular extended item')
+        if fx != 'Regular':
+            raise Exception('irregular extended item')
         tell('<len>({},{})</len>'.format(n1, n2))
         renderGroup()
 
     def renderRepetitive():
+        if variation['rep']['type'] != 'Regular':
+            raise Exception('irregular repetitive item')
+        if variation['rep']['size'] != 8:
+            raise Exception('unexpected repetition size')
         var = variation['variation']
         if var['type'] == 'Element':
             # repetitive type expects additional level
