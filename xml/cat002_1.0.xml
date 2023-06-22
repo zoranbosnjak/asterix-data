@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 9f59505d990d77369a7af922f728545bde499390
+    sha1sum of the json input: 8d66e48fae10266e4c44b149a7e1784f6acc2a15
 -->
 
 <category cat="002" edition="1.0">
@@ -68,7 +68,8 @@
             <dsc>Station Configuration Status</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="SCS" type="Fixed">
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>
@@ -77,7 +78,8 @@
             <dsc>Station Processing Mode</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="SPM" type="Fixed">
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>
@@ -113,8 +115,8 @@
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="WE" type="Fixed">
-                    <dsc>W/E Value</dsc>
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>

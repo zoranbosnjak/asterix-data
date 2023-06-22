@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: bfeeadb88dffc088d13e0ed08a7b6df1028c4b63
+    sha1sum of the json input: 323d35d75af5d6e33058fb43ab00cb41871e9baa
 -->
 
 <category cat="020" edition="1.10">
@@ -134,7 +134,8 @@
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="WE" type="Fixed">
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                     <values>
                         <value val="0" dsc="Not defined; never used"/>

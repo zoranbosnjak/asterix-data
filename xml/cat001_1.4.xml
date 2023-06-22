@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: f7f3b50ab42ef9e49449e6b2052d88d7d91bbda6
+    sha1sum of the json input: 6442aa8edcd45ee736b11d21032e192cb8e42e8e
 -->
 
 <category cat="001" edition="1.4">
@@ -113,8 +113,8 @@
             <dsc>Warning/Error Conditions</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="WE" type="Fixed">
-                    <dsc>WEVALUE</dsc>
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                     <values>
                         <value val="0" dsc="No warning nor error condition"/>
@@ -576,8 +576,8 @@
             <dsc>Radar Plot Characteristics</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="IND" type="Fixed">
-                    <dsc>Indicator</dsc>
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>
@@ -718,8 +718,8 @@
             <dsc>Track Quality</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="QI" type="Fixed">
-                    <dsc>Relative Track Quality</dsc>
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>

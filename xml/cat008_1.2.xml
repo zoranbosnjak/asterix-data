@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 787e4d9e86e4817ef80a0ff68931f37bc6402e54
+    sha1sum of the json input: 1cabf1c10e40a5193213b46d8502a1855eb05175
 -->
 
 <category cat="008" edition="1.2">
@@ -224,8 +224,8 @@
             <dsc>Station Configuration Status</dsc>
             <len>(8,8)</len>
             <items>
-                <item name="DATA" type="Fixed">
-                    <dsc>Unspecified Data</dsc>
+                <item name="Subitem" type="Fixed">
+                    <dsc>Subitem</dsc>
                     <len>7</len>
                 </item>
             </items>
