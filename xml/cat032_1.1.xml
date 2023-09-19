@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 3df31c30051a23352fa1e60bb0b2076c27374cc0
+    sha1sum of the json input: 8bb865c834c79eb6b28d6915550bd92da26f31be
 -->
 
 <category cat="032" edition="1.1">
@@ -85,7 +85,7 @@
         </item>
         <item name="050" type="Extended">
             <dsc>Composed Track Number</dsc>
-            <len>(24,24)</len>
+            <len>(24,8)</len>
             <items>
                 <item name="SUI" type="Fixed">
                     <dsc>System Unit Identification</dsc>
