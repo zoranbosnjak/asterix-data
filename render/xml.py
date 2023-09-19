@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unicodedata
+from itertools import takewhile, dropwhile
 
 def case(msg, val, *cases):
     """'case' statement as a function."""
@@ -145,6 +146,40 @@ def ffloat(val):
         val += '0'
     return val
 
+def split_list(delim, lst):
+    if not lst:
+        return
+    a = list(takewhile(lambda x: x != delim, lst))
+    b = list(dropwhile(lambda x: x != delim, lst))[1:]
+    yield a
+    for i in split_list(delim, b):
+        yield i
+
+def recalculate_extended_sizes(lst):
+    def size_of(i):
+        if i is None:
+            return None # FX
+        if i['spare']:
+            return i['length']
+        vt = i['variation']['type']
+        if vt == 'Element':
+            return i['variation']['size']
+        if vt == 'Group':
+            return sum([size_of(j) for j in i['variation']['items']])
+        raise Exception('not a fixed item')
+    sizes = list(split_list(None, list(map(size_of, lst))))
+    sizes = [sum(i) for i in sizes]
+    a = sizes[0] + 1
+    b = [i + 1 for i in sizes[1:]]
+    if not b:
+        b = [8]
+    # all extended sizes must be the same and byte aligned
+    assert all(lambda x: x==b[0] for x in b)
+    b = b[0]
+    assert (a % 8) == 0
+    assert (b % 8) == 0
+    return (a,b)
+
 def renderVariation(indent, variation):
     tell = indent.tell
 
@@ -241,13 +276,13 @@ def renderVariation(indent, variation):
         tell('</items>')
 
     def renderExtended():
-        n1 = variation['first']
-        n2 = variation['extents']
-        fx = variation['fx']
-        if fx != 'Regular':
-            raise Exception('irregular extended item')
+        n1, n2 = recalculate_extended_sizes(variation['items'])
         tell('<len>({},{})</len>'.format(n1, n2))
-        renderGroup()
+        # render the rest of non-fx items like 'group'
+        renderVariation(indent, {
+            "type": "Group",
+            "items": [i for i in variation['items'] if i is not None]
+        })
 
     def renderRepetitive():
         if variation['rep']['type'] != 'Regular':
@@ -274,6 +309,9 @@ def renderVariation(indent, variation):
             renderVariation(indent, var)
 
     def renderExplicit():
+        pass
+
+    def renderRfs():
         pass
 
     def renderCompound():
