@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 9f61c991abfbab3440671f1b5961c493e3a69c5b
+    sha1sum of the json input: 91f7c638ad76804cc5d9e89a66893a72232716c4
 -->
 
 <category cat="034" edition="1.28">
@@ -541,7 +541,7 @@
                     <dsc>Height of Data Source</dsc>
                     <len>16</len>
                     <convert>
-                        <type>unsigned decimal</type>
+                        <type>decimal</type>
                         <lsb>1.0</lsb>
                         <unit>m</unit>
                     </convert>
