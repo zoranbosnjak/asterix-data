@@ -12,41 +12,46 @@ def case(msg, val, *cases):
 
 def getNumber(value):
     """Get Natural/Real/Rational number as an object."""
-    class Integer(object):
+    class Integer:
         def __init__(self, val):
             self.val = val
+        def __int__(self):
+            return self.val
+        def __float__(self):
+            return float(self.val)
+        def __str__(self):
+            return '{}'.format(float(self.val))
+
+    class Div:
+        def __init__(self, numerator, denominator):
+            self.numerator = numerator
+            self.denominator = denominator
+        def __float__(self):
+            return float(self.numerator) / float(self.denominator)
+        def __str__(self):
+            return '{}/{}'.format(float(self.numerator), int(self.denominator))
+
+    class Pow:
+        def __init__(self, base, exponent):
+            self.val = pow(base, exponent)
+        def __int__(self):
+            return self.val
+        def __float__(self):
+            return float(self.val)
         def __str__(self):
             return '{}'.format(self.val)
-        def __float__(self):
-            return float(self.val)
-
-    class Ratio(object):
-        def __init__(self, a, b):
-            self.a = a
-            self.b = b
-        def __str__(self):
-            return '{}/{}'.format(self.a, self.b)
-        def __float__(self):
-            return float(self.a) / float(self.b)
-
-    class Real(object):
-        def __init__(self, val):
-            self.val = val
-        def __str__(self):
-            return '{0:f}'.format(self.val).rstrip('0')
-        def __float__(self):
-            return float(self.val)
 
     t = value['type']
-    val = value['value']
 
     if t == 'Integer':
-        return Integer(int(val))
-    if t == 'Ratio':
-        x, y = val['numerator'], val['denominator']
-        return Ratio(x, y)
-    if t == 'Real':
-        return Real(float(val))
+        val = value['value']
+        return Integer(val)
+    if t == 'Div':
+        x, y = value['numerator'], value['denominator']
+        return Div(getNumber(x), getNumber(y))
+    if t == 'Pow':
+        x, y = value['base'], value['exponent']
+        return Pow(x, y)
     raise Exception('unexpected value type {}'.format(t))
 
 def renderRule(rule, caseContextFree, caseDependent):
@@ -190,24 +195,18 @@ def renderVariation(indent, variation):
             tell('<type>{}</type>'.format(sig + 'integer'))
             for i in value['constraints']:
                 if i['type'] in ['>', '>=']:
-                    tell('<min>{}</min>'.format(getNumber(i['value'])))
+                    tell('<min>{}</min>'.format(int(getNumber(i['value']))))
                 if i['type'] in ['<', '<=']:
-                    tell('<max>{}</max>'.format(getNumber(i['value'])))
+                    tell('<max>{}</max>'.format(int(getNumber(i['value']))))
         tell('</convert>')
 
     def renderQuantity(value):
         tell('<convert>')
         with indent:
             sig = '' if value['signed'] else 'unsigned '
-            k = getNumber(value['scaling'])
             tell('<type>{}</type>'.format(sig + 'decimal'))
-
-            fract = value['fractionalBits']
-            if fract == 0:
-                tell('<lsb>{}</lsb>'.format(ffloat(k)))
-            else:
-                tell('<lsb>{}/{}</lsb>'.format(ffloat(k), pow(2,fract)))
-
+            lsb = getNumber(value['lsb'])
+            tell('<lsb>{}</lsb>'.format(lsb))
             unit = value['unit']
             if unit is not None:
                 tell('<unit>{}</unit>'.format(unit))
@@ -378,4 +377,3 @@ def render(root, cks):
         renderUap(indent, root['uap'])
     tell('</category>')
     return ''.join([line+'\n' for line in indent.accumulator])
-

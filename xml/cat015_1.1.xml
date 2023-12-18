@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: fc5fdc67f83b7f7819b3398095e0452b0c8c607b
+    sha1sum of the json input: 6f7058dd9af522a2138c694ea68908cbbf9c4b34
 -->
 
 <category cat="015" edition="1.1">
@@ -195,7 +195,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <max>655.35</max>
                     </convert>
@@ -205,7 +205,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <max>655.35</max>
                     </convert>
@@ -215,7 +215,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <max>655.35</max>
                     </convert>
@@ -379,7 +379,7 @@
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <min>-83286.0</min>
                         <max>83286.0</max>
@@ -390,7 +390,7 @@
                     <len>24</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <max>167772.15</max>
                     </convert>
@@ -400,7 +400,7 @@
                     <len>24</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m</unit>
                         <max>167772.15</max>
                     </convert>
@@ -526,7 +526,7 @@
                             <len>20</len>
                             <convert>
                                 <type>decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <min>-5242.87</min>
                                 <max>5242.87</max>
@@ -536,7 +536,7 @@
                             <len>20</len>
                             <convert>
                                 <type>decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <min>-5242.87</min>
                                 <max>5242.87</max>
@@ -551,7 +551,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <max>655.35</max>
                             </convert>
@@ -560,7 +560,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <max>655.35</max>
                             </convert>
@@ -582,7 +582,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <max>655.35</max>
                             </convert>
@@ -591,7 +591,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <max>655.35</max>
                             </convert>
@@ -788,7 +788,7 @@
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m/s</unit>
                         <min>-83886.07</min>
                         <max>83886.07</max>
@@ -799,7 +799,7 @@
                     <len>16</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m/s</unit>
                         <max>655.35</max>
                     </convert>
@@ -811,7 +811,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s</unit>
                                 <max>655.35</max>
                             </convert>
@@ -899,7 +899,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m/s2</unit>
                         <min>-327.67</min>
                         <max>327.67</max>
@@ -912,7 +912,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s2</unit>
                                 <max>167772.15</max>
                             </convert>
@@ -1008,7 +1008,7 @@
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m</unit>
                         <min>-838860.7</min>
                         <max>838860.7</max>
@@ -1019,7 +1019,7 @@
                     <len>24</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m</unit>
                         <max>1677721.5</max>
                     </convert>
@@ -1029,7 +1029,7 @@
                     <len>24</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m</unit>
                         <max>1677721.5</max>
                     </convert>
@@ -1039,7 +1039,7 @@
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m/s</unit>
                         <min>-838860.7</min>
                         <max>838860.7</max>
@@ -1050,7 +1050,7 @@
                     <len>24</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m/s</unit>
                         <max>1677721.5</max>
                     </convert>
@@ -1062,7 +1062,7 @@
                             <len>24</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.1</lsb>
+                                <lsb>1.0/10</lsb>
                                 <unit>m/s</unit>
                                 <max>1677721.5</max>
                             </convert>
@@ -1128,7 +1128,7 @@
                     <len>24</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.01</lsb>
+                        <lsb>1.0/100</lsb>
                         <unit>m/s</unit>
                         <min>-83886.07</min>
                         <max>83886.07</max>

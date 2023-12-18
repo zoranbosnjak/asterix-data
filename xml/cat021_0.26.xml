@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 2d7230b6b842342dcdb753bb10869647be47753f
+    sha1sum of the json input: df04bfa4b5301f34ccc98bad8b4fb3e1b978c699
 -->
 
 <category cat="021" edition="0.26">
@@ -376,7 +376,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>NM</unit>
                                 <min>0.0</min>
                                 <max>655.35</max>
@@ -732,7 +732,7 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>0.01</lsb>
+                <lsb>1.0/100</lsb>
                 <unit>deg</unit>
                 <min>-180.0</min>
                 <max>180.0</max>

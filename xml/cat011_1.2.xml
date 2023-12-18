@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 08d1e5f40c883f8484f8ce45868530eaa6f4ddfd
+    sha1sum of the json input: 5aea6fe4cfa7321dd2942c160e9f56f8adf121fe
 -->
 
 <category cat="011" edition="1.2">
@@ -1080,7 +1080,7 @@
                             <len>8</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.1</lsb>
+                                <lsb>1.0/10</lsb>
                                 <unit>m/s</unit>
                             </convert>
                         </item>
@@ -1089,7 +1089,7 @@
                             <len>8</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.1</lsb>
+                                <lsb>1.0/10</lsb>
                                 <unit>m/s</unit>
                             </convert>
                         </item>
@@ -1100,7 +1100,7 @@
                     <len>16</len>
                     <convert>
                         <type>decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>m/s</unit>
                     </convert>
                 </item>
@@ -1112,7 +1112,7 @@
                             <len>8</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s2</unit>
                             </convert>
                         </item>
@@ -1121,7 +1121,7 @@
                             <len>8</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>m/s2</unit>
                             </convert>
                         </item>

@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 59b5bc183b7a919833816b74e7e966d18cdbce21
+    sha1sum of the json input: 169e24067d316ddf372b3b1d5d90b196766fc24c
 -->
 
 <category cat="021" edition="2.5">
@@ -565,7 +565,7 @@
                             <len>16</len>
                             <convert>
                                 <type>unsigned decimal</type>
-                                <lsb>0.01</lsb>
+                                <lsb>1.0/100</lsb>
                                 <unit>NM</unit>
                                 <min>0.0</min>
                                 <max>655.35</max>
@@ -1032,7 +1032,7 @@
             <len>16</len>
             <convert>
                 <type>decimal</type>
-                <lsb>0.01</lsb>
+                <lsb>1.0/100</lsb>
                 <unit>deg</unit>
                 <min>-180.0</min>
                 <max>180.0</max>
@@ -1144,7 +1144,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1154,7 +1154,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1164,7 +1164,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1174,7 +1174,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1184,7 +1184,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1194,7 +1194,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1204,7 +1204,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1214,7 +1214,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1224,7 +1224,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1234,7 +1234,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1244,7 +1244,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1254,7 +1254,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1264,7 +1264,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1274,7 +1274,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1284,7 +1284,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1294,7 +1294,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1304,7 +1304,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1314,7 +1314,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1324,7 +1324,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1334,7 +1334,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1344,7 +1344,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1354,7 +1354,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
@@ -1364,7 +1364,7 @@
                     <len>8</len>
                     <convert>
                         <type>unsigned decimal</type>
-                        <lsb>0.1</lsb>
+                        <lsb>1.0/10</lsb>
                         <unit>s</unit>
                         <max>25.5</max>
                     </convert>
