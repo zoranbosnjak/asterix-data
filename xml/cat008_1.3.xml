@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 8334b3de7871e56cb4a5a107b4cb69c8026c8527
+    sha1sum of the json input: 6ef33581ce3688ff013f1fa5562237041b920b84
 -->
 
 <category cat="008" edition="1.3">
@@ -93,10 +93,20 @@
                 <item name="STR" type="Fixed">
                     <dsc>Start Range</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="ENDR" type="Fixed">
                     <dsc>End Range</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/128</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="AZ" type="Fixed">
                     <dsc>Azimuth</dsc>
@@ -115,14 +125,29 @@
                 <item name="X" type="Fixed">
                     <dsc>X-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="Y" type="Fixed">
                     <dsc>Y-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="LENGTH" type="Fixed">
                     <dsc>Length</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>unsigned decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
             </items>
         </item>
@@ -132,18 +157,38 @@
                 <item name="X1" type="Fixed">
                     <dsc>X1-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="Y1" type="Fixed">
                     <dsc>Y1-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="X2" type="Fixed">
                     <dsc>X2-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="Y2" type="Fixed">
                     <dsc>Y2-Component</dsc>
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
             </items>
         </item>
@@ -182,9 +227,19 @@
             <items>
                 <item name="X1" type="Fixed">
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
                 <item name="Y1" type="Fixed">
                     <len>8</len>
+                    <convert>
+                        <type>decimal</type>
+                        <lsb>1.0/64</lsb>
+                        <unit>(NM)</unit>
+                    </convert>
                 </item>
             </items>
         </item>
@@ -205,9 +260,7 @@
                     <dsc>Scaling Factor</dsc>
                     <len>5</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0</lsb>
-                        <unit></unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="R" type="Fixed">
