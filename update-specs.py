@@ -66,6 +66,8 @@ parser.add_argument('--src', metavar='SRC', action='append',
 parser.add_argument('dst', metavar='DST', help='path to xml output')
 parser.add_argument('--reference', action='store_true',
     help='print upstream reference and exit')
+parser.add_argument('--debug', action='store_true',
+    help='re-raise exception in case of problems')
 
 args = parser.parse_args()
 
@@ -94,4 +96,5 @@ for s in jsons:
             f.write(result)
     except Exception as e:
         print('skip', out, e)
-
+        if args.debug:
+            raise e

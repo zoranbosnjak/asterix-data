@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 0137c92613c7383a30312f6722254f447a99843d
+    sha1sum of the json input: 3c7227b96b280063f6cd237b4ddd781cd5c9dfb9
 -->
 
 <category cat="004" edition="1.12">
@@ -771,7 +771,7 @@
                             <dsc>Identification of Conflict Categories Definition Table</dsc>
                             <len>4</len>
                         </item>
-                        <item name="CP" type="Fixed">
+                        <item name="CPC" type="Fixed">
                             <dsc>Conflict Properties Class</dsc>
                             <len>3</len>
                         </item>

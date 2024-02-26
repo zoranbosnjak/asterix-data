@@ -54,14 +54,14 @@ def getNumber(value):
         return Pow(x, y)
     raise Exception('unexpected value type {}'.format(t))
 
-def renderRule(rule, caseContextFree, caseDependent):
-    rule_type = rule['type']
-    if rule_type == 'ContextFree':
-        return caseContextFree(rule)
-    elif rule_type == 'Dependent':
-        return caseDependent(rule)
+def getRule(rule):
+    t = rule['type']
+    if t == 'ContextFree':
+        return rule['value']
+    elif t == 'Dependent':
+        return rule['default']
     else:
-        raise Exception('unexpected rule type {}'.format(rule_type))
+        raise Exception('unexpected type: {}'.format(t))
 
 class Indent(object):
     """Simple indent context manager."""
@@ -104,7 +104,7 @@ def xmlquote(s):
     })
 
 def itemLine(item):
-    itemType = item['variation']['type']
+    itemType = getRule(item['rule'])['type']
     if itemType != 'Group':
         if itemType == 'Element':
             itemType = 'Fixed'
@@ -114,13 +114,18 @@ def itemLine(item):
 
 def renderTopItem(indent, item):
     # manipulate 'repetitive fx' item
-    if item['variation']['type'] == 'Repetitive' and item['variation']['rep']['type'] == 'Fx':
-        var = item['variation']['variation'].copy()
+    variation = getRule(item['rule'])
+    if variation['type'] == 'Repetitive' and variation['rep']['type'] == 'Fx':
+        var = variation['variation'].copy()
         if var['type'] != 'Element':
             raise Exception("Expecting 'Element'")
         n = var['size']
         item = item.copy()
-        item['variation'] = {
+        rule = {
+            'type': 'ContextFree',
+            'value': var,
+            }
+        var2 = {
             'type': 'Extended',
             'first': n+1,
             'extents': n+1,
@@ -132,16 +137,20 @@ def renderTopItem(indent, item):
                 'remark': None,
                 'spare': False,
                 'title': 'Subitem',
-                'variation': var,
+                'rule': rule,
                 }]
         }
+        item['rule'] = {
+            'type': 'ContextFree',
+            'value': var2,
+            }
     tell = indent.tell
     tell(itemLine(item))
     with indent:
         title = item['title']
         if title:
             tell('<dsc>{}</dsc>'.format(xmlquote(title)))
-        renderVariation(indent, item['variation'])
+        renderVariation(indent, getRule(item['rule']))
     tell('</item>')
 
 def ffloat(val):
@@ -166,11 +175,12 @@ def recalculate_extended_sizes(lst):
             return None # FX
         if i['spare']:
             return i['length']
-        vt = i['variation']['type']
+        var = getRule(i['rule'])
+        vt = var['type']
         if vt == 'Element':
-            return i['variation']['size']
+            return var['size']
         if vt == 'Group':
-            return sum([size_of(j) for j in i['variation']['items']])
+            return sum([size_of(j) for j in getRule(i['rule'])['items']])
         raise Exception('not a fixed item')
     sizes = list(split_list(None, list(map(size_of, lst))))
     sizes = [sum(i) for i in sizes]
@@ -220,35 +230,31 @@ def renderVariation(indent, variation):
 
     def renderElement():
         tell('<len>{}</len>'.format(variation['size']))
-        def case1(val):
-            rule = val['content']
-            t = rule['type']
-            if t == 'Raw':
-                pass
-            elif t == 'Table':
-                tell('<values>')
-                with indent:
-                    for key,value in rule['values']:
-                        tell('<value val="{}" dsc="{}"/>'.format(key, xmlquote(value)))
-                tell('</values>')
-            elif t == 'String':
-                f = case('string variatioin', rule['variation'],
-                    ('StringAscii', lambda: tell('<convert><type>string</type></convert>')),
-                    ('StringICAO', lambda: tell('<convert><type>ACID</type></convert>')),
-                    ('StringOctal', lambda: None),
-                    )
-                f ()
-            elif t == 'Integer':
-                renderInteger(rule)
-            elif t == 'Quantity':
-                renderQuantity(rule)
-            elif t == 'Bds':
-                pass
-            else:
-                raise Exception('unexpected value type {}'.format(t))
-        def case2(val):
+        content = getRule(variation['rule'])
+        t = content['type']
+        if t == 'Raw':
             pass
-        return renderRule(variation['rule'], case1, case2)
+        elif t == 'Table':
+            tell('<values>')
+            with indent:
+                for key,value in content['values']:
+                    tell('<value val="{}" dsc="{}"/>'.format(key, xmlquote(value)))
+            tell('</values>')
+        elif t == 'String':
+            f = case('string variatioin', content['variation'],
+                ('StringAscii', lambda: tell('<convert><type>string</type></convert>')),
+                ('StringICAO', lambda: tell('<convert><type>ACID</type></convert>')),
+                ('StringOctal', lambda: None),
+                )
+            f ()
+        elif t == 'Integer':
+            renderInteger(content)
+        elif t == 'Quantity':
+            renderQuantity(content)
+        elif t == 'Bds':
+            pass
+        else:
+            raise Exception('unexpected value type {}'.format(t))
 
     def renderMaybeItem(n, item):
         if item['spare']:
@@ -260,7 +266,7 @@ def renderVariation(indent, variation):
                 title = item['title']
                 if title:
                     tell('<dsc>{}</dsc>'.format(xmlquote(title)))
-                renderVariation(indent, item['variation'])
+                renderVariation(indent, getRule(item['rule']))
             tell('</item>')
             return False
 
@@ -301,7 +307,10 @@ def renderVariation(indent, variation):
                     "remark": None,
                     "spare": False,
                     "title": "title",
-                    "variation": var
+                    "rule": {
+                        'type': 'ContextFree',
+                        'value': var,
+                    },
                     }]
             })
         else:
