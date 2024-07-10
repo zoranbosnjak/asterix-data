@@ -13,6 +13,7 @@ import hashlib
 import urllib.request
 
 import render.xml
+import convertspec as convert
 
 # Path to default upstream repository
 upstream_repo = 'https://zoranbosnjak.github.io/asterix-specs'
@@ -81,6 +82,7 @@ jsons = load_jsons(args.src)
 for s in jsons:
     cks = hashlib.sha1(s).hexdigest()
     root = json.loads(s)
+    root = convert.handle_asterix(root)
     if root['type'] != 'Basic':
         continue
     cat = root['number']
