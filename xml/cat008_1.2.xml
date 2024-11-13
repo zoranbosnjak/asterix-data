@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 3b6e5dad74c9e118dda12cda4b81e4373a56e053
+    sha1sum of the json input: d13bf0caad1d5bba15925f28aff02d72f490898c
 -->
 
 <category cat="008" edition="1.2">
@@ -94,18 +94,14 @@
                     <dsc>Start Range</dsc>
                     <len>8</len>
                     <convert>
-                        <type>unsigned decimal</type>
-                        <lsb>1.0/128</lsb>
-                        <unit>(NM)</unit>
+                        <type>unsigned integer</type>
                     </convert>
                 </item>
                 <item name="ENDR" type="Fixed">
                     <dsc>End Range</dsc>
                     <len>8</len>
                     <convert>
-                        <type>unsigned decimal</type>
-                        <lsb>1.0/128</lsb>
-                        <unit>(NM)</unit>
+                        <type>unsigned integer</type>
                     </convert>
                 </item>
                 <item name="AZ" type="Fixed">
@@ -126,27 +122,21 @@
                     <dsc>X-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
                     <dsc>Y-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="LENGTH" type="Fixed">
                     <dsc>Length</dsc>
                     <len>8</len>
                     <convert>
-                        <type>unsigned decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>unsigned integer</type>
                     </convert>
                 </item>
             </items>
@@ -158,36 +148,28 @@
                     <dsc>X1-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="Y1" type="Fixed">
                     <dsc>Y1-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="X2" type="Fixed">
                     <dsc>X2-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="Y2" type="Fixed">
                     <dsc>Y2-Component</dsc>
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
             </items>
@@ -228,17 +210,13 @@
                 <item name="X1" type="Fixed">
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="Y1" type="Fixed">
                     <len>8</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
             </items>

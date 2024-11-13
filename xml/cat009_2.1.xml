@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 2cbd740e908cfdf1f3fdd319c4fc1ca062faf50f
+    sha1sum of the json input: 8d40cff22d2bbef37355385f2ed05b9826844273
 -->
 
 <category cat="009" edition="2.1">
@@ -77,27 +77,21 @@
                     <dsc>X-coordinate</dsc>
                     <len>16</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="Y" type="Fixed">
                     <dsc>Y-coordinate</dsc>
                     <len>16</len>
                     <convert>
-                        <type>decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>integer</type>
                     </convert>
                 </item>
                 <item name="L" type="Fixed">
                     <dsc>Vector Length</dsc>
                     <len>16</len>
                     <convert>
-                        <type>unsigned decimal</type>
-                        <lsb>1.0/64</lsb>
-                        <unit>(NM)</unit>
+                        <type>unsigned integer</type>
                     </convert>
                 </item>
             </items>

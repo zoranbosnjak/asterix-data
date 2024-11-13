@@ -7,7 +7,7 @@
     from this project: https://zoranbosnjak.github.io/asterix-specs/
     See README.md file for details.
 
-    sha1sum of the json input: 784f24cf5150f2c6d93cab607ab90f8936ce7db8
+    sha1sum of the json input: f309311f052f87064f62b31518147f0d48029ac5
 -->
 
 <category cat="004" edition="1.12">
@@ -983,7 +983,7 @@
                 <item name="MS1" type="Fixed">
                     <dsc>Aircraft Identification Downloaded from Aircraft 1 Involved in the Conflict If Equipped with a Mode-S Transponder</dsc>
                     <len>48</len>
-                    <convert><type>string</type></convert>
+                    <convert><type>ACID</type></convert>
                 </item>
                 <item name="FP1">
                     <dsc>Number of the Flight Plan Correlated to Aircraft 1 Involved in the Conflict</dsc>
@@ -1190,7 +1190,7 @@
                 <item name="MS2" type="Fixed">
                     <dsc>Aircraft Identification Downloaded From Aircraft 2 Involved in the Conflict If Eequipped With a Mode-S Transponder</dsc>
                     <len>48</len>
-                    <convert><type>string</type></convert>
+                    <convert><type>ACID</type></convert>
                 </item>
                 <item name="FP2">
                     <dsc>Number of the Flight Plan Correlated to Aircraft 2 Involved in the Conflict</dsc>
